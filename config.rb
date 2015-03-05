@@ -6,7 +6,10 @@ set :js_dir, "assets/javascripts"
 # set :markdown, :smartypants => true
 set :relative_links, true
 
-["4_2_1", "5_0_0"].each do |version|
+data_files = Dir.glob("./docs/*.json")
+AVAILABLE_VERSIONS = data_files.map { |f| /\d_\d_\d/.match(f).to_s }
+
+AVAILABLE_VERSIONS.each do |version|
   proxy "/docs/#{version}.html", "/docs/index.html", :ignore => true
 end
 
