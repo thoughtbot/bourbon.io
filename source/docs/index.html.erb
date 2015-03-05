@@ -1,0 +1,15 @@
+---
+title: "Bourbon Documentation"
+---
+<section>
+  <div class="container">
+    <ol>
+      <% for item in data.bourbon_5_0_0 %>
+        <li>
+          <h2><%= item.context.name %></h2>
+          <p><%= item.description %></p>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+</section>
