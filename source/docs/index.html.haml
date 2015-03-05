@@ -1,0 +1,31 @@
+---
+title: "Bourbon Documentation"
+---
+%section
+  .container
+    - data.bourbon_5_0_0.each do |item|
+      %article.docs-item
+        %h1
+          %code= item.context.name
+        %p= item.description
+        %a{ href: "//github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/#{item.file.path}" } View Source
+
+        - if item.parameter
+          %h2 Parameters
+          %ol.item-parameters
+            - item.parameter.each do |param|
+              %li
+                %p.param-name
+                  %code=  param.name
+                %p.param-type= param.type
+                - if param["default"]
+                  %p.param-default
+                    %code= param["default"]
+                - if param.description
+                  %p.param-description= param.description
+        - if item.example
+          %h2 Example
+          - item.example.each do |ex|
+            %h3= ex.description
+            %pre
+              %code= ex.code
