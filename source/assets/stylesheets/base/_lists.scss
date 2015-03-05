@@ -1,0 +1,22 @@
+ol,
+ul {
+  margin: 0 0 ($base-spacing / 1.5);
+  padding: 0;
+
+  li {
+    @include padding(($base-spacing * 0.1) null);
+  }
+}
+
+dl {
+  margin: 0 0 ($base-spacing / 1.5);
+
+  dt {
+    font-weight: 700;
+    margin-top: $small-spacing;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
