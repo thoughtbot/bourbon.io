@@ -3,13 +3,39 @@ title: "Bourbon Documentation"
 ---
 <section>
   <div class="container">
-    <ol>
-      <% for item in data.bourbon_5_0_0 %>
-        <li>
-          <h2><%= item.context.name %></h2>
-          <p><%= item.description %></p>
-        </li>
-      <% end %>
-    </ol>
+
+    <% data.bourbon_5_0_0.each do |item| %>
+
+      <h2><code><%= item.context.name %></code></h2>
+
+      <pre>
+        <%= item.context.code %>
+      </pre>
+
+      <p><%= item.description %></p>
+      <a href="//github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/<%= item.file.path %>">View Source</a>
+
+
+      <% if item.parameter %>
+        <% item.parameter.each do |param| %>
+          <%= param.type %>
+          <%= param.name %>
+          <%= param.default %>
+        <% end %>
+      <% end if %>
+
+
+      <% if item.example %>
+        <% item.example.each do |ex| %>
+          <%= ex.type %>
+          <pre>
+            <%= ex.code %>
+          </pre>
+        <% end %>
+      <% end if %>
+
+
+    <% end %>
+
   </div>
 </section>
