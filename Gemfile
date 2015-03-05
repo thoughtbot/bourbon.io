@@ -10,4 +10,5 @@ gem "middleman-minify-html"
 
 gem "bourbon"
 gem "neat"
+gem "rake"
 gem "sass"

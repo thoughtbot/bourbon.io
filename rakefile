@@ -1,0 +1,17 @@
+require "rubygems"
+require "bundler"
+
+task :default => [:generate]
+
+desc "generate a docco json output file for the gem version defined in Gemfile"
+
+task :generate do
+  bourbon_path = Bundler.load.specs.find{|s| s.name == "bourbon" }.full_gem_path
+
+  assets_dir = "#{bourbon_path}/app/assets/stylesheets"
+
+  # ~/.gem/ruby/2.2.0/gems/bourbon-4.2.1 => "4_2_1"
+  version_number = bourbon_path.scan(/(\d\.\d\.\d)+/).last.last.gsub(/\./, "_")
+
+  system("sassdoc #{assets_dir} -p > docs/bourbon_#{version_number}.json")
+end
