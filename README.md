@@ -27,3 +27,15 @@
   `% middleman server`
 
   `% open http://localhost:4567`
+
+### Available rake tasks
+
+  `% rake generate` or just `rake`
+
+This task generates documentation (as a new json file, for example:
+`data/bourbon_5.0.0.json`) for the gem version specified in the `Gemfile`.
+
+  `% rake generate_for 4.2.1`
+
+This task grabs the gem version from Github and pretty much does the same.
+
