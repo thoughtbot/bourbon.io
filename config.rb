@@ -6,7 +6,7 @@ set :js_dir, "assets/javascripts"
 # set :markdown, :smartypants => true
 set :relative_links, true
 
-data_files = Dir.glob("./docs/*.json")
+data_files = Dir.glob("./data/*.json")
 AVAILABLE_VERSIONS = data_files.map { |f| /\d_\d_\d/.match(f).to_s }
 
 AVAILABLE_VERSIONS.each do |version|

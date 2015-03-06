@@ -13,5 +13,5 @@ task :generate do
   # ~/.gem/ruby/2.2.0/gems/bourbon-4.2.1 => "4_2_1"
   version_number = bourbon_path.scan(/(\d\.\d\.\d)+/).last.last.gsub(/\./, "_")
 
-  system("sassdoc #{assets_dir} -p > docs/bourbon_#{version_number}.json")
+  system("sassdoc #{assets_dir} -p > data/bourbon_#{version_number}.json")
 end
