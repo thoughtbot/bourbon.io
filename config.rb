@@ -30,5 +30,6 @@ configure :build do
 end
 
 configure :deploy do
-  # deploy.method = :git
+  deploy.build_before = true
+  deploy.method = :git
 end
