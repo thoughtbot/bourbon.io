@@ -70,3 +70,13 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+pre {
+  background-color: $secondary-background-color;
+  border: $base-border;
+  padding: $small-spacing;
+}
+
+code {
+  font-family: $mono-font-family;
+}
