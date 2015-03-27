@@ -15,7 +15,7 @@ AVAILABLE_VERSIONS.each do |version|
 end
 
 activate :autoprefixer do |config|
-  config.browsers = ["> 1%", "last 5 versions", "Explorer >= 9"]
+  config.browsers = ["last 2 versions", "Explorer >= 9"]
 end
 activate :directory_indexes
 
