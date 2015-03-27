@@ -10,7 +10,8 @@ data_files = Dir.glob("./data/*.json")
 AVAILABLE_VERSIONS = data_files.map { |f| /\d_\d_\d/.match(f).to_s }
 
 AVAILABLE_VERSIONS.each do |version|
-  proxy "/docs/#{version}.html", "/docs/index.html", :ignore => true
+  proxy "/docs/#{version}.html", "/docs/index.html",
+    :locals => { :version_number => "bourbon_#{version}" }, :ignore => true
 end
 
 activate :autoprefixer do |config|

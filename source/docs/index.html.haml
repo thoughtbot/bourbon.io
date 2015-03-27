@@ -3,7 +3,8 @@ title: "Bourbon Documentation"
 ---
 %section
   .container
-    - data.bourbon_5_0_0.each do |item|
+    = version_number
+    - data.send(version_number.to_sym).each do |item|
       %article.docs-item
         %h1
           %code= item.context.name
