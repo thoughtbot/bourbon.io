@@ -1,22 +1,19 @@
-ol,
-ul {
-  margin: 0 0 ($base-spacing / 1.5);
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
   padding: 0;
-
-  li {
-    @include padding(($base-spacing * 0.1) null);
-  }
 }
 
 dl {
-  margin: 0 0 ($base-spacing / 1.5);
+  margin: 0;
+}
 
-  dt {
-    font-weight: 700;
-    margin-top: $small-spacing;
-  }
+dt {
+  font-weight: 600;
+  margin: 0;
+}
 
-  dd {
-    margin: 0;
-  }
+dd {
+  margin: 0;
 }

@@ -1,4 +1,3 @@
-require "rubygems"
 require "bundler"
 
 task :default => [:generate]
@@ -14,7 +13,6 @@ task :generate do
 
   system("sassdoc #{assets_dir} -p > data/bourbon_#{version_number}.json")
 end
-
 
 desc "generate docs for a specific version number"
 task :generate_for do

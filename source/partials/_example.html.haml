@@ -1,0 +1,13 @@
+- if item.example
+  %h2 Example
+  - item.example.each do |example|
+    - if example.description
+      / %p= example.description
+    - if example.type == "scss"
+      = preserve do
+        = code("scss") do
+          = example.code
+    - if example.type == "css"
+      = preserve do
+        - code("css") do
+          = example.code

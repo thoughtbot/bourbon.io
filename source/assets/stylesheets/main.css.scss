@@ -1,11 +1,13 @@
-@charset "utf-8";
-
-@import "vendor/vendor";
-
 @import "bourbon";
-@import "base/grid-settings";
-@import "neat";
 @import "base/base";
+@import "github.css";
 
-@import "components/components";
-@import "patterns/patterns";
+.container {
+  @include margin(null auto);
+  @include padding(null 1rem);
+  max-width: 40rem;
+}
+
+.docs-item {
+  margin-bottom: 8rem;
+}

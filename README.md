@@ -1,4 +1,6 @@
-[![Bourbon](http://images.thoughtbot.com/bourbon/bourbon-logo.svg)](http://bourbon.io)
+[<img src="http://images.thoughtbot.com/bourbon/bourbon-logo.svg" width="200" alt="Bourbon logo">][Bourbon]
+
+[Bourbon]: http://bourbon.io
 
 # Bourbon Website
 
@@ -24,7 +26,7 @@
 
 5. Verify that the app is up and running
 
-  `% middleman server`
+  `% bundle exec middleman`
 
   `% open http://localhost:4567`
 
@@ -32,10 +34,9 @@
 
   `% rake generate` or just `rake`
 
-This task generates documentation (as a new json file, for example:
-`data/bourbon_5.0.0.json`) for the gem version specified in the `Gemfile`.
+This task generates documentation (as a new JSON file, for example:
+`data/bourbon_5_0_0.json`) for the gem version specified in the `Gemfile`.
 
   `% rake generate_for 4.2.1`
 
 This task grabs the gem version from Github and pretty much does the same.
-

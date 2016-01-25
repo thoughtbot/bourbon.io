@@ -1,18 +1,8 @@
 body {
   color: $base-font-color;
   font-family: $base-font-family;
-  font-feature-settings: "kern", "liga", "pnum";
   font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
   line-height: $base-line-height;
-
-  @media screen and (min-width: $medium-screen) {
-    font-size: $base-font-size * 1.0625;
-  }
-
-  @media screen and (min-width: $large-screen) {
-    font-size: $base-font-size * 1.1875;
-  }
 }
 
 h1,
@@ -22,24 +12,9 @@ h4,
 h5,
 h6 {
   font-family: $heading-font-family;
-  font-size: $base-font-size;
+  font-size: modular-scale(1);
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
-}
-
-h1 {
-  font-size: modular-scale(3);
-}
-
-h2 {
-  font-size: modular-scale(2);
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-size: modular-scale(1);
 }
 
 p {
@@ -48,35 +23,20 @@ p {
 
 a {
   color: $action-color;
-  transition: color 0.1s linear;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: darken($action-color, 15%);
+    color: shade($action-color, 25%);
   }
 }
 
 hr {
   border-bottom: $base-border;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
   margin: $base-spacing 0;
-}
-
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
-}
-
-pre {
-  background-color: $secondary-background-color;
-  border: $base-border;
-  padding: $small-spacing;
-}
-
-code {
-  font-family: $mono-font-family;
 }
