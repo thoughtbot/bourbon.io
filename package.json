@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sassdoc": "^2.1.20"
+  },
+  "name": "bourbon.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thoughtbot/bourbon.io.git"
+  },
+  "version": "0.1.0"
+}
