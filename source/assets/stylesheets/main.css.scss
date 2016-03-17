@@ -1,6 +1,6 @@
 @import "bourbon";
 @import "base/base";
-@import "github.css";
+@import "syntax-highlight";
 
 .container {
   @include margin(null auto);
@@ -8,6 +8,12 @@
   max-width: 40rem;
 }
 
-.docs-item {
+.doc-item {
   margin-bottom: 8rem;
+}
+
+.doc-item__code-example {
+  border: $base-border;
+  border-radius: $base-border-radius;
+  padding: 1em;
 }

@@ -1,0 +1,13 @@
+---
+title: "Bourbon Documentation"
+---
+
+section
+  .container
+    / = version_number
+    - data.send(version_number.to_sym).each do |item|
+      - if item.access["public"]
+        article.doc-item
+          = partial "partials/doc_item_header", locals: { item: item }
+          = partial "partials/doc_item_arguments", locals: { item: item }
+          = partial "partials/doc_item_example", locals: { item: item }

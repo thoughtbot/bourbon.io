@@ -1,0 +1,33 @@
+- unless item.parameter.nil?
+  h2 Arguments
+
+  table
+    tr
+      th scope="col"
+        | Name
+      th scope="col"
+        | Type
+      th scope="col"
+        | Default
+      th scope="col"
+        | Description
+
+    - item.parameter.each do |argument|
+      tr
+        td
+          code
+            = argument.name
+        td
+          code
+            = argument.type
+        td
+          - if argument.default
+            code
+              = argument.default
+          - else
+            | -
+        td
+          - if argument.description
+            = markdown(argument.description)
+          - else
+            | -

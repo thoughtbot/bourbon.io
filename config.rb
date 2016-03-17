@@ -3,7 +3,7 @@ activate :autoprefixer do |prefix|
 end
 activate :directory_indexes
 activate :syntax do |syntax|
-  syntax.css_class = "highlight"
+  syntax.css_class = "syntax-highlight"
 end
 
 set :css_dir, "assets/stylesheets"

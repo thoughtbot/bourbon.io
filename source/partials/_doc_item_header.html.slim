@@ -1,0 +1,18 @@
+h1.doc-item__title
+  code
+    = item.context.name
+
+span.doc-item__directive-type
+  = item.context.type
+
+- unless item.return.nil?
+  .doc-item__returns
+    | Returns: #{ item.return.type }
+
+.doc-item__source-link
+  = link_to "View Source",
+            "//github.com/thoughtbot/bourbon/blob/master/core/#{item.file.path}"
+
+- unless item.description.nil?
+  .doc-item__description
+    = markdown(item.description)

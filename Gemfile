@@ -12,3 +12,4 @@ gem "rake"
 gem "redcarpet"
 gem "sassc"
 gem "scss_lint", require: false
+gem "slim"

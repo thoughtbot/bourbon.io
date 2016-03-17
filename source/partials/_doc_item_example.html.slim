@@ -1,0 +1,19 @@
+- unless item.example.nil?
+  h2 Example
+
+  - item.example.each do |example|
+
+    - unless example.description.nil?
+      p= example.description
+
+    - if example.type == "scss"
+      .doc-item__code-example
+        span SCSS
+        = code("scss") do
+          = example.code
+
+    - if example.type == "css"
+      .doc-item__code-example
+        span CSS
+        = code("css") do
+          = example.code

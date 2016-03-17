@@ -1,0 +1,16 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    / meta name= "description" content= current_page.data.description || "Bourbon is a…"
+    / title= current_page.data.title || "Bourbon"
+    title= current_page.data.title
+    = stylesheet_link_tag :main
+  body
+    / = partial "partials/site_nav"
+    / = partial "partials/site_header"
+    main role="main"
+      = yield
+    / = partial "partials/site_footer"
+    / = partial "partials/analytics"
