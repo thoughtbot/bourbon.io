@@ -6,7 +6,7 @@ desc "generate a docco json output file for the gem version defined in Gemfile"
 task :generate do
   bourbon_path = Bundler.load.specs.find{|s| s.name == "bourbon" }.full_gem_path
 
-  assets_dir = "#{bourbon_path}/app/assets/stylesheets"
+  assets_dir = "#{bourbon_path}/core"
 
   # ~/.gem/ruby/2.2.0/gems/bourbon-4.2.1 => "4_2_1"
   version_number = bourbon_path.scan(/(\d\.\d\.\d)+/).last.last.gsub(/\./, "_")
