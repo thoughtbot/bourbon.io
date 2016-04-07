@@ -2,10 +2,18 @@
 
 section
   .container
-    / = version_number
+    nav
+      ol
+        - data.send(version_number.to_sym).each do |item|
+          li
+            - if item.access["public"]
+              = link_to "##{ item.context.name }" do
+                code
+                  = item.context.name
+
     - data.send(version_number.to_sym).each do |item|
       - if item.access["public"]
-        article.doc-item
+        article.doc-item id="#{ item.context.name }"
           = partial "partials/doc_item_header", locals: { item: item }
           = partial "partials/doc_item_arguments", locals: { item: item }
           = partial "partials/doc_item_example", locals: { item: item }
