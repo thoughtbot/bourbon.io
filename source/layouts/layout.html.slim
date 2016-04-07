@@ -3,9 +3,14 @@ html lang="en"
   head
     meta charset="utf-8"
     meta name="viewport" content="width=device-width,initial-scale=1"
-    / meta name= "description" content= current_page.data.description || "Bourbon is a…"
-    / title= current_page.data.title || "Bourbon"
-    title= current_page.data.title
+    - if content_for?(:description)
+      meta name="description" content=(yield_content :description)
+    - else
+      meta name="description" content="Bourbon is a…"
+    - if content_for?(:title)
+      title=(yield_content :title)
+    - else
+      title="Bourbon"
     = stylesheet_link_tag :main
   body
     / = partial "partials/site_nav"
