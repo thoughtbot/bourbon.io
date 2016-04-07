@@ -7,13 +7,13 @@
       p= example.description
 
     - if example.type == "scss"
-      .doc-item__code-example
-        span SCSS
+      figure.doc-item__code-example
+        figcaption SCSS
         = code("scss") do
           = example.code
 
     - if example.type == "css"
-      .doc-item__code-example
-        span CSS
+      figure.doc-item__code-example
+        figcaption CSS
         = code("css") do
           = example.code
