@@ -1041,7 +1041,7 @@
     }
   },
   {
-    "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project.\n\n",
+    "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
     "commentRange": {
       "start": 3,
       "end": 60
@@ -1055,12 +1055,6 @@
         "end": 113
       }
     },
-    "link": [
-      {
-        "url": "https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/helpers/_scales.scss",
-        "caption": "We provide a list of commonly used scales as pre-defined variables."
-      }
-    ],
     "parameter": [
       {
         "type": "number (unitless)",
@@ -2163,7 +2157,7 @@
         }
       },
       {
-        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project.\n\n",
+        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
         "context": {
           "type": "function",
           "name": "modular-scale",
