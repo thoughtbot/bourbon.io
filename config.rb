@@ -1,3 +1,5 @@
+require "lib/version"
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -18,15 +20,16 @@ page "/*.xml", layout: false
 page "/*.json", layout: false
 page "/*.txt", layout: false
 
-data_files = Dir.glob("./data/*.json")
-AVAILABLE_VERSIONS = data_files.map { |f| /\d_\d_\d/.match(f).to_s }
 
-AVAILABLE_VERSIONS.each do |version|
+versions = Dir.glob("./data/*.json").map { |version| Version.new(version) }
+
+versions.each do |version|
   proxy(
     "/docs/#{version}.html",
     "/docs/index.html",
     locals: {
-      version_number: "bourbon_#{version}"
+      version: version,
+      versions: versions,
     },
     ignore: true,
   )
