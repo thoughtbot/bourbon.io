@@ -3,7 +3,9 @@ class Version
 
   def initialize(filename)
     file = File.read(filename)
-    @doc_items = JSON.parse(file, object_class: OpenStruct)
+    @doc_items = JSON.parse(file, object_class: OpenStruct).
+      reject { |doc_item| doc_item["access"] == "private" }
+
     @version = filename
   end
 
