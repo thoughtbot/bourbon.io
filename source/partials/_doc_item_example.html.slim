@@ -1,19 +1,18 @@
-- unless item.example.nil?
-  h2 Example
+h2 Example
 
-  - item.example.each do |example|
+- item.example.each do |example|
 
-    - unless example.description.nil?
-      p= example.description
+  - if example.description.present?
+    p= example.description
 
-    - if example.type == "scss"
-      figure.doc-item__code-example
-        figcaption SCSS
-        = code("scss") do
-          = example.code
+  - if example.type == "scss"
+    figure.doc-item__code-example
+      figcaption SCSS
+      = code("scss") do
+        = example.code
 
-    - if example.type == "css"
-      figure.doc-item__code-example
-        figcaption CSS
-        = code("css") do
-          = example.code
+  - if example.type == "css"
+    figure.doc-item__code-example
+      figcaption CSS
+      = code("css") do
+        = example.code

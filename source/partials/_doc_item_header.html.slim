@@ -5,7 +5,7 @@ h1.doc-item__title
 span.doc-item__directive-type
   = item.context.type
 
-- unless item.return.nil?
+- if item.return.present?
   .doc-item__returns
     | Returns: #{ item.return.type }
 
@@ -13,6 +13,6 @@ span.doc-item__directive-type
   = link_to "View Source",
             "//github.com/thoughtbot/bourbon/blob/master/core/#{item.file.path}"
 
-- unless item.description.nil?
+- if item.description.present?
   .doc-item__description
     = markdown(item.description)

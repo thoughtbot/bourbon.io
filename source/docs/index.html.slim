@@ -10,12 +10,14 @@ section
       ol
         - version.doc_items.each do |item|
           li
-            = link_to item.context.name do
+            = link_to "##{item.context.name}" do
               code
                 = item.context.name
 
     - version.doc_items.each do |item|
       article.doc-item id="#{item.context.name}"
         = partial "partials/doc_item_header", locals: { item: item }
-        = partial "partials/doc_item_arguments", locals: { item: item }
-        = partial "partials/doc_item_example", locals: { item: item }
+        - if item.parameter.present?
+          = partial "partials/doc_item_arguments", locals: { item: item }
+        - if item.example.present?
+          = partial "partials/doc_item_example", locals: { item: item }
