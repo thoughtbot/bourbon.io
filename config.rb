@@ -20,7 +20,6 @@ page "/*.xml", layout: false
 page "/*.json", layout: false
 page "/*.txt", layout: false
 
-
 versions = Dir.glob("./data/*.json").map { |version| Version.new(version) }
 
 versions.each do |version|
