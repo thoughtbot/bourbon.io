@@ -721,10 +721,10 @@
     "context": {
       "type": "function",
       "name": "contrast-switch",
-      "code": "\n\n  @return if(_is-light($base-color), $dark-color, $light-color);\n",
+      "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
       "line": {
         "start": 42,
-        "end": 49
+        "end": 60
       }
     },
     "parameter": [
@@ -762,6 +762,10 @@
     "require": [
       {
         "type": "function",
+        "name": "_is-color"
+      },
+      {
+        "type": "function",
         "name": "_is-light",
         "external": false
       }
@@ -774,6 +778,11 @@
     "access": "public",
     "group": [
       "undefined"
+    ],
+    "throw": [
+      "`#{$base-color}` is not a valid color for the `$base-color` ",
+      "`#{$dark-color}` is not a valid color for the `$dark-color` ",
+      "`#{$light-color}` is not a valid color for the `$light-color` "
     ],
     "file": {
       "path": "bourbon/library/_contrast-switch.scss",
@@ -885,7 +894,7 @@
       },
       {
         "type": "function",
-        "name": "_bourbon-get-setting",
+        "name": "_retrieve-bourbon-setting",
         "external": false
       }
     ],
@@ -947,7 +956,7 @@
     "context": {
       "type": "mixin",
       "name": "hide-visually",
-      "code": "\n  @if $toggle == \"hide\" {\n    border: 0;\n    clip: rect(1px, 1px, 1px, 1px);\n    clip-path: circle(1% at 1% 1%);\n    height: 1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n  } @elseif $toggle == \"unhide\" {\n    clip: auto;\n    clip-path: none;\n    height: auto;\n    overflow: visible;\n    position: static;\n    width: auto;\n  }\n",
+      "code": "\n  @if $toggle == \"hide\" {\n    border: 0;\n    clip: rect(1px, 1px, 1px, 1px);\n    clip-path: circle(1% at 1% 1%);\n    height: 1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n  } @else if $toggle == \"unhide\" {\n    clip: auto;\n    clip-path: none;\n    height: auto;\n    overflow: visible;\n    position: static;\n    width: auto;\n  }\n",
       "line": {
         "start": 47,
         "end": 65
@@ -1090,7 +1099,7 @@
     "require": [
       {
         "type": "function",
-        "name": "_bourbon-get-setting",
+        "name": "_retrieve-bourbon-setting",
         "external": false
       }
     ],
@@ -1275,10 +1284,10 @@
     "context": {
       "type": "function",
       "name": "shade",
-      "code": "\n\n  @return mix(#000, $color, $percent);\n",
+      "code": "\n\n  @if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `shade` mixin.\";\n  } @else {\n    @return mix(#000, $color, $percent);\n  }\n",
       "line": {
         "start": 22,
-        "end": 28
+        "end": 33
       }
     },
     "parameter": [
@@ -1309,7 +1318,15 @@
     "group": [
       "undefined"
     ],
-    "require": [],
+    "require": [
+      {
+        "type": "function",
+        "name": "_is-color"
+      }
+    ],
+    "throw": [
+      "`#{$color}` is not a valid color for the `$color` argument in "
+    ],
     "file": {
       "path": "bourbon/library/_shade.scss",
       "name": "_shade.scss"
@@ -1324,7 +1341,7 @@
     "context": {
       "type": "mixin",
       "name": "size",
-      "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` parameter \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` parameter \" +\n           \"in the `size` mixin.\";\n  }\n",
+      "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` argument \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` argument \" +\n           \"in the `size` mixin.\";\n  }\n",
       "line": {
         "start": 31,
         "end": 49
@@ -1363,8 +1380,8 @@
       "undefined"
     ],
     "throw": [
-      "`#{$height}` is not a valid length for the `$height` parameter ",
-      "`#{$width}` is not a valid length for the `$width` parameter "
+      "`#{$height}` is not a valid length for the `$height` argument ",
+      "`#{$width}` is not a valid length for the `$width` argument "
     ],
     "file": {
       "path": "bourbon/library/_size.scss",
@@ -1664,10 +1681,10 @@
     "context": {
       "type": "function",
       "name": "tint",
-      "code": "\n\n  @return mix(#fff, $color, $percent);\n",
+      "code": "\n\n  @if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `tint` mixin.\";\n  } @else {\n    @return mix(#fff, $color, $percent);\n  }\n",
       "line": {
         "start": 22,
-        "end": 28
+        "end": 33
       }
     },
     "parameter": [
@@ -1698,7 +1715,15 @@
     "group": [
       "undefined"
     ],
-    "require": [],
+    "require": [
+      {
+        "type": "function",
+        "name": "_is-color"
+      }
+    ],
+    "throw": [
+      "`#{$color}` is not a valid color for the `$color` argument in "
+    ],
     "file": {
       "path": "bourbon/library/_tint.scss",
       "name": "_tint.scss"
@@ -1713,10 +1738,10 @@
     "context": {
       "type": "mixin",
       "name": "triangle",
-      "code": "\n  @if not index(\n      \"up\" \"up-right\" \"right\" \"down-right\" \"down\" \"down-left\" \"left\" \"up-left\",\n      $direction\n    ) {\n    @error \"Direction must be `up`, `up-right`, `right`, `down-right`, \" +\n           \"`down`, `down-left`, `left` or `up-left`.\";\n  } @else {\n    border-style: solid;\n    height: 0;\n    width: 0;\n\n    @if $direction == \"up\" {\n      border-color: transparent transparent $color;\n      border-width: 0 ($width / 2) $height;\n    } @else if $direction == \"up-right\" {\n      border-color: transparent $color transparent transparent;\n      border-width: 0 $width $width 0;\n    } @else if $direction == \"right\" {\n      border-color: transparent transparent transparent $color;\n      border-width: ($height / 2) 0 ($height / 2) $width;\n    } @else if $direction == \"down-right\" {\n      border-color: transparent transparent $color;\n      border-width: 0 0 $width $width;\n    } @else if $direction == \"down\" {\n      border-color: $color transparent transparent;\n      border-width: $height ($width / 2) 0;\n    } @else if $direction == \"down-left\" {\n      border-color: transparent transparent transparent $color;\n      border-width: $width 0 0 $width;\n    } @else if $direction == \"left\" {\n      border-color: transparent $color transparent transparent;\n      border-width: ($height / 2) $width ($height / 2) 0;\n    } @else if $direction == \"up-left\" {\n      border-color: $color transparent transparent;\n      border-width: $width $width 0 0;\n    }\n  }\n",
+      "code": "\n  @if not index(\n      \"up\" \"up-right\" \"right\" \"down-right\" \"down\" \"down-left\" \"left\" \"up-left\",\n      $direction\n    ) {\n    @error \"Direction must be `up`, `up-right`, `right`, `down-right`, \" +\n           \"`down`, `down-left`, `left` or `up-left`.\";\n  } @else if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `triangle` mixin.\";\n  } @else {\n    border-style: solid;\n    height: 0;\n    width: 0;\n\n    @if $direction == \"up\" {\n      border-color: transparent transparent $color;\n      border-width: 0 ($width / 2) $height;\n    } @else if $direction == \"up-right\" {\n      border-color: transparent $color transparent transparent;\n      border-width: 0 $width $width 0;\n    } @else if $direction == \"right\" {\n      border-color: transparent transparent transparent $color;\n      border-width: ($height / 2) 0 ($height / 2) $width;\n    } @else if $direction == \"down-right\" {\n      border-color: transparent transparent $color;\n      border-width: 0 0 $width $width;\n    } @else if $direction == \"down\" {\n      border-color: $color transparent transparent;\n      border-width: $height ($width / 2) 0;\n    } @else if $direction == \"down-left\" {\n      border-color: transparent transparent transparent $color;\n      border-width: $width 0 0 $width;\n    } @else if $direction == \"left\" {\n      border-color: transparent $color transparent transparent;\n      border-width: ($height / 2) $width ($height / 2) 0;\n    } @else if $direction == \"up-left\" {\n      border-color: $color transparent transparent;\n      border-width: $width $width 0 0;\n    }\n  }\n",
       "line": {
         "start": 36,
-        "end": 79
+        "end": 82
       }
     },
     "parameter": [
@@ -1759,13 +1784,74 @@
     "group": [
       "undefined"
     ],
-    "require": [],
+    "require": [
+      {
+        "type": "function",
+        "name": "_is-color"
+      }
+    ],
     "throw": [
-      "Direction must be `up`, `up-right`, `right`, `down-right`, "
+      "Direction must be `up`, `up-right`, `right`, `down-right`, ",
+      "`#{$color}` is not a valid color for the `$color` argument in "
     ],
     "file": {
       "path": "bourbon/library/_triangle.scss",
       "name": "_triangle.scss"
+    }
+  },
+  {
+    "description": "Generates vendor prefixes for values.\n\n",
+    "commentRange": {
+      "start": 3,
+      "end": 26
+    },
+    "context": {
+      "type": "mixin",
+      "name": "value-prefixer",
+      "code": "\n\n  @each $prefix in $prefixes {\n    #{$property}: #{\"-\" + $prefix + \"-\" + $value};\n  }\n  #{$property}: $value;\n",
+      "line": {
+        "start": 28,
+        "end": 38
+      }
+    },
+    "parameter": [
+      {
+        "type": "string",
+        "name": "property",
+        "description": "Property to use.\n"
+      },
+      {
+        "type": "string",
+        "name": "value",
+        "description": "Value to prefix.\n"
+      },
+      {
+        "type": "list",
+        "name": "prefixes",
+        "description": "Vendor prefixes to output.\n"
+      }
+    ],
+    "example": [
+      {
+        "type": "scss",
+        "code": ".element {\n  @include value-prefixer(cursor, grab, (\"webkit\", \"moz\"));\n}"
+      },
+      {
+        "type": "css",
+        "code": ".element {\n  cursor: -webkit-grab;\n  cursor: -moz-grab;\n  cursor: grab;\n}"
+      }
+    ],
+    "author": [
+      "Matthew Tobiasz"
+    ],
+    "access": "public",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "bourbon/library/_value-prefixer.scss",
+      "name": "_value-prefixer.scss"
     }
   },
   {
@@ -1879,7 +1965,7 @@
         "description": "Return a Bourbon setting.\n\n",
         "context": {
           "type": "function",
-          "name": "_bourbon-get-setting",
+          "name": "_retrieve-bourbon-setting",
           "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
           "line": {
             "start": 14,
@@ -1925,7 +2011,7 @@
         "description": "Return a Bourbon setting.\n\n",
         "context": {
           "type": "function",
-          "name": "_bourbon-get-setting",
+          "name": "_retrieve-bourbon-setting",
           "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
           "line": {
             "start": 14,
@@ -2090,81 +2176,6 @@
           "line": {
             "start": 163,
             "end": 163
-          }
-        }
-      }
-    ]
-  },
-  {
-    "description": "Return a Bourbon setting.\n\n",
-    "commentRange": {
-      "start": 3,
-      "end": 12
-    },
-    "context": {
-      "type": "function",
-      "name": "_bourbon-get-setting",
-      "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
-      "line": {
-        "start": 14,
-        "end": 16
-      }
-    },
-    "parameter": [
-      {
-        "type": "string",
-        "name": "setting"
-      }
-    ],
-    "return": {
-      "type": "boolean | color | list | number | string"
-    },
-    "example": [
-      {
-        "type": "scss",
-        "code": "_bourbon-get-setting(rails-asset-pipeline)"
-      }
-    ],
-    "access": "private",
-    "group": [
-      "undefined"
-    ],
-    "require": [
-      {
-        "type": "variable",
-        "name": "_bourbon-defaults"
-      },
-      {
-        "type": "variable",
-        "name": "bourbon"
-      }
-    ],
-    "file": {
-      "path": "bourbon/utilities/_bourbon-get-setting.scss",
-      "name": "_bourbon-get-setting.scss"
-    },
-    "usedBy": [
-      {
-        "description": "Generates an `@font-face` declaration. You can choose the specific file\nformats you need to output; the mixin supports `eot`, `ttf`, `svg`, `woff2`\nand `woff`. The mixin also supports usage with the Rails Asset Pipeline,\nwhich you can enable per use, or globally in the `$bourbon()` settings.\n\n",
-        "context": {
-          "type": "mixin",
-          "name": "font-face",
-          "code": "\n\n  @font-face {\n    font-family: $font-family;\n    src: _font-source-declaration(\n      $font-family,\n      $file-path,\n      $asset-pipeline,\n      $file-formats\n    );\n    @content;\n  }\n",
-          "line": {
-            "start": 48,
-            "end": 65
-          }
-        }
-      },
-      {
-        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
-        "context": {
-          "type": "function",
-          "name": "modular-scale",
-          "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
-          "line": {
-            "start": 62,
-            "end": 113
           }
         }
       }
@@ -2420,6 +2431,81 @@
     ]
   },
   {
+    "description": "Return a Bourbon setting.\n\n",
+    "commentRange": {
+      "start": 3,
+      "end": 12
+    },
+    "context": {
+      "type": "function",
+      "name": "_retrieve-bourbon-setting",
+      "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
+      "line": {
+        "start": 14,
+        "end": 16
+      }
+    },
+    "parameter": [
+      {
+        "type": "string",
+        "name": "setting"
+      }
+    ],
+    "return": {
+      "type": "boolean | color | list | number | string"
+    },
+    "example": [
+      {
+        "type": "scss",
+        "code": "_retrieve-bourbon-setting(rails-asset-pipeline)"
+      }
+    ],
+    "access": "private",
+    "group": [
+      "undefined"
+    ],
+    "require": [
+      {
+        "type": "variable",
+        "name": "_bourbon-defaults"
+      },
+      {
+        "type": "variable",
+        "name": "bourbon"
+      }
+    ],
+    "file": {
+      "path": "bourbon/utilities/_retrieve-bourbon-setting.scss",
+      "name": "_retrieve-bourbon-setting.scss"
+    },
+    "usedBy": [
+      {
+        "description": "Generates an `@font-face` declaration. You can choose the specific file\nformats you need to output; the mixin supports `eot`, `ttf`, `svg`, `woff2`\nand `woff`. The mixin also supports usage with the Rails Asset Pipeline,\nwhich you can enable per use, or globally in the `$bourbon()` settings.\n\n",
+        "context": {
+          "type": "mixin",
+          "name": "font-face",
+          "code": "\n\n  @font-face {\n    font-family: $font-family;\n    src: _font-source-declaration(\n      $font-family,\n      $file-path,\n      $asset-pipeline,\n      $file-formats\n    );\n    @content;\n  }\n",
+          "line": {
+            "start": 48,
+            "end": 65
+          }
+        }
+      },
+      {
+        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
+        "context": {
+          "type": "function",
+          "name": "modular-scale",
+          "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
+          "line": {
+            "start": 62,
+            "end": 113
+          }
+        }
+      }
+    ]
+  },
+  {
     "description": "Converts shorthand to the 4-value syntax.\n\n",
     "commentRange": {
       "start": 3,
@@ -2602,6 +2688,90 @@
     ]
   },
   {
+    "description": "Checks for a valid CSS color.\n\n",
+    "commentRange": {
+      "start": 3,
+      "end": 9
+    },
+    "context": {
+      "type": "function",
+      "name": "_is-color",
+      "code": "\n  @return (type-of($color) == color) or ($color == \"currentColor\");\n",
+      "line": {
+        "start": 11,
+        "end": 13
+      }
+    },
+    "parameter": [
+      {
+        "type": "string",
+        "name": "color"
+      }
+    ],
+    "return": {
+      "type": "boolean"
+    },
+    "access": "private",
+    "group": [
+      "undefined"
+    ],
+    "require": [],
+    "file": {
+      "path": "bourbon/validators/_is-color.scss",
+      "name": "_is-color.scss"
+    },
+    "usedBy": [
+      {
+        "description": "Switches between two colors based on the lightness of a another color. Great\nfor building button styles.\n\n",
+        "context": {
+          "type": "function",
+          "name": "contrast-switch",
+          "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
+          "line": {
+            "start": 42,
+            "end": 60
+          }
+        }
+      },
+      {
+        "description": "Mixes a color with black.\n\n",
+        "context": {
+          "type": "function",
+          "name": "shade",
+          "code": "\n\n  @if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `shade` mixin.\";\n  } @else {\n    @return mix(#000, $color, $percent);\n  }\n",
+          "line": {
+            "start": 22,
+            "end": 33
+          }
+        }
+      },
+      {
+        "description": "Mixes a color with white.\n\n",
+        "context": {
+          "type": "function",
+          "name": "tint",
+          "code": "\n\n  @if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `tint` mixin.\";\n  } @else {\n    @return mix(#fff, $color, $percent);\n  }\n",
+          "line": {
+            "start": 22,
+            "end": 33
+          }
+        }
+      },
+      {
+        "description": "Generates a triangle pointing in a specified direction.\n\n",
+        "context": {
+          "type": "mixin",
+          "name": "triangle",
+          "code": "\n  @if not index(\n      \"up\" \"up-right\" \"right\" \"down-right\" \"down\" \"down-left\" \"left\" \"up-left\",\n      $direction\n    ) {\n    @error \"Direction must be `up`, `up-right`, `right`, `down-right`, \" +\n           \"`down`, `down-left`, `left` or `up-left`.\";\n  } @else if not _is-color($color) {\n    @error \"`#{$color}` is not a valid color for the `$color` argument in \" +\n           \"the `triangle` mixin.\";\n  } @else {\n    border-style: solid;\n    height: 0;\n    width: 0;\n\n    @if $direction == \"up\" {\n      border-color: transparent transparent $color;\n      border-width: 0 ($width / 2) $height;\n    } @else if $direction == \"up-right\" {\n      border-color: transparent $color transparent transparent;\n      border-width: 0 $width $width 0;\n    } @else if $direction == \"right\" {\n      border-color: transparent transparent transparent $color;\n      border-width: ($height / 2) 0 ($height / 2) $width;\n    } @else if $direction == \"down-right\" {\n      border-color: transparent transparent $color;\n      border-width: 0 0 $width $width;\n    } @else if $direction == \"down\" {\n      border-color: $color transparent transparent;\n      border-width: $height ($width / 2) 0;\n    } @else if $direction == \"down-left\" {\n      border-color: transparent transparent transparent $color;\n      border-width: $width 0 0 $width;\n    } @else if $direction == \"left\" {\n      border-color: transparent $color transparent transparent;\n      border-width: ($height / 2) $width ($height / 2) 0;\n    } @else if $direction == \"up-left\" {\n      border-color: $color transparent transparent;\n      border-width: $width $width 0 0;\n    }\n  }\n",
+          "line": {
+            "start": 36,
+            "end": 82
+          }
+        }
+      }
+    ]
+  },
+  {
     "description": "Checks for a valid CSS length.\n\n",
     "commentRange": {
       "start": 3,
@@ -2712,10 +2882,10 @@
         "context": {
           "type": "function",
           "name": "contrast-switch",
-          "code": "\n\n  @return if(_is-light($base-color), $dark-color, $light-color);\n",
+          "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
           "line": {
             "start": 42,
-            "end": 49
+            "end": 60
           }
         }
       }
@@ -2811,7 +2981,7 @@
         "context": {
           "type": "mixin",
           "name": "size",
-          "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` parameter \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` parameter \" +\n           \"in the `size` mixin.\";\n  }\n",
+          "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` argument \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` argument \" +\n           \"in the `size` mixin.\";\n  }\n",
           "line": {
             "start": 31,
             "end": 49
