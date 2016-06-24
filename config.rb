@@ -22,10 +22,12 @@ page "/*.txt", layout: false
 
 versions = Dir.glob("./data/*.json").map { |version| Version.new(version) }
 
+latest_version = versions.max { |a, b| a.to_s <=> b.to_s }
+
 versions.each do |version|
   proxy(
-    "/docs/#{version}.html",
-    "/docs/index.html",
+    "/docs/#{version}/index.html",
+    "/docs/version/index.html",
     locals: {
       version: version,
       versions: versions,
@@ -33,6 +35,16 @@ versions.each do |version|
     ignore: true,
   )
 end
+
+proxy(
+  "/docs/latest/index.html",
+  "/docs/version/index.html",
+  locals: {
+    version: latest_version,
+    versions: versions,
+  },
+  ignore: true,
+)
 
 configure :development do
   activate :livereload do |reload|
