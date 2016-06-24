@@ -46,6 +46,8 @@ proxy(
   ignore: true,
 )
 
+proxy("_redirects", "redirects", ignore: true)
+
 configure :development do
   activate :livereload do |reload|
     reload.no_swf = true
