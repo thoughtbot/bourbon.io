@@ -83,6 +83,9 @@ GEM
       servolux
       tilt (~> 1.4.1)
       uglifier (~> 3.0)
+    middleman-dotenv (2.0.0)
+      dotenv (>= 2.0)
+      middleman-core (>= 4.0)
     middleman-livereload (3.4.6)
       em-websocket (~> 0.5.1)
       middleman-core (>= 3.3)
@@ -138,6 +141,7 @@ DEPENDENCIES
   bourbon (= 5.0.0.beta.5)
   middleman
   middleman-autoprefixer
+  middleman-dotenv
   middleman-livereload
   middleman-minify-html
   middleman-syntax
