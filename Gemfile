@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "2.2.3"
 
 gem "bourbon", "5.0.0.beta.6"
+gem "builder"
 gem "middleman"
 gem "middleman-autoprefixer"
 gem "middleman-dotenv"

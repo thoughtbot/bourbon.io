@@ -14,6 +14,7 @@ GEM
     bourbon (5.0.0.beta.6)
       sass (~> 3.4.22)
       thor (~> 0.19.1)
+    builder (3.2.2)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -139,6 +140,7 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon (= 5.0.0.beta.6)
+  builder
   middleman
   middleman-autoprefixer
   middleman-dotenv
