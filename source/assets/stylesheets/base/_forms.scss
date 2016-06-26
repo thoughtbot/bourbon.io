@@ -25,8 +25,8 @@ textarea {
   font-size: $base-font-size;
 }
 
-#{$all-text-inputs},
-select[multiple] {
+#{$all-text-inputs} {
+  appearance: none;
   background-color: $base-background-color;
   border: $base-border;
   border-radius: $base-border-radius;
@@ -55,14 +55,14 @@ select[multiple] {
       border: $base-border;
     }
   }
+
+  &::placeholder {
+    color: $medium-gray;
+  }
 }
 
 textarea {
   resize: vertical;
-}
-
-[type="search"] {
-  appearance: none;
 }
 
 [type="checkbox"],
@@ -78,6 +78,5 @@ textarea {
 
 select {
   margin-bottom: $small-spacing;
-  max-width: 100%;
-  width: auto;
+  width: 100%;
 }
