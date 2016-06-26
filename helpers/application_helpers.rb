@@ -15,6 +15,11 @@ module ApplicationHelpers
     markdown.render(contents)
   end
 
+  def preferred_url
+    path = yield_content :preferred_path
+    File.join(ENV["SITE_URL"], path, "/")
+  end
+
   def svg(name)
     root = Middleman::Application.root
     file_path = "#{root}/source/images/#{name}.svg"
