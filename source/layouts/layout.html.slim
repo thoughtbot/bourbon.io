@@ -13,9 +13,7 @@ html lang="en"
       title="Bourbon"
     = stylesheet_link_tag :main
   body
-    / = partial "partials/site_nav"
-    / = partial "partials/site_header"
+    = partial "partials/site_nav"
     main role="main"
       = yield
-    / = partial "partials/site_footer"
     = partial "partials/analytics"
