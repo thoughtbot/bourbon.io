@@ -6,13 +6,13 @@ span.doc-item__directive-type
   = item.context.type
 
 - if item.return.present?
-  .doc-item__returns
+  div.doc-item__returns
     | Returns: #{ item.return.type }
 
-.doc-item__source-link
+div.doc-item__source-link
   = link_to "View Source",
             "//github.com/thoughtbot/bourbon/blob/master/core/#{item.file.path}"
 
 - if item.description.present?
-  .doc-item__description
+  div.doc-item__description
     = markdown(item.description)
