@@ -4,33 +4,31 @@
 
 # Bourbon Website
 
-### Setup
+## Setup
 
-1. Get the code
+1. Get the code:
 
-  `% git clone https://github.com/thoughtbot/bourbon.io.git`
+  ```
+  git clone https://github.com/thoughtbot/bourbon.io.git
+  ```
 
-2. Install `NPM`. If you use `Homebrew`:
+1. Set up your machine:
 
-  `% brew install node`
+  ```
+  bin/setup
+  ```
 
-  Otherwise, check instructions at https://github.com/npm/npm
+1. Run the app:
 
-3. Install `sassdoc`
+  ```
+  bundle exec middleman
+  ```
 
-  `% npm install sassdoc -g`
+  ```
+  open http://localhost:4567
+  ```
 
-4. Bundle gems
-
-  `% bundle`
-
-5. Verify that the app is up and running
-
-  `% bundle exec middleman`
-
-  `% open http://localhost:4567`
-
-### Available rake tasks
+## Available Rake tasks
 
   `% rake generate` or just `rake`
 
