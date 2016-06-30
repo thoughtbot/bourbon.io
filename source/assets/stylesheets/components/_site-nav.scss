@@ -1,0 +1,20 @@
+.c-site-nav {
+  @include padding($base-spacing null);
+  border-bottom: $base-border;
+  margin-bottom: $base-spacing;
+
+  a {
+    color: $base-font-color;
+
+    &:focus,
+    &:hover {
+      color: $action-color;
+    }
+  }
+}
+
+.c-site-nav__link {
+  &:not(:last-of-type) {
+    margin-right: $base-spacing;
+  }
+}

@@ -4,13 +4,5 @@
 
 @import "library/library";
 @import "base/base";
-
-.container {
-  @include margin(null auto);
-  @include padding(null 1rem);
-  max-width: 40rem;
-}
-
-.doc-item {
-  margin-bottom: 8rem;
-}
+@import "patterns/patterns";
+@import "components/components";

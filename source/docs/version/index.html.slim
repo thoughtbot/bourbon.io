@@ -1,18 +1,18 @@
 - content_for(:title, "Bourbon Documentation | #{version}")
 - content_for(:preferred_path, "docs/#{version}")
 
-section
-  .container
-    nav
-      ol
-        - version.doc_items.each do |item|
-          li
-            = link_to "##{item.context.name}" do
-              code
-                = item.context.name
+div.p-container.p-flex-container
+  nav.c-docs-nav role="navigation"
+    ol
+      - version.doc_items.each do |item|
+        li
+          = link_to "##{item.context.name}" do
+            code
+              = item.context.name
 
+  section.c-docs-list
     - version.doc_items.each do |item|
-      article.doc-item id="#{item.context.name}"
+      article.c-doc-item id="#{item.context.name}"
         = partial "partials/doc_item_header", locals: { item: item }
         - if item.parameter.present?
           = partial "partials/doc_item_arguments", locals: { item: item }
