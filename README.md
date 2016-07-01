@@ -1,8 +1,11 @@
-[<img src="http://images.thoughtbot.com/bourbon/bourbon-logo.svg" width="200" alt="Bourbon logo">][Bourbon]
-
-[Bourbon]: http://bourbon.io
+[<img src="http://images.thoughtbot.com/bourbon/bourbon-logo.svg" width="200" alt="Bourbon logo">][Bourbon website]
 
 # Bourbon Website
+
+This is the source code for the [Bourbon website]. It’s built with [Middleman].
+
+[Bourbon website]: http://www.bourbon.io/
+[Middleman]: https://middlemanapp.com/
 
 ## Setup
 
@@ -28,16 +31,31 @@
   open http://localhost:4567
   ```
 
-## Available Rake tasks
+## Generate Documentation
 
-  `% rake generate` or just `rake`
+Bourbon uses [SassDoc] to document its source code. For this website, we use
+Rake tasks to run SassDoc’s CLI, which parses documentation-specific comments
+from [Bourbon’s source] and outputs them as versioned JSON files
+(e.g. [`bourbon_5_0_0.json`]). We then use a [proxy] in Middleman to generate
+unique pages for each version.
 
-This task generates documentation (as a new JSON file, for example:
-`data/bourbon_5_0_0.json`) for the gem version specified in the `Gemfile`.
+To generate documentation for the gem version specified in the `Gemfile`, run:
 
-  `% rake generate_for 4.2.1`
+  ```
+  rake generate
+  ```
 
-This task grabs the gem version from Github and pretty much does the same.
+You can also generate documentation for the gem version from GitHub by using the
+`generate_for` command:
+
+  ```
+  rake generate_for 5.0.0
+  ```
+
+[SassDoc]: http://sassdoc.com/
+[Bourbon’s source]: https://github.com/thoughtbot/bourbon/
+[`bourbon_5_0_0.json`]: data/bourbon_5_0_0.json
+[proxy]: https://middlemanapp.com/advanced/dynamic_pages/
 
 ## Hosting & Deployment
 
