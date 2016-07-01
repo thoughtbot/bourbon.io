@@ -4,14 +4,8 @@ html lang="en"
     meta charset="utf-8"
     meta(name="viewport"
          content="width=device-width, initial-scale=1, shrink-to-fit=no")
-    - if content_for?(:description)
-      meta name="description" content=yield_content :description
-    - else
-      meta name="description" content="Bourbon is a…"
-    - if content_for?(:title)
-      title=yield_content :title
-    - else
-      title="Bourbon"
+    meta name="description" content=page_description
+    title=page_title
     - if content_for?(:preferred_path)
       link rel="canonical" href=preferred_url
     = stylesheet_link_tag :main

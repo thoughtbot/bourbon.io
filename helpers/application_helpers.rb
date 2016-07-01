@@ -15,6 +15,14 @@ module ApplicationHelpers
     markdown.render(contents)
   end
 
+  def page_description
+    yield_content(:description) || data.site.description
+  end
+
+  def page_title
+    yield_content(:title) || data.site.title
+  end
+
   def preferred_url
     path = yield_content :preferred_path
     File.join(ENV["SITE_URL"], path, "/")
