@@ -38,3 +38,11 @@ This task generates documentation (as a new JSON file, for example:
   `% rake generate_for 4.2.1`
 
 This task grabs the gem version from Github and pretty much does the same.
+
+## Hosting & Deployment
+
+The website is hosted on [Netlify], and is automatically built and deployed when
+changes are pushed to the `master` branch. Credentials for Netlify can be found
+in 1Password.
+
+[Netlify]: https://www.netlify.com/
