@@ -10,8 +10,7 @@ span.doc-item__directive-type
     | Returns: #{ item.return.type }
 
 div.doc-item__source-link
-  = link_to "View Source",
-            "//github.com/thoughtbot/bourbon/blob/master/core/#{item.file.path}"
+  = link_to "View Source", github_file_url(item.file.path, version)
 
 - if item.description.present?
   div.doc-item__description
