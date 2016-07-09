@@ -13,8 +13,36 @@ h5,
 h6 {
   font-family: $heading-font-family;
   font-size: modular-scale(1);
+  font-weight: 400;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+}
+
+h1 {
+  font-size: modular-scale(11);
+}
+
+h2 {
+  font-family: $base-font-family;
+  font-size: modular-scale(10);
+  font-weight: 400;
+  letter-spacing: $letter-spacing-small;
+}
+
+h3 {
+  font-size: modular-scale(9);
+}
+
+h4,
+h5 {
+  font-family: $base-font-family;
+  font-size: modular-scale(6);
+  font-weight: 300;
+  letter-spacing: $letter-spacing-small;
+}
+
+h5 {
+  font-size: modular-scale(5);
 }
 
 p {
@@ -22,14 +50,16 @@ p {
 }
 
 a {
-  color: $action-color;
+  border-bottom: 1px solid currentColor;
+  color: $link-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 15%);
+    border-bottom: 2px solid currentColor;
+    color: shade($link-color, 10%);
   }
 }
 

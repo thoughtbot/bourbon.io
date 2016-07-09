@@ -1,16 +1,22 @@
+$bourbon: (
+  "modular-scale-base": 1em,
+  "modular-scale-ratio": $major-second,
+  "rails-asset-pipeline": false,
+);
+
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
 $base-font-family: $font-stack-system;
-$heading-font-family: $base-font-family;
+$heading-font-family: "Quincy", $font-stack-georgia;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 0.875em;
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 2;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -18,6 +24,8 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$letter-spacing-small: 0.02em;
+$letter-spacing-extra-small: $letter-spacing-small / 2;
 
 // Grid
 $neat-grid: (
@@ -33,10 +41,13 @@ $light-gray: #ddd;
 $white: #fff;
 
 $orange: #f27126;
+$thoughtbot-red: #ed3e44;
+$bourbon-gradient: linear-gradient(to bottom right, #ff7e47, #f3603c);
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $orange;
+$link-color: $thoughtbot-red;
 
 // Border
 $base-border-color: $light-gray;

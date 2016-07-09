@@ -1,16 +1,16 @@
-#{$all-buttons} {
+.c-button {
   appearance: none;
   background-color: $action-color;
+  background-image: $bourbon-gradient;
   border: 0;
-  border-radius: $base-border-radius;
   color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
-  font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: $letter-spacing-extra-small;
   padding: $small-spacing $base-spacing;
   text-align: center;
   text-decoration: none;
@@ -23,6 +23,7 @@
   &:focus {
     background-color: shade($action-color, 20%);
     color: $white;
+    border: 0;
   }
 
   &:disabled {
