@@ -8,7 +8,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    autoprefixer-rails (6.3.6.2)
+    autoprefixer-rails (6.3.7)
       execjs
     backports (3.6.8)
     bourbon (5.0.0.beta.6)
@@ -33,7 +33,7 @@ GEM
     fast_blank (1.0.0)
     fastimage (2.0.0)
       addressable (~> 2)
-    ffi (1.9.10)
+    ffi (1.9.13)
     haml (4.0.7)
       tilt
     hamster (3.0.0)
@@ -119,9 +119,9 @@ GEM
       bundler
       ffi (~> 1.9.6)
       sass (>= 3.3.0)
-    scss_lint (0.48.0)
+    scss_lint (0.49.0)
       rake (>= 0.9, < 12)
-      sass (~> 3.4.15)
+      sass (~> 3.4.20)
     servolux (0.12.0)
     slim (3.0.7)
       temple (~> 0.7.6)

@@ -1,16 +1,23 @@
+$bourbon: (
+  "global-font-file-formats": ("ttf", "woff2", "woff"),
+  "modular-scale-base": 1em,
+  "modular-scale-ratio": $major-third,
+  "rails-asset-pipeline": false,
+);
+
 // Breakpoints
 $medium-screen: 600px;
 $large-screen: 900px;
 
 // Typography
 $base-font-family: $font-stack-system;
-$heading-font-family: $base-font-family;
+$heading-font-family: "Quincy";
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 0.875rem;
 
 // Line height
-$base-line-height: 1.5;
+$base-line-height: 2;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -18,6 +25,7 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$letter-spacing-small: 0.02em;
 
 // Colors
 $black: #000;
@@ -27,10 +35,13 @@ $light-gray: #ddd;
 $white: #fff;
 
 $orange: #f27126;
+$thoughtbot-red: #ed3e44;
+$neat-gradient: linear-gradient(to bottom right, #ff7e47, #f3603c);
 
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $orange;
+$link-color: $thoughtbot-red;
 
 // Border
 $base-border-color: $light-gray;

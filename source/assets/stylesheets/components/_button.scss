@@ -1,0 +1,8 @@
+.c-button {
+  @extend button;
+
+  &,
+  &:hover {
+    border-bottom: 0;
+  }
+}

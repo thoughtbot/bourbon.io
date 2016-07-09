@@ -1,0 +1,9 @@
+@include font-face("Quincy", "../fonts/quincy-cf-text", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 400;
+};
+
+@include font-face("Anonymous Pro", "../fonts/anonymous-pro", ("ttf")) {
+  font-style: normal;
+  font-weight: 400;
+};
