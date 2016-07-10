@@ -4,16 +4,16 @@
   margin-bottom: $base-spacing;
 
   a {
+    border: 0;
     color: $base-font-color;
     font-weight: 700;
     letter-spacing: $letter-spacing-small;
     text-decoration: none;
-    border: 0;
 
     &:focus,
     &:hover {
-      color: $link-color;
       border: 0;
+      color: $link-color;
     }
   }
 }
