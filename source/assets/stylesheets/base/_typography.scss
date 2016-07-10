@@ -50,8 +50,8 @@ a {
   &:active,
   &:focus,
   &:hover {
-    color: shade($link-color, 10%);
     border-bottom: 2px solid currentColor;
+    color: shade($link-color, 10%);
   }
 }
 
