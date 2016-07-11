@@ -64,3 +64,26 @@ changes are pushed to the `master` branch. Credentials for Netlify can be found
 in 1Password.
 
 [Netlify]: https://www.netlify.com/
+
+## Front-end Architecture
+
+This project uses:
+
+- Sass, with Bourbon
+- [BEM]-style CSS class names, with [namespaces]
+  - `library/`: Non-rendering Sass
+  - `base/`: Base HTML element styles
+  - `patterns/`: Highly reusable pieces of style that are used in any number of
+    unrelated contexts
+  - `components/`: A concrete, implementation-specific piece of UI
+- Autoprefixer
+- SCSS-Lint, with Hound ([configuration](.scss-lint.yml))
+- A variety of CSS units:
+  - `em` for typographical-related elements
+  - `rem` for lengths related to components
+  - `px` for borders, text shadows, etc.
+  - `vw`/`vh` for lengths that should be relational to the viewport
+- `modular-scale()` (which outputs `em` values) for font sizes
+
+[BEM]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+[namespaces]: http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/
