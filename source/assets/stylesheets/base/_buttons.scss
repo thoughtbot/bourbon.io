@@ -1,16 +1,16 @@
 #{$all-buttons} {
   appearance: none;
   background-color: $action-color;
+  background-image: $neat-gradient;
   border: 0;
-  border-radius: $base-border-radius;
   color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
-  font-size: $base-font-size;
   -webkit-font-smoothing: antialiased;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: $letter-spacing-small / 2;
   padding: $small-spacing $base-spacing;
   text-align: center;
   text-decoration: none;
