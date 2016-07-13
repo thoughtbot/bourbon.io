@@ -3,17 +3,22 @@ header
     h1
       | Bourbon
     h2.c-sub-heading
-      | A simple and lightweight library for Sass.
+      | A simple and lightweight library for&nbsp;Sass.
     nav
       = link_to "Documentation",
         "/docs/latest/",
         class: "c-button"
-    p
-      | File bugs and questions on #{link_to 'GitHub', 'https://github.com/thoughtbot/bourbon'}.
-      br
-      | Find feature and API changes in the #{link_to 'change log', 'https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md'}.
-      br
-      | Follow us on #{link_to 'Twitter', 'https://twitter.com/bourbonsass'} for announcements.
+    ul
+      li
+        | File bugs and questions on
+          #{link_to "GitHub", "https://github.com/thoughtbot/bourbon"}.
+      li
+        | Find feature and API changes in the
+          #{link_to "change log", "https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md"}.
+      li
+        | Follow us on
+          #{link_to "Twitter", "https://twitter.com/bourbonsass"}
+          for announcements.
 
 section
   div.p-container
@@ -28,8 +33,8 @@ section
         at thoughtbot.
     p
       | With tools like color functions, animation
-        timing functions, CSS triangles, clearfixes,
-        and more, Bourbon lets you write less Sass
+        timing functions, CSS triangles, clearfixe,
+        and more, Bourbon help you write less Sass
         so you can focus on your project instead of
         your stylesheets.
 
@@ -69,9 +74,9 @@ footer
       span.c-emoji
         '  💖
       | from the humans at thoughtbot.
-    p
+    p https://github.com/thoughtbot/bourbon/blob/master/LICENSE.md
       | Bourbon is free software, and may be
         redistributed under the terms specified in
-        the license.
+        the #{link_to "license", "https://github.com/thoughtbot/bourbon"}..
     p
-      | © 2011–2016 thoughtbot, inc.
+      | &#169; 2011–2016 thoughtbot, inc.
