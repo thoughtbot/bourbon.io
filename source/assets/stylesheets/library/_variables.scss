@@ -19,6 +19,12 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
+// Grid
+$neat-grid: (
+  columns: 12,
+  gutter: 2rem,
+);
+
 // Colors
 $black: #000;
 $dark-gray: #333;
