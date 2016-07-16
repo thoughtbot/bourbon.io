@@ -9,8 +9,8 @@
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   font-weight: 500;
-  line-height: 1;
   letter-spacing: $letter-spacing-extra-small;
+  line-height: 1;
   padding: $small-spacing $base-spacing;
   text-align: center;
   text-decoration: none;
@@ -22,8 +22,8 @@
   &:hover,
   &:focus {
     background-color: shade($action-color, 20%);
-    color: $white;
     border: 0;
+    color: $white;
   }
 
   &:disabled {
