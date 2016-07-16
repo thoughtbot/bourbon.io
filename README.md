@@ -4,8 +4,11 @@
 
 This is the source code for the [Bourbon website]. It’s built with [Middleman].
 
+You can find the [Bourbon Sass library source code here][library repo].
+
 [Bourbon website]: http://www.bourbon.io/
 [Middleman]: https://middlemanapp.com/
+[library repo]: https://github.com/thoughtbot/bourbon
 
 ## Setup
 
