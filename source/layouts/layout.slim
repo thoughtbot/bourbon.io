@@ -8,7 +8,7 @@ html lang="en"
     title=page_title
     - if content_for?(:preferred_path)
       link rel="canonical" href=preferred_url
-    = stylesheet_link_tag :main
+    = stylesheet_link_tag "main"
   body
     = partial "partials/site_nav"
     main role="main"

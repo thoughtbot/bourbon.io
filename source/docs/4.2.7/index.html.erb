@@ -1,0 +1,1686 @@
+---
+layout: "layout-v4-docs"
+---
+
+<nav class="fixed-nav">
+  <ul class="list">
+    <li class="title"><a href="#mixins"><h3>Mixins</h3></a></li>
+    <li><a href="#animation">Animation</a></li>
+    <li><a href="#animation-delay">Animation Delay</a></li>
+    <li><a href="#animation-direction">Animation Direction</a></li>
+    <li><a href="#animation-duration">Animation Duration</a></li>
+    <li><a href="#animation-fill-mode">Animation Fill Mode</a></li>
+    <li><a href="#animation-iteration-count">Animation Iteration Count</a></li>
+    <li><a href="#animation-name">Animation Name</a></li>
+    <li><a href="#animation-play-state">Animation Play State</a></li>
+    <li><a href="#animation-timing-function">Animation Timing Function</a></li>
+    <li><a href="#appearance">Appearance</a></li>
+    <li><a href="#backface-visibility">Backface Visibility</a></li>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#background-image">Background Image</a></li>
+    <li><a href="#border-image">Border Image</a></li>
+    <li class="deprecated"><a href="#box-sizing">Box Sizing</a></li>
+    <li><a href="#calc">Calc</a></li>
+    <li><a href="#columns">Columns</a></li>
+    <li><a href="#filter">Filter</a></li>
+    <li><a href="#flexbox">Flexbox</a></li>
+    <li><a href="#font-face">Font Face</a></li>
+    <li><a href="#font-feature-settings">Font Feature Settings</a></li>
+    <li><a href="#hidpi-media-query">HiDPI Media Query</a></li>
+    <li><a href="#hyphens">Hyphens</a></li>
+    <li><a href="#image-rendering">Image Rendering</a></li>
+    <li><a href="#keyframes">Keyframes</a></li>
+    <li><a href="#linear-gradient">Linear Gradient</a></li>
+    <li><a href="#perspective">Perspective</a></li>
+    <li><a href="#placeholder">Placeholder</a></li>
+    <li><a href="#radial-gradient">Radial Gradient</a></li>
+    <li><a href="#selection">Selection</a></li>
+    <li><a href="#text-decoration">Text Decoration</a></li>
+    <li><a href="#transform">Transform</a></li>
+    <li><a href="#transitions">Transitions</a></li>
+    <li><a href="#user-select">User Select</a></li>
+
+    <li class="title"><a href="#functions"><h3>Functions</h3></a></li>
+    <li class="deprecated"><a href="#flex-grid">Flex Grid</a></li>
+    <li class="deprecated"><a href="#golden-ratio">Golden Ratio</a></li>
+    <li class="deprecated"><a href="#grid-width">Grid Width</a></li>
+    <li><a href="#linear-gradient-function">Linear Gradient</a></li>
+    <li><a href="#modular-scale">Modular Scale</a></li>
+    <li><a href="#px-to-em">Pixel to Ems</a></li>
+    <li><a href="#px-to-rem">Pixel to Rems</a></li>
+    <li><a href="#strip-units">Strip Units</a></li>
+    <li><a href="#tint-shade">Tint &amp; Shade</a></li>
+    <li><a href="#unpack">Unpack</a></li>
+
+    <li class="title"><a href="#add-ons"><h3>Add-ons</h3></a><li>
+    <li><a href="#border-color">Border Color</a></li>
+    <li><a href="#border-radius">Border Radius</a></li>
+    <li><a href="#border-style">Border Style</a></li>
+    <li><a href="#border-width">Border Width</a></li>
+    <li class="deprecated"><a href="#buttons">Buttons</a></li>
+    <li><a href="#buttons-variable">Buttons (Variable)</a></li>
+    <li><a href="#clearfix">Clearfix</a></li>
+    <li><a href="#directional-property">Directional Property</a></li>
+    <li><a href="#ellipsis">Ellipsis</a></li>
+    <li><a href="#font-stacks">Font Stacks</a></li>
+    <li><a href="#hide-text">Hide Text</a></li>
+    <li class="deprecated"><a href="#inline-block">Inline Block</a></li>
+    <li><a href="#margin">Margin</a></li>
+    <li><a href="#padding">Padding</a></li>
+    <li><a href="#position">Position</a></li>
+    <li><a href="#prefixer">Prefixer</a></li>
+    <li><a href="#retina-image">Retina Image</a></li>
+    <li><a href="#size">Size</a></li>
+    <li><a href="#text-inputs">Text Inputs</a></li>
+    <li><a href="#timing-functions">Timing Functions</a></li>
+    <li><a href="#triangle">Triangle</a></li>
+    <li><a href="#word-wrap">Word Wrap</a></li>
+
+    <li class="title"><a href="#settings"><h3>Settings</h3></a><li>
+    <li><a href="#asset-pipeline">Global Asset Pipeline</a></li>
+    <li><a href="#global-prefixer">Global Prefixer</a></li>
+    <li><a href="#em-base">Global EM Base</a></li>
+    <li><a href="#output-bourbon-deprecation-warnings">Deprecation Warnings</a></li>
+
+    <li class="complete-list"><a href="#complete-list"><h3>Complete List</h3></a></li>
+  </ul>
+</nav>
+
+
+<div class="main-content">
+  <div class="main-inner">
+    <h1 id="mixins" class="">Mixins</h1>
+
+    <section class="mixins">
+
+
+      <article id="animation" data-type="mixin">
+        <header class="title-bar">
+          <h2 class="title">Animation</h2>
+          <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+          <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation">View spec</a>
+        </header>
+
+        <p>The <code>animation</code> mixin supports comma separated lists of values, which allows different transitions for individual properties to be described in a single style rule. Each value in the list corresponds to the value at that same position in the other properties.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">box</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="c1">// Animation shorthand works the same as the CSS3 animation shorthand
+</span>  <span class="k">@include</span> <span class="nd">animation</span><span class="p">(</span><span class="n">scale</span> <span class="m">1</span><span class="mi">.0s</span> <span class="n">ease-in</span><span class="o">,</span> <span class="n">slide</span> <span class="m">2</span><span class="mi">.0s</span> <span class="n">ease</span><span class="p">);</span>
+
+  <span class="c1">// The above outputs the same CSS as using independent, granular mixins.
+</span>  <span class="k">@include</span> <span class="nd">animation-name</span><span class="p">(</span><span class="n">scale</span><span class="o">,</span> <span class="n">slide</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">animation-duration</span><span class="p">(</span><span class="m">2s</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">animation-timing-function</span><span class="p">(</span><span class="n">ease</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">animation-iteration-count</span><span class="p">(</span><span class="n">infinite</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+        <h3>Demo</h3>
+        <section class="demo">
+          <div id="run-demo" class="box"></div>
+        </section>
+      </article>
+
+  <article id="animation-delay" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Delay</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-delay">View spec</a>
+  </header>
+  <p>The <code>animation-delay</code> property specifies when an animation should start.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-delay</span><span class="p">(</span><span class="m">2s</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-direction" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Direction</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-direction">View spec</a>
+  </header>
+  <p>The <code>animation-direction</code> property indicates whether the animation should play in reverse on alternate cycles.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-direction</span><span class="p">(</span><span class="n">alternate-reverse</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-duration" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Duration</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-duration">View spec</a>
+  </header>
+  <p>The <code>animation-duration</code> property specifies the length of time that an animation should take to complete one cycle.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-duration</span><span class="p">(</span><span class="m">2s</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-fill-mode" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Fill Mode</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode">View spec</a>
+  </header>
+  <p>The <code>animation-fill-mode</code> property specifies how a CSS animation should apply styles to its target before and after it is executing.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-fill-mode</span><span class="p">(</span><span class="n">backwards</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-iteration-count" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Iteration Count</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count">View spec</a>
+  </header>
+  <p>The <code>animation-iteration-count</code> property defines the number of times an animation cycle should be played before stopping.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-iteration-count</span><span class="p">(</span><span class="n">infinite</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-name" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Name</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-name">View spec</a>
+  </header>
+  <p>The <code>animation-name</code> property specifies a list of animations that should be applied to the selected element.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-name</span><span class="p">(</span><span class="n">scale</span><span class="o">,</span> <span class="n">slide</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-play-state" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Play State</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state">View spec</a>
+  </header>
+  <p>The <code>animation-play-state</code> property determines whether an animation is running or paused.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-play-state</span><span class="p">(</span><span class="n">paused</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="animation-timing-function" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Animation Timing Function</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_animation.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function">View spec</a>
+  </header>
+  <p>The <code>animation-timing-function</code> property specifies how a CSS animation should progress over the duration of each cycle.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">animation-timing-function</span><span class="p">(</span><span class="n">ease</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="appearance" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Appearance</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_appearance.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance">View spec</a>
+  </header>
+  <p>The <code>appearance</code> CSS property is used to display an element using a platform-native styling based on the operating system’s theme.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">appearance</span><span class="p">(</span><span class="nb">none</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="backface-visibility" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Backface Visibility</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_backface-visibility.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility">View spec</a>
+  </header>
+  <p>The CSS <code>backface-visibility</code> property determines whether or not the back face of the element is visible when facing the user. The back face of an element always is a transparent background, letting, when visible, a mirror image of the front face be displayed.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">backface-visibility</span><span class="p">(</span><span class="nb">visible</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="background" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Background</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_background.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/background">View spec</a>
+  </header>
+  <p>The <code>background</code> mixin is used for adding multiple backgrounds using shorthand notation.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">background</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="no">green</span><span class="p">)</span> <span class="nb">left</span> <span class="nb">repeat</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">background</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="no">green</span><span class="p">)</span> <span class="nb">left</span> <span class="nb">repeat</span><span class="o">,</span> <span class="nf">radial-gradient</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="no">orange</span><span class="p">));</span>
+<span class="k">@include</span> <span class="nd">background</span><span class="p">(</span><span class="sx">url("/images/a.png")</span><span class="o">,</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="no">green</span><span class="p">)</span><span class="o">,</span> <span class="nb">center</span> <span class="nb">no-repeat</span> <span class="no">orange</span> <span class="nb">scroll</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="background-image" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Background Image</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_background-image.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/background-image">View spec</a>
+  </header>
+  <p>The <code>background-image</code> mixin is helpful for chaining multiple comma delimited background images and/or linear/radial-gradients into one <code>background-image</code> property. The <code>background-image</code> mixin supports up to 10 background-images.</p>
+  <p>Use in combination with the <a href="#linear-gradient-function">linear-gradient function</a> and the <a href="#radial-gradient-function">radial-gradient function</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Image asset with a linear-gradient
+</span><span class="k">@include</span> <span class="nd">background-image</span><span class="p">(</span><span class="sx">url("/images/a.png")</span><span class="o">,</span> <span class="nf">linear-gradient</span><span class="p">(</span><span class="no">white</span> <span class="m">0</span><span class="o">,</span> <span class="no">yellow</span> <span class="m">50%</span><span class="o">,</span> <span class="nb">transparent</span> <span class="m">50%</span><span class="p">));</span>
+
+<span class="c1">// Multiple linear-gradients - Demo
+</span><span class="k">@include</span> <span class="nd">background-image</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="nf">hsla</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">100%</span><span class="o">,</span> <span class="m">100%</span><span class="o">,</span> <span class="m">0</span><span class="mi">.25</span><span class="p">)</span> <span class="m">0%</span><span class="o">,</span> <span class="nf">hsla</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">100%</span><span class="o">,</span> <span class="m">100%</span><span class="o">,</span> <span class="m">0</span><span class="mi">.08</span><span class="p">)</span> <span class="m">50%</span><span class="o">,</span> <span class="nb">transparent</span> <span class="m">50%</span><span class="p">)</span><span class="o">,</span>
+                           <span class="nf">linear-gradient</span><span class="p">(</span><span class="mh">#4e7ba3</span><span class="o">,</span> <span class="nf">darken</span><span class="p">(</span><span class="mh">#4e7ba4</span><span class="o">,</span> <span class="m">10%</span><span class="p">)));</span>
+
+<span class="c1">// NOT SUPPORTED
+</span><span class="k">@include</span> <span class="nd">background-image</span><span class="p">(</span><span class="sx">url("/images/a.png")</span> <span class="nb">center</span> <span class="nb">no-repeat</span><span class="o">,</span> <span class="sx">url("images/b.png")</span> <span class="nb">left</span> <span class="nb">repeat</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="nt">Background-image</span> <span class="nt">is</span> <span class="nt">not</span> <span class="nt">a</span> <span class="nt">shorthand</span> <span class="nt">property</span><span class="o">,</span> <span class="nt">therefore</span> <span class="nt">this</span> <span class="nt">doesn</span><span class="s1">'t make sense.</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo">
+  </section>
+
+<h3>Note about shorthand notation</h3>
+
+<p>All CSS background properties support comma delimited values. For multiple background images you can specify the background properties like position, repeat, etc. for each image. For example:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">background-image</span><span class="p">(</span><span class="sx">url("/images/a.png")</span><span class="o">,</span> <span class="sx">url("images/b.png")</span><span class="p">);</span>
+<span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">top</span><span class="o">,</span> <span class="nb">center</span><span class="p">;</span>
+<span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="o">,</span> <span class="nb">repeat-x</span><span class="p">;</span></code></pre></figure>
+
+</article>
+
+  <article id="border-image" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Border Image</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_border-image.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/border-image">View spec</a>
+  </header>
+  <p>Supports shorthand notation.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">border-image</span><span class="p">(</span><span class="sx">url(/images/border.png)</span> <span class="m">27</span> <span class="nb">repeat</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="box-sizing" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Box Sizing</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_box-sizing.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/box-sizing">View spec</a>
+  </header>
+  <p class="alert"><b>Deprecation Warning:</b> The <code>box-sizing</code> mixin has been deprecated and will be removed in v5.0.</p>
+  <p>Changes the CSS box model of the element it’s applied to.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">box-sizing</span><span class="p">(</span><span class="n">border-box</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="calc" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Calc</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_calc.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/calc">View spec</a>
+  </header>
+  <p>A mixin for vendor-prefixing the CSS3 <code>calc</code> function. It accepts a property and a value.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">calc</span><span class="p">(</span><span class="n">width</span><span class="o">,</span> <span class="s2">"100% - 80px"</span><span class="p">);</span></code></pre></figure>
+
+Note: You must use interpolation to pass in a variable: <code>#{&hellip;}</code>.
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+
+<span class="k">@include</span> <span class="nd">calc</span><span class="p">(</span><span class="n">width</span><span class="o">,</span> <span class="s2">"</span><span class="si">#{</span><span class="nv">$width</span><span class="si">}</span><span class="s2"> - 80px"</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="columns" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Columns</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_columns.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/columns">View spec</a>
+  </header>
+  <p>All current CSS3 column properties are supported. See the <a href="#complete-list-mixins">complete list of mixins</a> for more info.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">columns</span><span class="p">(</span><span class="m">12</span> <span class="m">8em</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">column-rule</span><span class="p">(</span><span class="m">1px</span> <span class="nb">solid</span> <span class="no">green</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="filter" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Filter</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_filter.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/filter">View spec</a>
+  </header>
+  <p>A mixin for generating clean, vendor-prefixed CSS3 filters.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">filter</span><span class="p">(</span><span class="nf">grayscale</span><span class="p">(</span><span class="m">50%</span><span class="p">));</span></code></pre></figure>
+</article>
+
+  <article id="flexbox" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Flexbox</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_flex-box.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes">View spec</a>
+  </header>
+  <p>The flexbox mixins are up to date with the <a href="//www.w3.org/TR/2014/WD-css-flexbox-1-20140325/">2014 W3C spec</a>. The mixins also include fallbacks for the <a href="//www.w3.org/TR/2009/WD-css3-flexbox-20090723/">2009 spec</a>.</p>
+  <p><a href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_flex-box.scss">View all flexbox mixins</a></p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">align-items</span><span class="p">(</span><span class="n">stretch</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">display</span><span class="p">(</span><span class="n">flex</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">flex-direction</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+  <span class="k">@include</span> <span class="nd">justify-content</span><span class="p">(</span><span class="n">flex-start</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.parent</span> <span class="o">&gt;</span> <span class="nc">.child</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">flex</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="font-face" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Font Face</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_font-face.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/@font-face">View spec</a>
+  </header>
+  <p>Generates an <code>@font-face</code> declaration. Accepts arguments for weight, style, usage with the Rails Asset Pipeline and file formats.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">font-face</span><span class="p">(</span><span class="s2">"source-sans-pro"</span><span class="o">,</span> <span class="s2">"/fonts/source-sans-pro/source-sans-pro-regular"</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">font-face</span><span class="p">(</span><span class="s2">"source-sans-pro"</span><span class="o">,</span> <span class="s2">"/fonts/source-sans-pro/source-sans-pro-bold"</span><span class="o">,</span> <span class="nb">bold</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">font-face</span><span class="p">(</span><span class="s2">"source-sans-pro"</span><span class="o">,</span> <span class="s2">"/fonts/source-sans-pro/source-sans-pro-italic"</span><span class="o">,</span> <span class="nb">normal</span><span class="o">,</span> <span class="nb">italic</span><span class="p">);</span></code></pre></figure>
+
+<p>The <code>$file-formats</code> argument allows you specify your font’s file formats (the default is <code>eot woff2 woff ttf svg</code>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">font-face</span><span class="p">(</span><span class="s2">"source-sans-pro"</span><span class="o">,</span> <span class="s2">"/fonts/source-sans-pro/source-sans-pro-regular"</span><span class="o">,</span> <span class="nv">$file-formats</span><span class="o">:</span> <span class="n">eot</span> <span class="n">woff2</span> <span class="n">woff</span><span class="p">);</span></code></pre></figure>
+
+<p>You can also use the Rails Asset Pipeline (place the fonts in <code>app/assets/fonts/</code>:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">font-face</span><span class="p">(</span><span class="s2">"source-sans-pro"</span><span class="o">,</span> <span class="s2">"source-sans-pro/source-sans-pro-regular"</span><span class="o">,</span> <span class="nb">normal</span><span class="o">,</span> <span class="nv">$asset-pipeline</span><span class="o">:</span> <span class="bp">true</span><span class="o">,</span> <span class="nv">$file-formats</span><span class="o">:</span> <span class="n">eot</span> <span class="n">woff</span> <span class="n">ttf</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="font-feature-settings" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Font Feature Settings</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_font-feature-settings.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings">View spec</a>
+  </header>
+  <p>The <code>font-feature-settings</code> mixin is helpful for using the advanced typographic features included in some OpenType fonts.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Use ligatures if the typeface and font file include them
+</span><span class="k">@include</span> <span class="nd">font-feature-settings</span><span class="p">(</span><span class="s2">"liga"</span><span class="p">);</span>
+
+<span class="c1">// Use proportional numbers, but not automatic kerning
+</span><span class="k">@include</span> <span class="nd">font-feature-settings</span><span class="p">(</span><span class="s2">"pnum"</span><span class="o">,</span> <span class="s2">"kern"</span> <span class="bp">false</span><span class="p">);</span></code></pre></figure>
+</article>
+
+
+  <article id="hidpi-media-query" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">HiDPI Media Query</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_hidpi-media-query.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#resolution">View spec</a>
+  </header>
+  <p>The <code>hidpi</code> mixin allows you to generate a media query that targets HiDPI devices. It accepts an optional ratio argument, with the default ratio being <code>1.3</code>. <a href="//bjango.com/articles/min-device-pixel-ratio">Find my device pixel ratio.</a></p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">hidpi</span><span class="p">(</span><span class="m">1</span><span class="mi">.5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">20em</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="o">-</span><span class="n">webkit-min-device-pixel-ratio</span><span class="o">:</span> <span class="m">1</span><span class="mi">.5</span><span class="p">)</span><span class="o">,</span>
+<span class="n">only</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="n">min--moz-device-pixel-ratio</span><span class="o">:</span> <span class="m">1</span><span class="mi">.5</span><span class="p">)</span><span class="o">,</span>
+<span class="n">only</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="o">-</span><span class="n">o-min-device-pixel-ratio</span><span class="o">:</span> <span class="m">1</span><span class="mi">.5</span><span class="o">/</span><span class="m">1</span><span class="p">)</span><span class="o">,</span>
+<span class="n">only</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="n">min-resolution</span><span class="o">:</span> <span class="m">144dpi</span><span class="p">)</span><span class="o">,</span>
+<span class="n">only</span> <span class="n">screen</span> <span class="nf">and</span> <span class="p">(</span><span class="n">min-resolution</span><span class="o">:</span> <span class="m">1</span><span class="mi">.5dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">20em</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+</article>
+
+  <article id="hyphens" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Hyphens</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_hyphens.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/hyphens">View spec</a>
+  </header>
+  <p>The <code>hyphens</code> property tells the browser how to split words when wrapping lines. The mixin accepts either <code>none</code>, <code>manual</code>, or <code>auto</code>, and defaults to <code>none</code> if left blank.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">hyphens</span><span class="p">(</span><span class="n">manual</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="image-rendering" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Image Rendering</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_image-rendering.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/image-rendering">View spec</a>
+  </header>
+  <p>The <code>image-rendering</code> mixin provides a hint to the user agent about how to handle its image rendering.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">image-rendering</span><span class="p">(</span><span class="n">optimizeSpeed</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="keyframes" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Keyframes</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_keyframes.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">View spec</a>
+  </header>
+  <p>A mixin for generating clean vendor-prefixed keyframes.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">keyframes</span><span class="p">(</span><span class="n">fadeIn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="k">@include</span> <span class="nd">transform</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="p">));</span>
+  <span class="p">}</span>
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="k">@include</span> <span class="nd">transform</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="m">1</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@-webkit-keyframes</span> <span class="nt">fadeIn</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="na">-webkit-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+
+<span class="k">@-moz-keyframes</span> <span class="nt">fadeIn</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="na">-moz-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="na">-moz-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+
+<span class="k">@-o-keyframes</span> <span class="nt">fadeIn</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="na">-o-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="na">-o-transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+
+<span class="k">@keyframes</span> <span class="nt">fadeIn</span> <span class="p">{</span>
+  <span class="nt">from</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="nt">to</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="nf">scale</span><span class="p">(</span><span class="m">1</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="linear-gradient" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Linear Gradient</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_linear-gradient.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient">View spec</a>
+  </header>
+  <p>Gradient position is optional. Position can be a degree (<code>90deg</code>). Mixin supports up to 10 color-stops.</p>
+  <p>This mixin will output a fallback <code>background-color: #first-color;</code> declaration. A <code>$fallback</code> argument can be passed to change the fallback color.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">linear-gradient</span><span class="p">(</span><span class="mh">#1e5799</span><span class="o">,</span> <span class="mh">#2989d8</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">top</span><span class="o">,</span> <span class="mh">#8fdce5</span><span class="o">,</span> <span class="mh">#3dc3d1</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">top</span><span class="o">,</span> <span class="mh">#8fdce5</span><span class="o">,</span> <span class="mh">#3dc3d1</span><span class="o">,</span> <span class="nv">$fallback</span><span class="o">:</span> <span class="no">red</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">linear-gradient</span><span class="p">(</span><span class="m">50deg</span><span class="o">,</span> <span class="mh">#1e5799</span> <span class="m">0%</span><span class="o">,</span> <span class="mh">#2989d8</span> <span class="m">50%</span><span class="o">,</span> <span class="mh">#207cca</span> <span class="m">51%</span><span class="o">,</span> <span class="mh">#7db9e8</span> <span class="m">100%</span><span class="p">);</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo"></section>
+</article>
+
+  <article id="perspective" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Perspective</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_perspective.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/perspective">View spec</a>
+  </header>
+  <p>The <code>perspective</code> CSS property determines the distance between the z=0 plane and the user in order to give to the 3D-positioned element some perspective.</p>
+  <p>The <code>perspective-origin</code> CSS property determines the position the viewer is looking at. It is used as the vanishing point by the <code>perspective</code> property.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">perspective</span><span class="p">(</span><span class="m">300px</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">perspective-origin</span><span class="p">(</span><span class="m">30%</span> <span class="m">30%</span><span class="p">);</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo">
+    <div class="example">
+      <div class="front">1</div>
+      <div class="back">2</div>
+      <div class="right">3</div>
+      <div class="left">4</div>
+      <div class="top">5</div>
+      <div class="bottom">6</div>
+    </div>
+  </section>
+</article>
+
+  <article id="placeholder" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Placeholder</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_placeholder.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/::-moz-placeholder">View spec</a>
+  </header>
+  <p>Outputs vendor-prefixed placeholders for styling. Must be nested in a rule-set.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">input</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+
+  <span class="k">@include</span> <span class="nd">placeholder</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">input</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="na">input</span><span class="p">:</span><span class="o">:-</span><span class="n">webkit-input-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="na">input</span><span class="p">:</span><span class="o">-</span><span class="n">moz-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="na">input</span><span class="p">:</span><span class="o">:-</span><span class="n">moz-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="na">input</span><span class="p">:</span><span class="o">-</span><span class="n">ms-input-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="radial-gradient" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Radial Gradient</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_radial-gradient.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient">View spec</a>
+  </header>
+  <p>Takes up to 10 gradients. See also the <a href="#background-image">Background Image mixin</a>.</p>
+  <p>This mixin will output a fallback <code>background-color: #first-color;</code> declaration. A <code>$fallback</code> argument can be passed to change the fallback color.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">radial-gradient</span><span class="p">(</span><span class="mh">#1e5799</span><span class="o">,</span> <span class="mh">#3dc3d1</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">radial-gradient</span><span class="p">(</span><span class="mh">#1e5799</span><span class="o">,</span> <span class="mh">#3dc3d1</span><span class="o">,</span> <span class="nv">$fallback</span><span class="o">:</span> <span class="no">red</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">radial-gradient</span><span class="p">(</span><span class="nb">circle</span> <span class="n">at</span> <span class="m">50%</span> <span class="m">50%</span><span class="o">,</span> <span class="mh">#eee</span> <span class="m">10%</span><span class="o">,</span> <span class="mh">#1e5799</span> <span class="m">30%</span><span class="o">,</span> <span class="mh">#efefef</span><span class="p">);</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo">
+  </section>
+</article>
+
+  <article id="selection" data-type="mixin">
+  <header class="title-bar">
+      <h2 class="title">Selection</h2>
+      <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_selection.scss">View source</a>
+      <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/::selection">View spec</a>
+  </header>
+  <p>Outputs the spec and prefixed versions of the <code>::selection</code> pseudo-element. Pass an argument of <code>true</code> to take the current element into consideration.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">selection</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#ffbb52</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">selection</span><span class="p">(</span><span class="bp">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#ffbb52</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nd">::-moz-selection</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffbb52</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nd">::selection</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffbb52</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span><span class="nd">::-moz-selection</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffbb52</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.element</span><span class="nd">::selection</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffbb52</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="text-decoration" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Text Decoration</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_text-decoration.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/text-decoration">View spec</a>
+  </header>
+  <p>CSS3 changes the <code>text-decoration</code> property to be a shorthand for <a href="//developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color"><code>text-decoration-color</code></a>, <a href="//developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line"><code>text-decoration-line</code></a>, and <a href="//developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style"><code>text-decoration-style</code></a>. This mixin will generate the necessary prefixes for these new properties and shorthand.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">text-decoration</span><span class="p">(</span><span class="nb">underline</span> <span class="nb">double</span> <span class="nf">rgb</span><span class="p">(</span><span class="m">124</span><span class="o">,</span><span class="m">213</span><span class="o">,</span><span class="m">224</span><span class="p">));</span>
+<span class="k">@include</span> <span class="nd">text-decoration-line</span><span class="p">(</span><span class="nb">line-through</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">text-decoration-style</span><span class="p">(</span><span class="nb">double</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">text-decoration-color</span><span class="p">(</span><span class="mh">#e71d02</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="transform" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Transform</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_transform.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/transform">View spec</a>
+  </header>
+  <p>The CSS <code>transform</code> property lets you modify the coordinate space of the CSS visual formatting model. Using it, elements can be translated, rotated, scaled, and skewed according to the values set</p>
+  <p>The <code>transform-origin</code> CSS property lets you modify the origin for transformations of an element.</p>
+  <p>The <code>transform-style</code> CSS property determines if the children of the element are positioned in the 3D-space or are flattened in the plane of the element.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">transform</span><span class="p">(</span><span class="nf">translateY</span><span class="p">(</span><span class="m">50px</span><span class="p">));</span>
+<span class="k">@include</span> <span class="nd">transform</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="m">0</span><span class="mi">.9</span><span class="p">)</span> <span class="nf">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">));</span>
+<span class="k">@include</span> <span class="nd">transform-origin</span><span class="p">(</span><span class="nb">center</span> <span class="nb">top</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">transform-style</span><span class="p">(</span><span class="n">preserve-3d</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="transitions" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Transition</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_transition.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/transition">View spec</a>
+  </header>
+  <p>This mixin provides a shorthand syntax and supports multiple transitions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">transition</span><span class="p">(</span><span class="n">all</span> <span class="m">2</span><span class="mi">.0s</span> <span class="n">ease-in-out</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">transition</span><span class="p">(</span><span class="n">opacity</span> <span class="m">1</span><span class="mi">.0s</span> <span class="n">ease-in</span> <span class="m">0s</span><span class="o">,</span> <span class="n">width</span> <span class="m">2</span><span class="mi">.0s</span> <span class="n">ease-in</span> <span class="m">2s</span><span class="p">);</span></code></pre></figure>
+
+  <p>To transition vendor-prefixed properties, e.g. <code>-webkit-transform</code> and <code>-moz-transform</code>, do not use the shorthand mixin. Instead, use the individual transition mixins:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">transition-property</span><span class="p">(</span><span class="n">transform</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">transition-duration</span><span class="p">(</span><span class="m">1</span><span class="mi">.0s</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">transition-timing-function</span><span class="p">(</span><span class="n">ease-in</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">transition-delay</span><span class="p">(</span><span class="m">0</span><span class="mi">.5s</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="user-select" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">User Select</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/css3/_user-select.scss">View source</a>
+    <a class="view-spec" href="//developer.mozilla.org/en-US/docs/Web/CSS/user-select">View spec</a>
+  </header>
+  <p>Controls the appearance (only) of selection. This does not have any affect on actual selection operation.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">user-select</span><span class="p">(</span><span class="nb">none</span><span class="p">);</span></code></pre></figure>
+</article>
+
+</section>
+
+
+    <h1 id="functions">Functions</h1>
+    <section class="functions">
+  <article id="flex-grid" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Flex Grid</h2>
+  </header>
+  <p class="alert"><b>Deprecation Warning: </b>The <code>flex-grid</code> has been moved to <a href="//github.com/thoughtbot/neat/blob/272c70958e9f1f4d0a2d95a49780f3d310ffe8d4/app/assets/stylesheets/grid/_private.scss">Neat</a> and will be removed in the next major version release.</p>
+  <p>Use this mixin to easily create a flexible-grid layout.</p>
+  <p>The <code>$fg-column</code>, <code>$fg-gutter</code> and <code>$fg-max-columns</code> variables must be defined in your base stylesheet to properly use the <code>flex-grid</code> function.</p>
+  <p>This function takes the fluid grid equation (target / context = result) and uses columns to help define each.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$fg-column</span><span class="p">:</span> <span class="m">60px</span><span class="p">;</span>             <span class="c1">// Column Width
+</span><span class="nv">$fg-gutter</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>             <span class="c1">// Gutter Width
+</span><span class="nv">$fg-max-columns</span><span class="p">:</span> <span class="m">12</span><span class="p">;</span>          <span class="c1">// Total Columns For Main Container
+</span>
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="nf">flex-grid</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>        <span class="c1">// returns (315px / 1020px) = 30.882353%;
+</span>  <span class="nl">margin-left</span><span class="p">:</span> <span class="nf">flex-gutter</span><span class="p">();</span> <span class="c1">// returns (25px / 1020px) = 2.45098%;
+</span>
+  <span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nf">flex-grid</span><span class="p">(</span><span class="m">2</span><span class="o">,</span> <span class="m">4</span><span class="p">);</span>   <span class="c1">// returns (145px / 315px) = 46.031746%;
+</span>    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="nf">flex-gutter</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>   <span class="c1">// returns (25px / 315px) = 7.936508%;
+</span>  <span class="p">}</span>
+
+  <span class="nt">blockquote</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="nf">flex-grid</span><span class="p">(</span><span class="m">2</span><span class="o">,</span> <span class="m">4</span><span class="p">);</span>   <span class="c1">// returns (145px / 315px) = 46.031746%;
+</span>  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="golden-ratio" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Golden Ratio</h2>
+  </header>
+  <p class="alert"><b>Deprecation Warning:</b> The <code>golden-ratio</code> function has been deprecated and will be removed in the next major version release. Use the <a href="#modular-scale"><code>modular-scale</code></a> function instead.</p>
+  <p>Returns the golden ratio of a given number. Must provide a pixel or em value for the first argument. Also takes a required integer for an increment value: ...-3, -2, -1, 0, 1, 2, 3...</p>
+  <p>Note: The <code>golden-ratio</code> function can be wrapped in Sass’s <code>abs()</code>, <code>floor()</code>, or <code>ceil()</code> functions to get the absolute value, round down, or round up, respectively.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Positive number will increment up the golden-ratio
+</span><span class="nl">font-size</span><span class="p">:</span> <span class="nf">golden-ratio</span><span class="p">(</span><span class="m">14px</span><span class="o">,</span>  <span class="m">1</span><span class="p">);</span>
+<span class="c1">// returns: 22.652px
+</span>
+<span class="c1">// Negative number will increment down the golden-ratio
+</span><span class="nl">font-size</span><span class="p">:</span> <span class="nf">golden-ratio</span><span class="p">(</span><span class="m">14px</span><span class="o">,</span> <span class="m">-1</span><span class="p">);</span>
+<span class="err">// </span><span class="na">returns</span><span class="p">:</span> <span class="m">8</span><span class="mi">.653px</span></code></pre></figure>
+  <p>Resources: <a href="//modularscale.com">modularscale.com</a></p>
+</article>
+
+  <article id="grid-width" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Grid Width</h2>
+  </header>
+  <p class="alert"><b>Deprecation Warning: </b>The <code>grid-width</code> has been moved to <a href="//github.com/thoughtbot/neat/blob/272c70958e9f1f4d0a2d95a49780f3d310ffe8d4/app/assets/stylesheets/grid/_private.scss">Neat</a> and will be removed in the next major version release.</p>
+  <p>Easily setup and follow a grid based design. Check out <a href="//gridulator.com">gridulator.com</a></p>
+  <p>The <code>$gw-column</code> and <code>$gw-gutter</code> variables must be defined in your base stylesheet to properly use the <code>grid-width</code> function.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$gw-column</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>          <span class="c1">// Column Width
+</span><span class="nv">$gw-gutter</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>           <span class="c1">// Gutter Width
+</span>
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="nf">grid-width</span><span class="p">(</span><span class="m">4</span><span class="p">);</span>     <span class="c1">// returns 520px;
+</span>  <span class="nl">margin-left</span><span class="p">:</span> <span class="nv">$gw-gutter</span><span class="p">;</span>  <span class="c1">// returns 40px;
+</span><span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="linear-gradient-function"  data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Linear Gradient</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_linear-gradient.scss">View source</a>
+  </header>
+  <p>Outputs a linear-gradient. Use in conjunction with the <a href="#background-image">background-image mixin.</a> The function takes the same arguments as the <a href="#linear-gradient">linear-gradient mixin</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">background-image</span><span class="p">(</span><span class="nf">linear-gradient</span><span class="p">(</span><span class="no">white</span> <span class="m">0</span><span class="o">,</span> <span class="no">yellow</span> <span class="m">50%</span><span class="o">,</span> <span class="nb">transparent</span> <span class="m">50%</span><span class="p">));</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo">
+  </section>
+</article>
+
+  <article id="modular-scale" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Modular Scale</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_modular-scale.scss">View Source</a>
+  </header>
+
+  <p>This function increments up or down a defined scale, then returns an adjusted value. This helps establish consistent measurements and spacial relationships throughout your project. We provide a list of commonly used scales as <a href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_modular-scale.scss">pre-defined variables</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">div</span> <span class="p">{</span>
+  <span class="c1">// Increment two steps up the default scale
+</span>  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">2</span><span class="p">);</span> <span class="c1">// returns: 1.77689em
+</span>
+  <span class="c1">// Increment one step down the default scale
+</span>  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">-1</span><span class="p">);</span> <span class="c1">// returns: 0.75019em
+</span>
+  <span class="c1">// Increment three steps up the default scale, with a base value of 2em
+</span>  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">3</span><span class="o">,</span> <span class="m">2em</span><span class="p">);</span> <span class="c1">// returns: 4.73719em
+</span><span class="p">}</span></code></pre></figure>
+
+  <p>The default scale is the perfect fourth (<code>1.333</code>), which you can globally override:</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$modular-scale-ratio</span><span class="p">:</span> <span class="nv">$golden</span><span class="p">;</span>
+<span class="nv">$modular-scale-base</span><span class="p">:</span> <span class="m">1</span><span class="mi">.2em</span><span class="p">;</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">2</span><span class="p">);</span> <span class="c1">// returns: 3.14151em
+</span><span class="p">}</span>
+
+<span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">3</span><span class="o">,</span> <span class="m">2em</span><span class="o">,</span> <span class="m">1</span><span class="mi">.234</span><span class="p">);</span> <span class="c1">// returns: 3.75816em
+</span><span class="p">}</span></code></pre></figure>
+
+  <p>The function also supports double-stranded scales by passing it two base values.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nf">modular-scale</span><span class="p">(</span><span class="m">3</span><span class="o">,</span> <span class="m">1em</span> <span class="m">1</span><span class="mi">.6em</span><span class="o">,</span> <span class="nv">$major-seventh</span><span class="p">);</span> <span class="c1">// returns: 3em
+</span><span class="p">}</span></code></pre></figure>
+
+  <p>Note: <em>The function can be wrapped in Sass’s <code>abs()</code>, <code>floor()</code>, or <code>ceil()</code> functions to get the absolute value, round down or round up, respectively.</em></p>
+
+  <p>Resource: <a href="//modularscale.com">modularscale.com</a></p>
+</article>
+
+  <article id="px-to-em" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Pixels to Ems</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-em.scss">View source</a>
+  </header>
+  <p>Convert pixels to ems.</p>
+  <p>For a relational value, the input is calculated based on a parent value. The default parent is <code>16px</code>.<br>The parent can be changed by passing an optional second value. Accepts unitless and pixel values for size.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-size</span><span class="p">:</span> <span class="nf">em</span><span class="p">(</span><span class="m">12</span><span class="p">);</span>
+<span class="nl">font-size</span><span class="p">:</span> <span class="nf">em</span><span class="p">(</span><span class="m">12</span><span class="o">,</span> <span class="m">24</span><span class="p">);</span></code></pre></figure>
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-size</span><span class="p">:</span> <span class="m">0</span><span class="mi">.75em</span><span class="p">;</span>
+<span class="nl">font-size</span><span class="p">:</span> <span class="m">0</span><span class="mi">.5em</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="px-to-rem" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Pixels to Rems</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_px-to-rem.scss">View source</a>
+  </header>
+  <p>Convert pixels to rems.</p>
+  <p>This assumes 1rem is 16px. You can override this by defining a new size for the <code>$em-base</code>.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-size</span><span class="p">:</span> <span class="nf">rem</span><span class="p">(</span><span class="m">12</span><span class="p">);</span></code></pre></figure>
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-size</span><span class="p">:</span> <span class="m">0</span><span class="mi">.75rem</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="strip-units" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Strip Units</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_strip-units.scss">View source</a>
+  </header>
+  <p>This strips the units from a value. It’s used as a helper in the <a href="#px-to-em">Pixel to Ems</a> and <a href="#px-to-rem">Pixel to Rems</a> functions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$dimension</span><span class="p">:</span> <span class="nf">strip-units</span><span class="p">(</span><span class="m">12px</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$dimension</span><span class="p">:</span> <span class="m">12</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="tint-shade" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Tint &amp; Shade</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_shade.scss" style="margin-left: 1em;">View source (Shade)</a>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_tint.scss">View source (Tint)</a>
+  </header>
+  <p>Tint and Shade are different from <code>lighten()</code> and <code>darken()</code> functions that are built into Sass.</p>
+  <p>Tint is a mix of color with white. Shade is a mix of color with black. Both take a color and a percent argument.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">background</span><span class="p">:</span> <span class="nf">tint</span><span class="p">(</span><span class="no">red</span><span class="o">,</span> <span class="m">40%</span><span class="p">);</span>
+<span class="nl">background</span><span class="p">:</span> <span class="nf">shade</span><span class="p">(</span><span class="no">blue</span><span class="o">,</span> <span class="m">60%</span><span class="p">);</span></code></pre></figure>
+
+</article>
+
+  <article id="unpack" data-type="function">
+  <header class="title-bar">
+    <h2 class="title">Unpack</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/functions/_unpack.scss">View source</a>
+  </header>
+  <p>This is a shorthand for converting one to three dimensions into their four-value syntax. It’s used in the <a href="#position">position</a> mixin.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">margin</span><span class="p">:</span> <span class="nf">unpack</span><span class="p">(</span><span class="m">1em</span> <span class="m">2em</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">margin</span><span class="p">:</span> <span class="m">1em</span> <span class="m">2em</span> <span class="m">1em</span> <span class="m">2em</span><span class="p">;</span></code></pre></figure>
+</article>
+
+</section>
+
+
+    <h1 id="add-ons">Add-ons</h1>
+    <section class="addons">
+  <article id="border-color" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Border Color</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_directional-values.scss">View source</a>
+  </header>
+  <p>The <code>border-color</code> mixin accepts up to four values, including <code>null</code>, and uses the <a href="#directional-property">directional-property</a> mixin to map them to their respective directions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">border-color</span><span class="p">(</span><span class="no">red</span> <span class="no">green</span> <span class="n">null</span> <span class="no">blue</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">border-top-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="nl">border-right-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="nl">border-left-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="border-radius" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Border Radius (Shorthand)</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_border-radius.scss">View source</a>
+  </header>
+  <p>These mixins provide a shorthand syntax to target and add border radii to <em>both corners</em> on one side of a box.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">border-top-radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">border-right-radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">border-bottom-radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">border-left-radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span></code></pre></figure>
+
+  <h3>Example</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">border-top-radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">border-top-left-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="nl">border-top-right-radius</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="border-style" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Border Style</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_border-style.scss">View source</a>
+  </header>
+  <p>The <code>border-style</code> mixin accepts up to four values, including <code>null</code>, and uses the <a href="#directional-property">directional-property</a> mixin to map them to their respective directions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">border-style</span><span class="p">(</span><span class="nb">dashed</span> <span class="n">null</span> <span class="nb">solid</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">border-top-style</span><span class="p">:</span> <span class="nb">dashed</span><span class="p">;</span>
+<span class="nl">border-bottom-style</span><span class="p">:</span> <span class="nb">solid</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="border-width" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Border Width</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_border-width.scss">View source</a>
+  </header>
+  <p>The <code>border-width</code> mixin accepts up to four widths, including <code>null</code>, and uses the <a href="#directional-property">directional-property</a> mixin to map them to their respective directions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">border-width</span><span class="p">(</span><span class="m">1em</span> <span class="m">20px</span> <span class="n">null</span> <span class="m">100%</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">border-top-width</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+<span class="nl">border-right-width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="nl">border-left-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="buttons" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Button</h2>
+  </header>
+  <p class="alert"><b>Deprecation Warning:</b> The <code>button</code> mixin has been deprecated and will be removed in the next major version release. Take a look at <a href="//bitters.bourbon.io">Bitters</a>, which includes basic styles for buttons.</p>
+  <p>The button add-on provides well-designed buttons with a single line in your CSS.</p>
+  <p>The mixin supports a style parameter and an optional color argument. The available button styles are:</p>
+  <ul>
+    <li>
+      <code>simple</code> (default)
+    </li>
+    <li>
+      <code>shiny</code>
+    </li>
+    <li>
+      <code>pill</code>
+    </li>
+  </ul>
+
+  <section class="demo">
+    <div class="wrapper">
+      <h3>Simple Button Style</h3>
+      <p>The mixin can be called with no arguments, which will render a blue button with the <code>simple</code> style.</p>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">button</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">button</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+      <button class="example-1">Simple button</button>
+    </div>
+
+    <div class="wrapper">
+      <h3>Pill Button Style</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">button</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">button</span><span class="p">(</span><span class="n">pill</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+      <button class="example-2">Pill Button</button>
+    </div>
+
+    <div class="wrapper">
+      <h3>Shiny Button Style</h3>
+      <p>Create beautiful buttons by defining a style and color argument; using a single color, the mixin calculates the gradient, borders, box shadow, text shadow and text color of the button. The mixin will change the text to be light when on a dark background, and dark when on a light background.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">button</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">button</span><span class="p">(</span><span class="n">shiny</span><span class="o">,</span> <span class="mh">#ff0000</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+      <button class="example-3">Shiny Button</button>
+    </div>
+  </section>
+
+</article>
+
+  <article id="buttons-variable" data-type="variable">
+  <header class="title-bar">
+    <h2 class="title">Buttons (Variable)</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_buttons.scss">View source</a>
+  </header>
+  <p>Generates variables for all HTML button elements. Please note that you must use interpolation on the variable: <code>#{$all-buttons}</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="si">#{</span><span class="nv">$all-buttons</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#f00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="si">#{</span><span class="nv">$all-buttons-focus</span><span class="si">}</span><span class="o">,</span>
+<span class="si">#{</span><span class="nv">$all-buttons-hover</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#0f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="si">#{</span><span class="nv">$all-buttons-active</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="mh">#00f</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">button</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#f00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">button</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">]</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#0f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">button</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">]</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="m">#00f</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+</article>
+
+  <article id="clearfix" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Clearfix</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_clearfix.scss">View source</a>
+  </header>
+  <p>Provides an easy way to include a clearfix for containing floats. We use this <a href="http://cssmojo.com/latest_new_clearfix_so_far">modern clearfix</a> from cssmojo.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.wrapper</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">clearfix</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.wrapper</span><span class="nd">::after</span> <span class="p">{</span>
+  <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+  <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+</article>
+
+  <article id="directional-property" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Directional Property</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/helpers/_directional-values.scss">View source</a>
+  </header>
+  <p>A helper mixin enabling short-hand notation for directional properties. It accepts a prefix, suffix, and array of up to four values that map to top, right, bottom, and left, respectively. You can optionally pass in <code>null</code> for the suffix argument to ignore it. You can optionally pass a <code>null</code> argument for a directional value to ignore it.</p>
+  <p>This mixin is mostly used as a helper for others. See <a href="#border-color">border-color</a>, <a href="#border-style">border-style</a>, <a href="#border-width">border-width</a>, <a href="#margin">margin</a>, and <a href="#padding">padding</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">directional-property</span><span class="p">(</span><span class="n">border</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="m">10px</span> <span class="n">null</span> <span class="m">4px</span> <span class="m">3px</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">border-top-width</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="nl">border-bottom-width</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="nl">border-left-width</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="ellipsis" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Ellipsis</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_ellipsis.scss">View source</a>
+  </header>
+  <p>This mixin will truncate text, adding an ellipsis to represent overflow. It accepts an optional max-width argument, default max-width is <code>100%</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">div</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">ellipsis</span><span class="p">(</span><span class="m">50%</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="font-stacks" data-type="variable">
+  <header class="title-bar">
+    <h2 class="title">Font Stacks</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_font-stacks.scss">View source</a>
+  </header>
+  <p>A series of default font stacks available as variables.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-family</span><span class="p">:</span> <span class="nv">$georgia</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="nv">$helvetica</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="nv">$lucida-grande</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="nv">$monospace</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="nv">$verdana</span><span class="p">;</span></code></pre></figure>
+
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Georgia"</span><span class="o">,</span> <span class="s2">"Cambria"</span><span class="o">,</span> <span class="s2">"Times New Roman"</span><span class="o">,</span> <span class="s2">"Times"</span><span class="o">,</span> <span class="nb">serif</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Helvetica Neue"</span><span class="o">,</span> <span class="s2">"Helvetica"</span><span class="o">,</span> <span class="s2">"Roboto"</span><span class="o">,</span> <span class="s2">"Arial"</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Lucida Grande"</span><span class="o">,</span> <span class="s2">"Tahoma"</span><span class="o">,</span> <span class="s2">"Verdana"</span><span class="o">,</span> <span class="s2">"Arial"</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Bitstream Vera Sans Mono"</span><span class="o">,</span> <span class="s2">"Consolas"</span><span class="o">,</span> <span class="s2">"Courier"</span><span class="o">,</span> <span class="nb">monospace</span><span class="p">;</span>
+<span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Verdana"</span><span class="o">,</span> <span class="s2">"Geneva"</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="hide-text" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Hide Text</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_hide-text.scss">View Source</a>
+  </header>
+  <p>Hide text to show a background image (a logo, for example). It is based on the <a href="//zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement">the "Kellum Method" image replacement</a>.</p>
+  <p>This image replacement is an improvement over the HTML5 Boilerplate method, while still providing the same benefits.</p>
+  <p>A height declaration is no longer required, but inline-level elements will need block-level display styles ("block", "inline-block", etc) applied.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">hide-text</span><span class="p">;</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(logo.png)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">text-indent</span><span class="p">:</span> <span class="m">101%</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(logo.png)</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="inline-block" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Inline Block</h2>
+  </header>
+  <p class="alert"><b>Deprecation Warning:</b> The <code>inline-block</code> mixin has been deprecated and will be removed in the next major version release. Bourbon will no longer support IE8 or lower.</p>
+  <p>The <code>inline-block</code> mixin provides support for the inline-block property in IE6 and IE7.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">inline-block</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="margin" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Margin</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_directional-values.scss">View source</a>
+  </header>
+  <p>The <code>margin</code> mixin accepts up to four values, including <code>null</code>, and uses the <a href="#directional-property">directional-property</a> mixin to map them to their respective directions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">margin</span><span class="p">(</span><span class="n">null</span> <span class="m">10px</span> <span class="m">3em</span> <span class="m">20vh</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">margin-right</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">3em</span><span class="p">;</span>
+<span class="nl">margin-left</span><span class="p">:</span> <span class="m">20vh</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="padding" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Padding</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_directional-values.scss">View source</a>
+  </header>
+  <p>The <code>padding</code> mixin accepts up to four values, including <code>null</code>, and uses the <a href="#directional-property">directional-property</a> mixin to map them to their respective directions.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">padding</span><span class="p">(</span><span class="m">20vh</span> <span class="n">null</span> <span class="m">10px</span> <span class="m">3em</span><span class="p">);</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nl">padding-top</span><span class="p">:</span> <span class="m">20vh</span><span class="p">;</span>
+<span class="nl">padding-bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="nl">padding-left</span><span class="p">:</span> <span class="m">3em</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="position" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Position</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_position.scss">View source</a>
+  </header>
+  <p>A shorthand notation for positioning elements.</p>
+  <p>The first argument is optional and defaults to <code>relative</code>. The second argument is a space-delimited list of values for <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>; it follows the standard CSS shorthand notation.</p>
+  <p><strong>Note:</strong> <code>null</code> values will be ignored. In the example below, this means that declarations will <em>not</em> be generated for the <code>right</code> and <code>bottom</code> properties.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">position</span><span class="p">(</span><span class="nb">relative</span><span class="o">,</span> <span class="m">0</span> <span class="n">null</span> <span class="n">null</span> <span class="m">10em</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.element</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">10em</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="prefixer" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Prefixer</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss">View source</a>
+  </header>
+  <p>The prefixer is for generating vendor prefixed declarations. The prefixer accepts the following prefixes: <code>webkit</code> <code>moz</code> <code>ms</code> <code>o</code> <code>spec</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">box-sizing</span><span class="p">(</span><span class="nv">$box</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">prefixer</span><span class="p">(</span><span class="n">box-sizing</span><span class="o">,</span> <span class="nv">$box</span><span class="o">,</span> <span class="n">webkit</span> <span class="n">moz</span> <span class="n">spec</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="na">-webkit-box-sizing</span><span class="p">:</span> <span class="nv">$box</span><span class="p">;</span>
+   <span class="na">-moz-box-sizing</span><span class="p">:</span> <span class="nv">$box</span><span class="p">;</span>
+        <span class="nl">box-sizing</span><span class="p">:</span> <span class="nv">$box</span><span class="p">;</span></code></pre></figure>
+  <section class="demo">
+    <div class="example double"></div>
+  </section>
+</article>
+
+
+  <article id="retina-image" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Retina Image</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_retina-image.scss">View source</a>
+  </header>
+  <p>The <code>retina-image</code> mixin is a helper to generate a retina background image and non-retina background image. The retina background image will output to a HiDPI media query. The mixin uses a <code>_2x.png</code> filename suffix by default.</p>
+
+  <p><code>$filename</code> will resolve a path to the image, e.g. <code>"../../home-icon"</code>. For Rails, you can use the Asset Pipeline by passing <code>true</code> to the argument.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@retina-image</span><span class="o">(</span><span class="err">$</span><span class="nt">filename</span><span class="o">,</span> <span class="err">$</span><span class="nt">background-size</span><span class="o">,</span> <span class="err">$</span><span class="nt">extension</span><span class="o">*,</span> <span class="err">$</span><span class="nt">retina-filename</span><span class="o">*,</span> <span class="err">$</span><span class="nt">retina-suffix</span><span class="o">*,</span> <span class="err">$</span><span class="nt">asset-pipeline</span><span class="o">*)</span></code></pre></figure>
+  <p><em>* = optional</em></p>
+
+  <h3>Argument Defaults</h3>
+  <ul>
+    <li><code>$extension: png</code></li>
+    <li><code>$retina-filename: null</code></li>
+    <li><code>$retina-suffix: _2x</code></li>
+    <li><code>$asset-pipeline: false</code></li>
+  </ul>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">span</span> <span class="p">{</span>
+  <span class="k">@include</span> <span class="nd">retina-image</span><span class="p">(</span><span class="n">home-icon</span><span class="o">,</span> <span class="m">32px</span> <span class="m">20px</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+  <h3>CSS Output</h3>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">span</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(home-icon.png)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">-webkit-min-device-pixel-ratio</span><span class="p">:</span> <span class="m">1.3</span><span class="p">),</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min--moz-device-pixel-ratio</span><span class="p">:</span> <span class="m">1.3</span><span class="p">),</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">-o-min-device-pixel-ratio</span><span class="p">:</span> <span class="m">1.3</span> <span class="p">/</span> <span class="m">1</span><span class="p">),</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">125dpi</span><span class="p">),</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">1.3dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nt">span</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(home-icon_2x.png)</span><span class="p">;</span>
+    <span class="nl">background-size</span><span class="p">:</span> <span class="m">32px</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</article>
+
+  <article id="size" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Size</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_size.scss">View source</a>
+  </header>
+  <p>Set <code>width</code> and <code>height</code> in a single statement. Accepts all units, including <code>auto</code> and <code>inherit</code>, unitless numbers, and <a href="//dev.w3.org/csswg/css-sizing/#width-height-keywords">intrinsic keywords</a> like <code>fill</code>, <code>max-content</code>, <code>min-content</code> &amp; <code>fit-content</code>. You can also use this mixin with the <code>calc()</code> CSS function.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">size</span><span class="p">(</span><span class="m">2em</span><span class="p">);</span> <span class="c1">// width: 2em; height: 2em;
+</span><span class="k">@include</span> <span class="nd">size</span><span class="p">(</span><span class="m">10em</span> <span class="nb">auto</span><span class="p">);</span> <span class="c1">// width: 10em; height: auto;
+</span><span class="k">@include</span> <span class="nd">size</span><span class="p">(</span><span class="n">min-content</span> <span class="m">9rem</span><span class="p">);</span> <span class="c1">// width: min-content; height: 9rem;
+</span><span class="k">@include</span> <span class="nd">size</span><span class="p">(</span><span class="m">20px</span> <span class="nf">calc</span><span class="p">(</span><span class="m">100%</span> <span class="o">-</span> <span class="m">80px</span><span class="p">));</span> <span class="err">// </span><span class="nl">width</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="nf">calc</span><span class="p">(</span><span class="m">100%</span> <span class="o">-</span> <span class="m">80px</span><span class="p">);</span></code></pre></figure>
+</article>
+
+  <article id="text-inputs" data-type="variable">
+  <header class="title-bar">
+    <h2 class="title">Text Inputs</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_text-inputs.scss">View source</a>
+  </header>
+  <p>Generates variables for all HTML text-based inputs. Please note that you must use interpolation on the variable: <code>#{$all-text-inputs}</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="si">#{</span><span class="nv">$all-text-inputs</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="mh">#f00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="si">#{</span><span class="nv">$all-text-inputs-focus</span><span class="si">}</span><span class="o">,</span>
+<span class="si">#{</span><span class="nv">$all-text-inputs-hover</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="mh">#0f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="si">#{</span><span class="nv">$all-text-inputs-active</span><span class="si">}</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="mh">#00f</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3>CSS Output</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"color"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"date"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime-local"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"email"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"month"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"number"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"password"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"search"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"tel"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"time"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"url"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"week"</span><span class="o">],</span>
+<span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">]),</span>
+<span class="nt">textarea</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#f00</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"color"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"date"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime-local"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"email"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"month"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"number"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"password"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"search"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"tel"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"time"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"url"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"week"</span><span class="o">]</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">])</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">textarea</span><span class="nd">:focus</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"color"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"date"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime-local"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"email"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"month"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"number"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"password"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"search"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"tel"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"time"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"url"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"week"</span><span class="o">]</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">])</span><span class="nd">:hover</span><span class="o">,</span>
+<span class="nt">textarea</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#0f0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"color"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"date"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"datetime-local"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"email"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"month"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"number"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"password"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"search"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"tel"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"time"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"url"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"week"</span><span class="o">]</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">])</span><span class="nd">:active</span><span class="o">,</span>
+<span class="nt">textarea</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#00f</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+</article>
+
+  <article id="timing-functions" data-type="parameter">
+  <header class="title-bar">
+    <h2 class="title">Timing Functions</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_timing-functions.scss">View source</a>
+  </header>
+  <p>These CSS cubic-bezier timing functions are variables that can be used with CSS3 animations and transitions. The provided timing functions are the same as the jQuery UI demo: <a href="//jqueryui.com/resources/demos/effect/easing.html">easing functions</a>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">transition</span><span class="p">(</span><span class="n">all</span> <span class="m">5s</span> <span class="nv">$ease-in-circ</span><span class="p">);</span></code></pre></figure>
+
+  <h3>Demo</h3>
+  <section class="demo">
+    <ul>
+      <li><code>$ease-in-quad</code><div class="box ease-in-quad"></div></li>
+      <li><code>$ease-out-quad</code><div class="box ease-out-quad"></div></li>
+      <li><code>$ease-in-out-quad</code><div class="box ease-in-out-quad"></div></li>
+
+      <li><code>$ease-in-cubic</code><div class="box ease-in-cubic"></div></li>
+      <li><code>$ease-out-cubic</code><div class="box ease-out-cubic"></div></li>
+      <li><code>$ease-in-out-cubic</code><div class="box ease-in-out-cubic"></div></li>
+
+      <li><code>$ease-in-quart</code><div class="box ease-in-quart"></div></li>
+      <li><code>$ease-out-quart</code><div class="box ease-out-quart"></div></li>
+      <li><code>$ease-in-out-quart</code><div class="box ease-in-out-quart"></div></li>
+
+      <li><code>$ease-in-quint</code><div class="box ease-in-quint"></div></li>
+      <li><code>$ease-out-quint</code><div class="box ease-out-quint"></div></li>
+      <li><code>$ease-in-out-quint</code><div class="box ease-in-out-quint"></div></li>
+
+      <li><code>$ease-in-sine</code><div class="box ease-in-sine"></div></li>
+      <li><code>$ease-out-sine</code><div class="box ease-out-sine"></div></li>
+      <li><code>$ease-in-out-sine</code><div class="box ease-in-out-sine"></div></li>
+
+      <li><code>$ease-in-expo</code><div class="box ease-in-expo"></div></li>
+      <li><code>$ease-out-expo</code><div class="box ease-out-expo"></div></li>
+      <li><code>$ease-in-out-expo</code><div class="box ease-in-out-expo"></div></li>
+
+      <li><code>$ease-in-circ</code><div class="box ease-in-circ"></div></li>
+      <li><code>$ease-out-circ</code><div class="box ease-out-circ"></div></li>
+      <li><code>$ease-in-out-circ</code><div class="box ease-in-out-circ"></div></li>
+
+      <li><code>$ease-in-back</code><div class="box ease-in-back"></div></li>
+      <li><code>$ease-out-back</code><div class="box ease-out-back"></div></li>
+      <li><code>$ease-in-out-back</code><div class="box ease-in-out-back"></div></li>
+    <ul>
+  </section>
+</article>
+
+  <article id="triangle" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Triangle</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_triangle.scss">View source</a>
+  </header>
+  <p>Creates a visual triangle. Mixin takes <code>($size, $color, $direction)</code></p>
+  <p>The <code>$size</code> argument can take one or two values&mdash;<code>width height</code>.</p>
+  <p>The <code>$color</code> argument can take one or two values&mdash;<code>foreground-color background-color</code>.</p>
+  <p><code>$direction: up, down, left, right, up-right, up-left, down-right, down-left</code></p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">triangle</span><span class="p">(</span><span class="m">12px</span><span class="o">,</span> <span class="no">gray</span><span class="o">,</span> <span class="n">down</span><span class="p">);</span>
+<span class="k">@include</span> <span class="nd">triangle</span><span class="p">(</span><span class="m">12px</span> <span class="m">6px</span><span class="o">,</span> <span class="no">gray</span> <span class="no">lavender</span><span class="o">,</span> <span class="n">up-left</span><span class="p">);</span></code></pre></figure>
+  <h3>Demo</h3>
+  <section class="demo">
+    <div class="up"></div>
+    <div class="down"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="up-right"></div>
+    <div class="up-left"></div>
+    <div class="down-right"></div>
+    <div class="down-left"></div>
+  </section>
+</article>
+
+
+  <article id="word-wrap" data-type="mixin">
+  <header class="title-bar">
+    <h2 class="title">Word Wrap</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_word-wrap.scss">View Source</a>
+  </header>
+  <p>The <code>word-wrap</code> mixin makes it easy to force long text (like URLs) to wrap instead of breaking your layout.</p>
+  <p>It uses the <code>($word-wrap)</code>argument, with a default value of <code>break-word</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@include</span> <span class="nd">word-wrap</span><span class="p">;</span>
+<span class="k">@include</span> <span class="nd">word-wrap</span><span class="p">(</span><span class="nb">normal</span><span class="p">);</span></code></pre></figure>
+</article>
+
+</section>
+
+
+    <h1 id="settings">Settings</h1>
+    <section class="variables">
+  <article id="asset-pipeline" data-type="setting">
+  <header class="title-bar">
+    <h2 class="title">Global Asset Pipeline</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/settings/_asset-pipeline.scss">View source</a>
+  </header>
+  <p>A boolean global setting for all functions that take the <code>$asset-pipeline</code> variable. It’s set to <code>false</code> by default.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$asset-pipeline</span><span class="p">:</span> <span class="bp">true</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="output-bourbon-deprecation-warnings" data-type="setting">
+  <header class="title-bar">
+    <h2 class="title">Output Bourbon Deprecation Warnings</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/settings/_deprecation-warnings.scss">View source</a>
+  </header>
+
+  <p>
+    Enable or disable output of Bourbon&rsquo;s deprecation-related Sass
+    warnings. This variable must be declared <em>before</em> importing Bourbon.
+    Set to <code>true</code> by default.
+  </p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$output-bourbon-deprecation-warnings</span><span class="p">:</span> <span class="bp">true</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="em-base" data-type="setting">
+  <header class="title-bar">
+    <h2 class="title">Global Em Base</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/app/assets/stylesheets/settings/_px-to-em.scss">View source</a>
+  </header>
+  <p>Sets global base em size for the <code>px-to-em</code> and <code>px-to-rem</code> function. This should be the same size as your body <code>font-size</code>. Setting default is <code>16px</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$em-base</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span></code></pre></figure>
+</article>
+
+  <article id="global-prefixer" data-type="option">
+  <header class="title-bar">
+    <h2 class="title">Global Prefixer</h2>
+    <a class="view-source" href="//github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss">View source</a>
+  </header>
+  <p>By default, Bourbon outputs all vendor-prefixes specified by each mixin. You can optionally overwrite these global defaults by setting any of these variables to <code>false</code> at the top of your stylesheet.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$prefix-for-webkit</span><span class="p">:</span>    <span class="bp">true</span><span class="p">;</span>
+<span class="nv">$prefix-for-mozilla</span><span class="p">:</span>   <span class="bp">true</span><span class="p">;</span>
+<span class="nv">$prefix-for-microsoft</span><span class="p">:</span> <span class="bp">true</span><span class="p">;</span>
+<span class="nv">$prefix-for-opera</span><span class="p">:</span>     <span class="bp">true</span><span class="p">;</span>
+<span class="nv">$prefix-for-spec</span><span class="p">:</span>      <span class="bp">true</span><span class="p">;</span></code></pre></figure>
+</article>
+
+</section>
+
+
+    <h1 id="complete-list">Complete List</h1>
+    <section class="complete-list">
+      <article id="complete-list">
+  <h2>All Supported Functions, Mixins, and Addons</h2>
+  <p><code>@</code> denotes a mixin and must be prefaced with <code>@include</code>.</p>
+
+<h3 id="complete-list-mixins">Mixins</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">animation</span>
+  <span class="o">@</span> <span class="nt">animation</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-delay</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-direction</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-duration</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-fill-mode</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-iteration-count</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-name</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-play-state</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">animation-timing-function</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">background</span>
+  <span class="o">@</span> <span class="nt">background</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">background-image</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">border-radius</span>
+  <span class="o">@</span> <span class="nt">border-top-radius</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">border-bottom-radius</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">border-left-radius</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">border-right-radius</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="o">@</span> <span class="nt">appearance</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">backface-visibility</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">border-image</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">box-sizing</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">calc</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">columns</span>
+  <span class="o">@</span><span class="nt">columns</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-count</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-fill</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-gap</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-rule</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-rule-color</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-rule-style</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-rule-width</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-span</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span><span class="nt">column-width</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="o">@</span> <span class="nt">filter</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">flexbox</span>
+  <span class="nt">Latest</span> <span class="nt">Spec</span>
+  <span class="o">@</span> <span class="nt">align-content</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">align-items</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">align-self</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">display</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-basis</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-direction</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-flow</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-grow</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-shrink</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">flex-wrap</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">justify-content</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">order</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+  <span class="nt">2009</span> <span class="nt">Spec</span>
+  <span class="o">@</span> <span class="nt">box</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-align</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-direction</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-flex</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-flex-group</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-lines</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-ordinal-group</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-orient</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">box-pack</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">display-box</span>
+
+<span class="o">@</span> <span class="nt">font-face</span>
+<span class="o">@</span> <span class="nt">font-feature-settings</span>
+<span class="o">@</span> <span class="nt">inline-block</span>
+<span class="o">@</span> <span class="nt">hidpi</span>
+<span class="o">@</span> <span class="nt">hyphens</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">image-rendering</span>
+<span class="o">@</span> <span class="nt">keyframes</span>
+<span class="o">@</span> <span class="nt">placeholder</span>
+<span class="o">@</span> <span class="nt">perspective</span>
+<span class="o">@</span> <span class="nt">linear-gradient</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">radial-gradient</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">selection</span>
+<span class="o">@</span> <span class="nt">user-select</span>
+
+<span class="nt">transform</span>
+  <span class="o">@</span> <span class="nt">transform</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">transform-origin</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">transition</span>
+  <span class="o">@</span> <span class="nt">transition</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">transition-delay</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">transition-duration</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">transition-property</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+  <span class="o">@</span> <span class="nt">transition-timing-function</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span></code></pre></figure>
+
+<h3 id="complete-list-functions">Functions</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">linear-gradient</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">modular-scale</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">em</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">rem</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">radial-gradient</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">shade</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">strip-units</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">tint</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="nt">unpack</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span></code></pre></figure>
+
+<h3 id="complete-list-addons">Add-ons</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="o">@</span> <span class="nt">border-color</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">border-style</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">border-width</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">clearfix</span>
+<span class="o">@</span> <span class="nt">hide-text</span>
+<span class="o">@</span> <span class="nt">directional-property</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">ellipsis</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">margin</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">padding</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">position</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">prefixer</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">retina-image</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">size</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+<span class="o">@</span> <span class="nt">triangle</span>
+<span class="o">@</span> <span class="nt">word-wrap</span><span class="o">(*</span><span class="nt">args</span><span class="o">)</span>
+
+<span class="nt">HTML5</span> <span class="nt">Inputs</span>
+  <span class="si">#{</span><span class="nv">$all-text-inputs</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-text-inputs-hover</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-text-inputs-focus</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-buttons</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-buttons-hover</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-buttons-focus</span><span class="si">}</span>
+  <span class="si">#{</span><span class="nv">$all-buttons-active</span><span class="si">}</span>
+
+<span class="nt">font-family</span>
+  <span class="err">$</span><span class="nt">georgia</span>
+  <span class="err">$</span><span class="nt">helvetica</span>
+  <span class="err">$</span><span class="nt">lucida-grande</span>
+  <span class="err">$</span><span class="nt">monospace</span>
+  <span class="err">$</span><span class="nt">verdana</span>
+
+<span class="nt">timing-functions</span>
+  <span class="err">$</span><span class="nt">ease-in-</span><span class="o">*</span>
+  <span class="err">$</span><span class="nt">ease-out-</span><span class="o">*</span>
+  <span class="err">$</span><span class="nt">ease-in-out-</span><span class="o">*</span>
+  <span class="o">*</span> <span class="o">=</span> <span class="nt">quad</span><span class="o">,</span> <span class="nt">cubic</span><span class="o">,</span> <span class="nt">quart</span><span class="o">,</span> <span class="nt">quint</span><span class="o">,</span> <span class="nt">sine</span><span class="o">,</span> <span class="nt">expo</span><span class="o">,</span> <span class="nt">circ</span><span class="o">,</span> <span class="nt">back</span></code></pre></figure>
+
+<h3 id="complete-list-settings">Settings</h3>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nt">asset-pipeline</span>
+  <span class="err">$</span><span class="nt">asset-pipeline</span>
+
+<span class="nt">deprecation-warnings</span>
+  <span class="err">$</span><span class="nt">output-bourbon-deprecation-warnings</span>
+
+<span class="nt">em-base</span>
+  <span class="err">$</span><span class="nt">em-base</span>
+
+<span class="nt">prefixer-settings</span>
+  <span class="err">$</span><span class="nt">prefix-for-webkit</span>
+  <span class="err">$</span><span class="nt">prefix-for-mozilla</span>
+  <span class="err">$</span><span class="nt">prefix-for-microsoft</span>
+  <span class="err">$</span><span class="nt">prefix-for-opera</span>
+  <span class="err">$</span><span class="nt">prefix-for-spec</span></code></pre></figure>
+
+</article>
+
+    </section>
+
+  </div>
+</div>

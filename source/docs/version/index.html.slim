@@ -6,6 +6,14 @@
 - content_for(:preferred_path, "docs/#{version}")
 
 div.p-container
+  nav role="navigation"
+    ol
+      - versions.reverse_each do |version|
+        li
+          = link_to version, "/docs/#{version}/"
+      li
+        = link_to "4.2.7", "/docs/4.2.7/"
+
   nav.c-docs-nav role="navigation"
     ol
       - version.doc_items.each do |item|

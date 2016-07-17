@@ -42,6 +42,9 @@ from [Bourbon’s source] and outputs them as versioned JSON files
 (e.g. [`bourbon_5_0_0.json`]). We then use a [proxy] in Middleman to generate
 unique pages for each version.
 
+SassDoc has only been in use since v5.0.0. The v4 release is documented
+via [a static page][v4], pulled from the previous website.
+
 To generate documentation for the gem version specified in the `Gemfile`, run:
 
   ```
@@ -59,6 +62,7 @@ You can also generate documentation for the gem version from GitHub by using the
 [Bourbon’s source]: https://github.com/thoughtbot/bourbon/
 [`bourbon_5_0_0.json`]: data/bourbon_5_0_0.json
 [proxy]: https://middlemanapp.com/advanced/dynamic_pages/
+[v4]: source/docs/4.2.7/index.html.erb
 
 ## Hosting & Deployment
 
