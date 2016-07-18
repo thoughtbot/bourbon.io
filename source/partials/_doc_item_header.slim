@@ -1,9 +1,9 @@
-span.doc-item__directive-type
-  = item.context.type
-
 h3.doc-item__title
   code
     = item.context.name
+
+span.doc-item__directive-type
+  = item.context.type
 
 - if item.return.present?
   div.doc-item__returns
