@@ -33,6 +33,21 @@ a {
   }
 }
 
+code {
+  font-family: $code-font-family;
+}
+
+pre {
+  margin: 0;
+  tab-size: 2;
+
+  > code {
+    display: block;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+}
+
 hr {
   border-bottom: $base-border;
   border-left: 0;
