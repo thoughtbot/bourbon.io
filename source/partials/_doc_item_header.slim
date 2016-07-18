@@ -9,6 +9,11 @@ h3.doc-item__title
   div.doc-item__returns
     | Returns: #{ item.return.type }
 
+- if item.since.present?
+  - item.since.each do |release|
+    span.doc-item__since
+      | #{release.version}+
+
 div.doc-item__source-link
   = link_to "View Source", github_file_url(item.file.path, version)
 
