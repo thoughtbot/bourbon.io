@@ -10,10 +10,10 @@ $large-screen: 900px;
 
 // Typography
 $base-font-family: $font-stack-system;
-$heading-font-family: "Quincy", $font-stack-georgia;
+$heading-font-family: $base-font-family;
 
 // Line height
-$base-line-height: 2;
+$base-line-height: 1.6;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -21,8 +21,6 @@ $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
-$letter-spacing-small: 0.02em;
-$letter-spacing-extra-small: $letter-spacing-small / 2;
 
 // Grid
 $neat-grid: (
@@ -39,7 +37,6 @@ $white: #fff;
 
 $orange: #f27126;
 $thoughtbot-red: #ed3e44;
-$bourbon-gradient: linear-gradient(to bottom right, #ff7e47, #f3603c);
 
 // Font Colors
 $base-font-color: $dark-gray;

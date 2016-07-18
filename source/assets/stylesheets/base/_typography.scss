@@ -13,36 +13,9 @@ h5,
 h6 {
   font-family: $heading-font-family;
   font-size: modular-scale(1);
-  font-weight: 400;
+  font-weight: 600;
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
-}
-
-h1 {
-  font-size: modular-scale(11);
-}
-
-h2 {
-  font-family: $base-font-family;
-  font-size: modular-scale(10);
-  font-weight: 400;
-  letter-spacing: $letter-spacing-small;
-}
-
-h3 {
-  font-size: modular-scale(9);
-}
-
-h4,
-h5 {
-  font-family: $base-font-family;
-  font-size: modular-scale(6);
-  font-weight: 300;
-  letter-spacing: $letter-spacing-small;
-}
-
-h5 {
-  font-size: modular-scale(5);
 }
 
 p {

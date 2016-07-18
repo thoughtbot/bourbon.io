@@ -1,15 +1,14 @@
 .c-button {
   appearance: none;
   background-color: $action-color;
-  background-image: $bourbon-gradient;
   border: 0;
+  border-radius: $base-border-radius;
   color: $white;
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
-  font-weight: 500;
-  letter-spacing: $letter-spacing-extra-small;
+  font-weight: 600;
   line-height: 1;
   padding: $small-spacing $base-spacing;
   text-align: center;
