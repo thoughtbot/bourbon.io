@@ -79,6 +79,8 @@ linters:
 
   ImportantRule:
     enabled: true
+    exclude:
+      - "source/assets/stylesheets/utilities/**"
 
   ImportPath:
     enabled: true
