@@ -1,13 +1,9 @@
 footer role="contentinfo"
   div.p-grid-container
-    p
-      | Bourbon is maintained and funded with
-      span.c-emoji
-        '  💖
-      | from the humans at #{link_to "thoughtbot", "https://thoughtbot.com"}.
-    p
-      | Bourbon is free software, and may be
-        redistributed under the terms specified in the
-        #{link_to "license", "https://github.com/thoughtbot/bourbon/blob/master/LICENSE.md"}.
-    p
-      | &#169; 2011 #{link_to "thoughtbot, inc.", "https://thoughtbot.com"}
+    p Bourbon is maintained by the humans at…
+    = link_to "https://thoughtbot.com" do
+      | thoughtbot
+    p Bourbon is free software, and may be redistributed under the terms
+      specified in the
+      #{link_to "license", "https://github.com/thoughtbot/bourbon/blob/master/LICENSE.md"}.
+    p © 2011 #{link_to "thoughtbot, inc.", "https://thoughtbot.com"}
