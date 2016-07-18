@@ -1,32 +1,35 @@
 h3 Arguments
 
-table
-  tr
-    th scope="col"
-      | Name
-    th scope="col"
-      | Type
-    th scope="col"
-      | Default
-    th scope="col"
-      | Description
-
-  - item.parameter.each do |argument|
+- if item.parameter.present?
+  table
     tr
-      td
-        code
-          = argument.name
-      td
-        code
-          = argument.type
-      td
-        - if argument.default
+      th scope="col"
+        | Name
+      th scope="col"
+        | Type
+      th scope="col"
+        | Default
+      th scope="col"
+        | Description
+
+    - item.parameter.each do |argument|
+      tr
+        td
           code
-            = argument.default
-        - else
-          | -
-      td
-        - if argument.description
-          = markdown(argument.description)
-        - else
-          | -
+            = argument.name
+        td
+          code
+            = argument.type
+        td
+          - if argument.default
+            code
+              = argument.default
+          - else
+            | -
+        td
+          - if argument.description
+            = markdown(argument.description)
+          - else
+            | -
+- else
+  | No arguments
