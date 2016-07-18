@@ -44,7 +44,8 @@ $bourbon-gradient: linear-gradient(to bottom right, #ff7e47, #f3603c);
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $orange;
-$link-color: $thoughtbot-red;
+$link-color: $base-font-color;
+$link-color--action: $thoughtbot-red;
 
 // Border
 $base-border-color: $light-gray;

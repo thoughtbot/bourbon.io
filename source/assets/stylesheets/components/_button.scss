@@ -22,7 +22,6 @@
   &:hover,
   &:focus {
     background-color: shade($action-color, 20%);
-    border: 0;
     color: $white;
   }
 

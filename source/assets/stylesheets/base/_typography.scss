@@ -50,16 +50,13 @@ p {
 }
 
 a {
-  border-bottom: 1px solid currentColor;
   color: $link-color;
-  text-decoration: none;
-  transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
-    border-bottom: 2px solid currentColor;
-    color: shade($link-color, 10%);
+    color: $link-color--action;
+    transition: color $base-duration $base-timing;
   }
 }
 
