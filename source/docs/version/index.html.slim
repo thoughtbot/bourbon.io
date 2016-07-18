@@ -27,8 +27,8 @@ div.p-grid-container
   section.c-docs-list
     - version.doc_items.each do |item|
       article.c-doc-item id="#{item.context.name}"
-        = partial "partials/doc_item_header",
+        = partial "doc_item_header",
                   locals: { item: item, version: version }
-        = partial "partials/doc_item_arguments", locals: { item: item }
+        = partial "doc_item_arguments", locals: { item: item }
         - if item.example.present?
-          = partial "partials/doc_item_example", locals: { item: item }
+          = partial "doc_item_example", locals: { item: item }
