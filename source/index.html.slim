@@ -4,11 +4,6 @@ header
 
     = config[:latest_version]
 
-    nav role="navigation"
-      = link_to "Documentation",
-        "/docs/latest/",
-        class: "c-button"
-
     ul
       li Dependency-free: It’s pure Sass.
       li Human-readable: We aim for clarity over brevity.
@@ -22,3 +17,5 @@ header
       li Follow us on
          #{link_to "Twitter", "https://twitter.com/bourbonsass"}
          for announcements.
+
+    = link_to "Documentation", "/docs/latest/", class: "c-button"
