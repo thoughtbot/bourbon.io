@@ -84,6 +84,8 @@ This project uses:
     any number of unrelated contexts (e.g. `.p-media {}`)
   - `components/`: Discrete, implementation-specific piece of UI
     (e.g. `.c-site-nav {}`)
+  - `utilities/`: High-specificity, very explicit selectors. Overrides and
+    helper classes (e.g. `.u-flex {}`).
 - Autoprefixer
 - SCSS-Lint, with Hound ([configuration](.scss-lint.yml))
 - A variety of CSS units:
