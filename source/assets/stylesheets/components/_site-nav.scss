@@ -16,5 +16,7 @@
 }
 
 .c-site-nav__link {
-  @include grid-column(3);
+  &:not(:last-of-type) {
+    margin-right: $base-spacing;
+  }
 }
