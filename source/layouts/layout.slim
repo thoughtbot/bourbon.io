@@ -9,6 +9,8 @@ html lang="en"
     - if content_for?(:preferred_path)
       link rel="canonical" href=preferred_url
     = stylesheet_link_tag "main"
+    = stylesheet_link_tag \
+      "https://cloud.typenetwork.com/projects/218/fontface.css"
   body
     = partial "partials/site_nav"
     main role="main"
