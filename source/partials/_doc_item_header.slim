@@ -6,8 +6,9 @@ span.doc-item__directive-type
   = item.context.type.capitalize
 
 - if item.return.present?
-  div.doc-item__returns
-    | Returns: #{ item.return.type }
+  span.doc-item__returns
+    | Returns:
+    code< #{item.return.type}
 
 - if item.since.present?
   - item.since.each do |release|
