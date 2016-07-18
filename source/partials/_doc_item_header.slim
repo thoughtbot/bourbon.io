@@ -3,7 +3,7 @@ h3.doc-item__title
     = item.context.name
 
 span.doc-item__directive-type
-  = item.context.type
+  = item.context.type.capitalize
 
 - if item.return.present?
   div.doc-item__returns
