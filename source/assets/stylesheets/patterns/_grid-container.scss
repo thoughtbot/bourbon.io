@@ -1,4 +1,4 @@
-.p-container {
+.p-grid-container {
   @include grid-container;
   @include margin(null auto);
   max-width: 60rem;
