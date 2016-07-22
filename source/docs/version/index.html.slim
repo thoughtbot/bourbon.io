@@ -20,13 +20,13 @@ div.p-grid-container
     ol
       - version.doc_items.each do |item|
         li
-          = link_to "##{item.context.name}" do
+          = link_to "##{item.context.name.parameterize}" do
             code
               = item.context.name
 
   section.c-docs-list
     - version.doc_items.each do |item|
-      article.c-doc-item id="#{item.context.name}"
+      article.c-doc-item id="#{item.context.name.parameterize}"
         = partial "doc_item_header",
                   locals: { item: item, version: version }
         - if item.parameter.present?
