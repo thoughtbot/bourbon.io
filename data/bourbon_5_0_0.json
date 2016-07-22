@@ -197,11 +197,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-color(#a60b55 #76cd9c null #e8ae1a);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-left-color: #e8ae1a;\n  border-right-color: #76cd9c;\n  border-top-color: #a60b55;\n}"
+        "code": ".element {\n  @include border-color(#a60b55 #76cd9c null #e8ae1a);\n}\n\n// CSS Output\n.element {\n  border-left-color: #e8ae1a;\n  border-right-color: #76cd9c;\n  border-top-color: #a60b55;\n}"
       }
     ],
     "require": [
@@ -244,11 +240,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-top-radius(4px);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}"
+        "code": ".element {\n  @include border-top-radius(4px);\n}\n\n// CSS Output\n.element {\n  border-top-left-radius: 4px;\n  border-top-right-radius: 4px;\n}"
       }
     ],
     "access": "public",
@@ -285,11 +277,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-right-radius(3px);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}"
+        "code": ".element {\n  @include border-right-radius(3px);\n}\n\n// CSS Output\n.element {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}"
       }
     ],
     "access": "public",
@@ -326,11 +314,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-bottom-radius(2px);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}"
+        "code": ".element {\n  @include border-bottom-radius(2px);\n}\n\n// CSS Output\n.element {\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n}"
       }
     ],
     "access": "public",
@@ -367,11 +351,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-left-radius(1px);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}"
+        "code": ".element {\n  @include border-left-radius(1px);\n}\n\n// CSS Output\n.element {\n  border-bottom-left-radius: 1px;\n  border-top-left-radius: 1px;\n}"
       }
     ],
     "access": "public",
@@ -409,11 +389,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-style(dashed null solid);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-style: solid;\n  border-top-style: dashed;\n}"
+        "code": ".element {\n  @include border-style(dashed null solid);\n}\n\n// CSS Output\n.element {\n  border-bottom-style: solid;\n  border-top-style: dashed;\n}"
       }
     ],
     "require": [
@@ -457,11 +433,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-width(1em null 20px);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-width: 20px;\n  border-top-width: 1em;\n}"
+        "code": ".element {\n  @include border-width(1em null 20px);\n}\n\n// CSS Output\n.element {\n  border-bottom-width: 20px;\n  border-top-width: 1em;\n}"
       }
     ],
     "require": [
@@ -499,11 +471,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-buttons} {\n  background-color: #f00;\n}"
-      },
-      {
-        "type": "css",
-        "code": "button,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n  background-color: #f00;\n}"
+        "code": "#{$all-buttons} {\n  background-color: #f00;\n}\n\n// CSS Output\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n  background-color: #f00;\n}"
       }
     ],
     "type": "list",
@@ -547,11 +515,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-buttons-active} {\n  background-color: #00f;\n}"
-      },
-      {
-        "type": "css",
-        "code": "button:active,\n[type='button']:active,\n[type='reset']:active,\n[type='submit']:active {\n  background-color: #00f;\n}"
+        "code": "#{$all-buttons-active} {\n  background-color: #00f;\n}\n\n// CSS Output\nbutton:active,\n[type='button']:active,\n[type='reset']:active,\n[type='submit']:active {\n  background-color: #00f;\n}"
       }
     ],
     "type": "list",
@@ -595,11 +559,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-buttons-focus} {\n  background-color: #0f0;\n}"
-      },
-      {
-        "type": "css",
-        "code": "button:focus,\n[type='button']:focus,\n[type='reset']:focus,\n[type='submit']:focus {\n  background-color: #0f0;\n}"
+        "code": "#{$all-buttons-focus} {\n  background-color: #0f0;\n}\n\n// CSS Output\nbutton:focus,\n[type='button']:focus,\n[type='reset']:focus,\n[type='submit']:focus {\n  background-color: #0f0;\n}"
       }
     ],
     "type": "list",
@@ -643,11 +603,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-buttons-hover} {\n  background-color: #0f0;\n}"
-      },
-      {
-        "type": "css",
-        "code": "button:hover,\n[type='button']:hover,\n[type='reset']:hover,\n[type='submit']:hover {\n  background-color: #0f0;\n}"
+        "code": "#{$all-buttons-hover} {\n  background-color: #0f0;\n}\n\n// CSS Output\nbutton:hover,\n[type='button']:hover,\n[type='reset']:hover,\n[type='submit']:hover {\n  background-color: #0f0;\n}"
       }
     ],
     "type": "list",
@@ -696,11 +652,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include clearfix;\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element::after {\n  clear: both;\n  content: \"\";\n  display: block;\n}"
+        "code": ".element {\n  @include clearfix;\n}\n\n// CSS Output\n.element::after {\n  clear: both;\n  content: \"\";\n  display: block;\n}"
       }
     ],
     "access": "public",
@@ -716,15 +668,15 @@
     "description": "Switches between two colors based on the lightness of a another color. Great\nfor building button styles.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 40
+      "end": 42
     },
     "context": {
       "type": "function",
       "name": "contrast-switch",
       "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
       "line": {
-        "start": 42,
-        "end": 60
+        "start": 44,
+        "end": 62
       }
     },
     "parameter": [
@@ -752,11 +704,11 @@
     "example": [
       {
         "type": "scss",
-        "code": ".first-element {\n  color: contrast-switch(#bae6e6);\n}\n\n.second-element {\n  $button-color: #2d72d9;\n  background-color: $button-color;\n  color: contrast-switch($button-color, #222, #eee);\n}"
+        "code": ".element {\n  color: contrast-switch(#bae6e6);\n}\n\n// CSS Output\n.element {\n  color: #000;\n}"
       },
       {
-        "type": "css",
-        "code": ".first-element {\n  color: #000;\n}\n\n.second-element {\n  background-color: #2d72d9;\n  color: #eee;\n}"
+        "type": "scss",
+        "code": ".element {\n  $button-color: #2d72d9;\n  background-color: $button-color;\n  color: contrast-switch($button-color, #222, #eee);\n}\n\n// CSS Output\n.element {\n  background-color: #2d72d9;\n  color: #eee;\n}"
       }
     ],
     "require": [
@@ -821,11 +773,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include ellipsis;\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  display: inline-block;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  word-wrap: normal;\n}"
+        "code": ".element {\n  @include ellipsis;\n}\n\n// CSS Output\n.element {\n  display: inline-block;\n  max-width: 100%;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  word-wrap: normal;\n}"
       }
     ],
     "access": "public",
@@ -879,11 +827,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "@include font-face(\n    \"source-sans-pro\",\n    \"fonts/source-sans-pro-regular\",\n    (\"woff2\", \"woff\")\n  ) {\n  font-style: normal;\n  font-weight: 400;\n}"
-      },
-      {
-        "type": "css",
-        "code": "@font-face {\n  font-family: \"source-sans-pro\";\n  src: url(\"fonts/source-sans-pro-regular.woff2\") format(\"woff2\"),\n       url(\"fonts/source-sans-pro-regular.woff\") format(\"woff\");\n  font-style: normal;\n  font-weight: 400;\n}"
+        "code": "@include font-face(\n    \"source-sans-pro\",\n    \"fonts/source-sans-pro-regular\",\n    (\"woff2\", \"woff\")\n  ) {\n  font-style: normal;\n  font-weight: 400;\n}\n\n// CSS Output\n@font-face {\n  font-family: \"source-sans-pro\";\n  src: url(\"fonts/source-sans-pro-regular.woff2\") format(\"woff2\"),\n       url(\"fonts/source-sans-pro-regular.woff\") format(\"woff\");\n  font-style: normal;\n  font-weight: 400;\n}"
       }
     ],
     "require": [
@@ -931,11 +875,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include hide-text;\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  overflow: hidden;\n  text-indent: 101%;\n  white-space: nowrap;\n}"
+        "code": ".element {\n  @include hide-text;\n}\n\n// CSS Output\n.element {\n  overflow: hidden;\n  text-indent: 101%;\n  white-space: nowrap;\n}"
       }
     ],
     "access": "public",
@@ -979,11 +919,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include hide-visually;\n\n  &:active,\n  &:focus {\n    @include hide-visually(unhide);\n  }\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border: 0;\n  clip: rect(1px, 1px, 1px, 1px);\n  clip-path: circle(1% at 1% 1%);\n  height: 1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.hide-visually:active,\n.hide-visually:focus {\n  clip: auto;\n  clip-path: none;\n  height: auto;\n  overflow: visible;\n  position: static;\n  width: auto;\n}"
+        "code": ".element {\n  @include hide-visually;\n\n  &:active,\n  &:focus {\n    @include hide-visually(unhide);\n  }\n}\n\n// CSS Output\n.element {\n  border: 0;\n  clip: rect(1px, 1px, 1px, 1px);\n  clip-path: circle(1% at 1% 1%);\n  height: 1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.hide-visually:active,\n.hide-visually:focus {\n  clip: auto;\n  clip-path: none;\n  height: auto;\n  overflow: visible;\n  position: static;\n  width: auto;\n}"
       }
     ],
     "since": [
@@ -1005,15 +941,15 @@
     "description": "Provides a quick method for targeting `margin` on specific sides of a\nbox. Use a `null` value to “skip” a side.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 30
+      "end": 32
     },
     "context": {
       "type": "mixin",
       "name": "margin",
       "code": "\n  @include _directional-property(margin, false, $values...);\n",
       "line": {
-        "start": 32,
-        "end": 34
+        "start": 34,
+        "end": 36
       }
     },
     "parameter": [
@@ -1026,11 +962,11 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element-one {\n  @include margin(null auto);\n}\n\n.element-two {\n  @include margin(10px 3em 20vh null);\n}"
+        "code": ".element {\n  @include margin(null auto);\n}\n\n// CSS Output\n.element {\n  margin-left: auto;\n  margin-right: auto;\n}"
       },
       {
-        "type": "css",
-        "code": ".element-one {\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.element-two {\n  margin-bottom: 20vh;\n  margin-right: 3em;\n  margin-top: 10px;\n}"
+        "type": "scss",
+        "code": ".element {\n  @include margin(10px 3em 20vh null);\n}\n\n// CSS Output\n.element {\n  margin-bottom: 20vh;\n  margin-right: 3em;\n  margin-top: 10px;\n}"
       }
     ],
     "require": [
@@ -1053,15 +989,15 @@
     "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
     "commentRange": {
       "start": 3,
-      "end": 60
+      "end": 66
     },
     "context": {
       "type": "function",
       "name": "modular-scale",
       "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
       "line": {
-        "start": 62,
-        "end": 113
+        "start": 68,
+        "end": 119
       }
     },
     "parameter": [
@@ -1089,11 +1025,19 @@
     "example": [
       {
         "type": "scss",
-        "code": ".first-element {\n  font-size: modular-scale(2);\n}\n\n.second-element {\n  margin-right: modular-scale(3, 2em);\n}\n\n.third-element {\n  font-size: modular-scale(3, 1em 1.6em, $major-seventh);\n}\n\n// Globally change the base ratio\n$bourbon: (\n  \"modular-scale-ratio\": 1.2,\n);\n\n.fourth-element {\n  font-size: modular-scale(3);\n}"
+        "code": ".element {\n  font-size: modular-scale(2);\n}\n\n// CSS Output\n.element {\n  font-size: 1.5625em;\n}"
       },
       {
-        "type": "css",
-        "code": ".first-element {\n  font-size: 1.5625em;\n}\n\n.second-element {\n  margin-right: 3.90625em;\n}\n\n.third-element {\n  font-size: 3em;\n}\n\n.fourth-element {\n  font-size: 1.728em;\n}"
+        "type": "scss",
+        "code": ".element {\n  margin-right: modular-scale(3, 2em);\n}\n\n// CSS Output\n.element {\n  margin-right: 3.90625em;\n}"
+      },
+      {
+        "type": "scss",
+        "code": ".element {\n  font-size: modular-scale(3, 1em 1.6em, $major-seventh);\n}\n\n// CSS Output\n.element {\n  font-size: 3em;\n}"
+      },
+      {
+        "type": "scss",
+        "code": "// Globally change the base ratio\n$bourbon: (\n  \"modular-scale-ratio\": 1.2,\n);\n\n.element {\n  font-size: modular-scale(3);\n}\n\n// CSS Output\n.element {\n  font-size: 1.728em;\n}"
       }
     ],
     "require": [
@@ -1116,15 +1060,15 @@
     "description": "Provides a quick method for targeting `padding` on specific sides of a\nbox. Use a `null` value to “skip” a side.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 30
+      "end": 32
     },
     "context": {
       "type": "mixin",
       "name": "padding",
       "code": "\n  @include _directional-property(padding, false, $values...);\n",
       "line": {
-        "start": 32,
-        "end": 34
+        "start": 34,
+        "end": 36
       }
     },
     "parameter": [
@@ -1137,11 +1081,11 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element-one {\n  @include padding(null 1rem);\n}\n\n.element-two {\n  @include padding(10vh null 10px 5%);\n}"
+        "code": ".element-one {\n  @include padding(null 1rem);\n}\n\n// CSS Output\n.element-one {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}"
       },
       {
-        "type": "css",
-        "code": ".element-one {\n  padding-left: 1rem;\n  padding-right: 1rem;\n}\n\n.element-two {\n  padding-bottom: 10px;\n  padding-left: 5%;\n  padding-top: 10vh;\n}"
+        "type": "scss",
+        "code": ".element-two {\n  @include padding(10vh null 10px 5%);\n}\n\n// CSS Output\n.element-two {\n  padding-bottom: 10px;\n  padding-left: 5%;\n  padding-top: 10vh;\n}"
       }
     ],
     "require": [
@@ -1192,11 +1136,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include position(absolute, 0 null null 10em);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  left: 10em;\n  position: absolute;\n  top: 0;\n}"
+        "code": ".element {\n  @include position(absolute, 0 null null 10em);\n}\n\n// CSS Output\n.element {\n  left: 10em;\n  position: absolute;\n  top: 0;\n}"
       }
     ],
     "require": [
@@ -1255,11 +1195,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include prefixer(appearance, none, (\"webkit\", \"moz\"));\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}"
+        "code": ".element {\n  @include prefixer(appearance, none, (\"webkit\", \"moz\"));\n}\n\n// CSS Output\n.element {\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}"
       }
     ],
     "author": [
@@ -1307,11 +1243,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  background-color: shade(#ffbb52, 60%);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  background-color: #664a20;\n}"
+        "code": ".element {\n  background-color: shade(#ffbb52, 60%);\n}\n\n// CSS Output\n.element {\n  background-color: #664a20;\n}"
       }
     ],
     "access": "public",
@@ -1336,15 +1268,15 @@
     "description": "Sets the `width` and `height` of the element in one statement.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 29
+      "end": 31
     },
     "context": {
       "type": "mixin",
       "name": "size",
       "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` argument \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` argument \" +\n           \"in the `size` mixin.\";\n  }\n",
       "line": {
-        "start": 31,
-        "end": 49
+        "start": 33,
+        "end": 51
       }
     },
     "parameter": [
@@ -1361,11 +1293,11 @@
     "example": [
       {
         "type": "scss",
-        "code": ".first-element {\n  @include size(2em);\n}\n\n.second-element {\n  @include size(auto, 10em);\n}"
+        "code": ".first-element {\n  @include size(2em);\n}\n\n// CSS Output\n.first-element {\n  width: 2em;\n  height: 2em;\n}"
       },
       {
-        "type": "css",
-        "code": ".first-element {\n  width: 2em;\n  height: 2em;\n}\n\n.second-element {\n  width: auto;\n  height: 10em;\n}"
+        "type": "scss",
+        "code": ".second-element {\n  @include size(auto, 10em);\n}\n\n// CSS Output\n.second-element {\n  width: auto;\n  height: 10em;\n}"
       }
     ],
     "require": [
@@ -1415,11 +1347,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "$dimension: strip-unit(10em);"
-      },
-      {
-        "type": "css",
-        "code": "$dimension: 10;"
+        "code": "$dimension: strip-unit(10em);\n\n// Output\n$dimension: 10;"
       }
     ],
     "access": "public",
@@ -1451,11 +1379,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-text-inputs} {\n  border: 1px solid #ccc;\n}"
-      },
-      {
-        "type": "css",
-        "code": "[type='color'],\n[type='date'],\n[type='datetime'],\n[type='datetime-local'],\n[type='email'],\n[type='month'],\n[type='number'],\n[type='password'],\n[type='search'],\n[type='tel'],\n[type='text'],\n[type='time'],\n[type='url'],\n[type='week'],\ninput:not([type]),\ntextarea {\n  border: 1px solid #ccc;\n}"
+        "code": "#{$all-text-inputs} {\n  border: 1px solid #ccc;\n}\n\n// CSS Output\n[type='color'],\n[type='date'],\n[type='datetime'],\n[type='datetime-local'],\n[type='email'],\n[type='month'],\n[type='number'],\n[type='password'],\n[type='search'],\n[type='tel'],\n[type='text'],\n[type='time'],\n[type='url'],\n[type='week'],\ninput:not([type]),\ntextarea {\n  border: 1px solid #ccc;\n}"
       }
     ],
     "type": "list",
@@ -1499,11 +1423,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-text-inputs-active} {\n  border: 1px solid #aaa;\n}"
-      },
-      {
-        "type": "css",
-        "code": "[type='color']:active,\n[type='date']:active,\n[type='datetime']:active,\n[type='datetime-local']:active,\n[type='email']:active,\n[type='month']:active,\n[type='number']:active,\n[type='password']:active,\n[type='search']:active,\n[type='tel']:active,\n[type='text']:active,\n[type='time']:active,\n[type='url']:active,\n[type='week']:active,\ninput:not([type]):active,\ntextarea:active {\n  border: 1px solid #aaa;\n}"
+        "code": "#{$all-text-inputs-active} {\n  border: 1px solid #aaa;\n}\n\n// CSS Output\n[type='color']:active,\n[type='date']:active,\n[type='datetime']:active,\n[type='datetime-local']:active,\n[type='email']:active,\n[type='month']:active,\n[type='number']:active,\n[type='password']:active,\n[type='search']:active,\n[type='tel']:active,\n[type='text']:active,\n[type='time']:active,\n[type='url']:active,\n[type='week']:active,\ninput:not([type]):active,\ntextarea:active {\n  border: 1px solid #aaa;\n}"
       }
     ],
     "type": "list",
@@ -1547,11 +1467,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-text-inputs-focus} {\n  border: 1px solid #1565c0;\n}"
-      },
-      {
-        "type": "css",
-        "code": "[type='color']:focus,\n[type='date']:focus,\n[type='datetime']:focus,\n[type='datetime-local']:focus,\n[type='email']:focus,\n[type='month']:focus,\n[type='number']:focus,\n[type='password']:focus,\n[type='search']:focus,\n[type='tel']:focus,\n[type='text']:focus,\n[type='time']:focus,\n[type='url']:focus,\n[type='week']:focus,\ninput:not([type]):focus,\ntextarea:focus {\n  border: 1px solid #1565c0;\n}"
+        "code": "#{$all-text-inputs-focus} {\n  border: 1px solid #1565c0;\n}\n\n// CSS Output\n[type='color']:focus,\n[type='date']:focus,\n[type='datetime']:focus,\n[type='datetime-local']:focus,\n[type='email']:focus,\n[type='month']:focus,\n[type='number']:focus,\n[type='password']:focus,\n[type='search']:focus,\n[type='tel']:focus,\n[type='text']:focus,\n[type='time']:focus,\n[type='url']:focus,\n[type='week']:focus,\ninput:not([type]):focus,\ntextarea:focus {\n  border: 1px solid #1565c0;\n}"
       }
     ],
     "type": "list",
@@ -1595,11 +1511,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-text-inputs-hover} {\n  border: 1px solid #aaa;\n}"
-      },
-      {
-        "type": "css",
-        "code": "[type='color']:hover,\n[type='date']:hover,\n[type='datetime']:hover,\n[type='datetime-local']:hover,\n[type='email']:hover,\n[type='month']:hover,\n[type='number']:hover,\n[type='password']:hover,\n[type='search']:hover,\n[type='tel']:hover,\n[type='text']:hover,\n[type='time']:hover,\n[type='url']:hover,\n[type='week']:hover,\ninput:not([type]):hover,\ntextarea:hover {\n  border: 1px solid #aaa;\n}"
+        "code": "#{$all-text-inputs-hover} {\n  border: 1px solid #aaa;\n}\n\n// CSS Output\n[type='color']:hover,\n[type='date']:hover,\n[type='datetime']:hover,\n[type='datetime-local']:hover,\n[type='email']:hover,\n[type='month']:hover,\n[type='number']:hover,\n[type='password']:hover,\n[type='search']:hover,\n[type='tel']:hover,\n[type='text']:hover,\n[type='time']:hover,\n[type='url']:hover,\n[type='week']:hover,\ninput:not([type]):hover,\ntextarea:hover {\n  border: 1px solid #aaa;\n}"
       }
     ],
     "type": "list",
@@ -1643,11 +1555,7 @@
     "example": [
       {
         "type": "scss",
-        "code": "#{$all-text-inputs-invalid} {\n  border: 1px solid #00f;\n}"
-      },
-      {
-        "type": "css",
-        "code": "[type='color']:invalid,\n[type='date']:invalid,\n[type='datetime']:invalid,\n[type='datetime-local']:invalid,\n[type='email']:invalid,\n[type='month']:invalid,\n[type='number']:invalid,\n[type='password']:invalid,\n[type='search']:invalid,\n[type='tel']:invalid,\n[type='text']:invalid,\n[type='time']:invalid,\n[type='url']:invalid,\n[type='week']:invalid,\ninput:not([type]):invalid,\ntextarea:invalid {\n  border: 1px solid #00f;\n}"
+        "code": "#{$all-text-inputs-invalid} {\n  border: 1px solid #00f;\n}\n\n// CSS Output\n[type='color']:invalid,\n[type='date']:invalid,\n[type='datetime']:invalid,\n[type='datetime-local']:invalid,\n[type='email']:invalid,\n[type='month']:invalid,\n[type='number']:invalid,\n[type='password']:invalid,\n[type='search']:invalid,\n[type='tel']:invalid,\n[type='text']:invalid,\n[type='time']:invalid,\n[type='url']:invalid,\n[type='week']:invalid,\ninput:not([type]):invalid,\ntextarea:invalid {\n  border: 1px solid #00f;\n}"
       }
     ],
     "type": "list",
@@ -1704,11 +1612,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  background-color: tint(#6ecaa6, 40%);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  background-color: #a8dfc9;\n}"
+        "code": ".element {\n  background-color: tint(#6ecaa6, 40%);\n}\n\n// CSS Output\n.element {\n  background-color: #a8dfc9;\n}"
       }
     ],
     "access": "public",
@@ -1773,11 +1677,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  &::before {\n    @include triangle(up, #b25c9c, 2rem);\n    content: \"\";\n  }\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element::before {\n  border-style: solid;\n  height: 0;\n  width: 0;\n  border-color: transparent transparent #b25c9c transparent;\n  border-width: 0 1rem 1rem;\n  content: \"\";\n}"
+        "code": ".element {\n  &::before {\n    @include triangle(up, #b25c9c, 2rem);\n    content: \"\";\n  }\n}\n\n// CSS Output\n.element::before {\n  border-style: solid;\n  height: 0;\n  width: 0;\n  border-color: transparent transparent #b25c9c transparent;\n  border-width: 0 1rem 1rem;\n  content: \"\";\n}"
       }
     ],
     "access": "public",
@@ -1834,11 +1734,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include value-prefixer(cursor, grab, (\"webkit\", \"moz\"));\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  cursor: -webkit-grab;\n  cursor: -moz-grab;\n  cursor: grab;\n}"
+        "code": ".element {\n  @include value-prefixer(cursor, grab, (\"webkit\", \"moz\"));\n}\n\n// CSS Output\n.element {\n  cursor: -webkit-grab;\n  cursor: -moz-grab;\n  cursor: grab;\n}"
       }
     ],
     "author": [
@@ -1880,11 +1776,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".wrapper {\n  @include word-wrap(break-word);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".wrapper {\n  overflow-wrap: break-word;\n  word-break: break-all;\n  word-wrap: break-word;\n}"
+        "code": ".wrapper {\n  @include word-wrap(break-word);\n}\n\n// CSS Output\n.wrapper {\n  overflow-wrap: break-word;\n  word-break: break-all;\n  word-wrap: break-word;\n}"
       }
     ],
     "access": "public",
@@ -1901,7 +1793,7 @@
     "description": "Default global Bourbon settings. Values in this map are overwritten by any\nvalues set in the `$bourbon` map.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 27
+      "end": 28
     },
     "context": {
       "type": "variable",
@@ -1909,8 +1801,8 @@
       "value": "(\n  \"contrast-switch-dark-color\": #000,\n  \"contrast-switch-light-color\": #fff,\n  \"global-font-file-formats\": (\"ttf\", \"woff2\", \"woff\"),\n  \"modular-scale-base\": 1em,\n  \"modular-scale-ratio\": $major-third,\n  \"rails-asset-pipeline\": false,\n)",
       "scope": "private",
       "line": {
-        "start": 29,
-        "end": 36
+        "start": 30,
+        "end": 37
       }
     },
     "type": "map",
@@ -1949,7 +1841,7 @@
         "type": "boolean",
         "name": "rails-asset-pipeline",
         "default": "false",
-        "description": "Enable or disable the `$asset-pipeline` variable for all functions that\n  accept it."
+        "description": "Set this to `true` when using the Rails Asset Pipeline and Bourbon will\n  write asset paths using\n  [sass-rails’ asset helpers](https://github.com/rails/sass-rails#asset-helpers)."
       }
     ],
     "access": "private",
@@ -1978,8 +1870,8 @@
   {
     "description": "Global Bourbon settings.\n\n",
     "commentRange": {
-      "start": 38,
-      "end": 71
+      "start": 39,
+      "end": 73
     },
     "context": {
       "type": "variable",
@@ -1987,8 +1879,8 @@
       "value": "()",
       "scope": "default",
       "line": {
-        "start": 73,
-        "end": 73
+        "start": 75,
+        "end": 75
       }
     },
     "type": "map",
@@ -2027,7 +1919,7 @@
         "type": "boolean",
         "name": "rails-asset-pipeline",
         "default": "false",
-        "description": "Enable or disable the `$asset-pipeline` variable for all functions that\n  accept it."
+        "description": "Set this to `true` when using the Rails Asset Pipeline and Bourbon will\n  write asset paths using\n  [sass-rails’ asset helpers](https://github.com/rails/sass-rails#asset-helpers)."
       }
     ],
     "example": [
@@ -2231,13 +2123,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include border-style(dotted null);\n  @include margin(null 0 10px);\n}",
-        "description": "Usage"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  border-bottom-style: dotted;\n  border-top-style: dotted;\n  margin-bottom: 10px;\n  margin-left: 0;\n  margin-right: 0;\n}",
-        "description": "CSS Output"
+        "code": ".element {\n  @include border-style(dotted null);\n  @include margin(null 0 10px);\n}\n\n// CSS Output\n.element {\n  border-bottom-style: dotted;\n  border-top-style: dotted;\n  margin-bottom: 10px;\n  margin-left: 0;\n  margin-right: 0;\n}"
       }
     ],
     "return": {
@@ -2363,8 +2249,8 @@
           "name": "margin",
           "code": "\n  @include _directional-property(margin, false, $values...);\n",
           "line": {
-            "start": 32,
-            "end": 34
+            "start": 34,
+            "end": 36
           }
         }
       },
@@ -2375,8 +2261,8 @@
           "name": "padding",
           "code": "\n  @include _directional-property(padding, false, $values...);\n",
           "line": {
-            "start": 32,
-            "end": 34
+            "start": 34,
+            "end": 36
           }
         }
       }
@@ -2518,8 +2404,8 @@
           "name": "modular-scale",
           "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
           "line": {
-            "start": 62,
-            "end": 113
+            "start": 68,
+            "end": 119
           }
         }
       }
@@ -2549,11 +2435,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  margin: _unpack(1em 2em);\n}"
-      },
-      {
-        "type": "css",
-        "code": ".element {\n  margin: 1em 2em 1em 2em;\n}"
+        "code": ".element {\n  margin: _unpack(1em 2em);\n}\n\n// CSS Output\n.element {\n  margin: 1em 2em 1em 2em;\n}"
       }
     ],
     "access": "private",
@@ -2748,8 +2630,8 @@
           "name": "contrast-switch",
           "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
           "line": {
-            "start": 42,
-            "end": 60
+            "start": 44,
+            "end": 62
           }
         }
       },
@@ -2904,8 +2786,8 @@
           "name": "contrast-switch",
           "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    @return if(_is-light($base-color), $dark-color, $light-color);\n  }\n",
           "line": {
-            "start": 42,
-            "end": 60
+            "start": 44,
+            "end": 62
           }
         }
       }
@@ -3003,8 +2885,8 @@
           "name": "size",
           "code": "\n\n  @if _is-size($height) {\n    height: $height;\n  } @else {\n    @error \"`#{$height}` is not a valid length for the `$height` argument \" +\n           \"in the `size` mixin.\";\n  }\n\n  @if _is-size($width) {\n    width: $width;\n  } @else {\n    @error \"`#{$width}` is not a valid length for the `$width` argument \" +\n           \"in the `size` mixin.\";\n  }\n",
           "line": {
-            "start": 31,
-            "end": 49
+            "start": 33,
+            "end": 51
           }
         }
       }
