@@ -1,18 +1,9 @@
 h3 Example
 
 - item.example.each do |example|
-
-  - if example.description.present?
-    p= example.description
-
-  - if example.type == "scss"
-    figure.doc-item__code-example
-      figcaption SCSS
-      = code("scss") do
-        = example.code
-
-  - if example.type == "css"
-    figure.doc-item__code-example
-      figcaption CSS Output
-      = code("css") do
-        = example.code
+  figure.doc-item__code-example
+    - if example.description.present?
+      figcaption
+        = example.description
+    = code("scss") do
+      = example.code
