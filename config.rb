@@ -26,8 +26,8 @@ page "/*.json", layout: false
 page "/*.txt", layout: false
 
 versions = Dir.glob("./data/*.json").map { |version| Version.new(version) }
-
 latest_version = versions.max { |a, b| a.to_s <=> b.to_s }
+set :latest_version, latest_version
 
 versions.each do |version|
   proxy(
