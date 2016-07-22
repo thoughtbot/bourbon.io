@@ -1,4 +1,4 @@
-h3 Arguments
+h3 Properties
 
 table
   tr
@@ -11,22 +11,22 @@ table
     th scope="col"
       | Description
 
-  - item.parameter.each do |argument|
+  - item.property.each do |property|
     tr
       td
         code
-          = argument.name
+          = property.name
       td
         code
-          = argument.type
+          = property.type
       td
-        - if argument.default
+        - if property.default
           code
-            = argument.default
+            = property.default
         - else
           | -
       td
-        - if argument.description
-          = markdown(argument.description)
+        - if property.description
+          = markdown(property.description)
         - else
           | -

@@ -29,6 +29,9 @@ div.p-grid-container
       article.c-doc-item id="#{item.context.name}"
         = partial "doc_item_header",
                   locals: { item: item, version: version }
-        = partial "doc_item_arguments", locals: { item: item }
+        - if item.parameter.present?
+          = partial "doc_item_arguments", locals: { item: item }
+        - if item.property.present?
+          = partial "doc_item_properties", locals: { item: item }
         - if item.example.present?
           = partial "doc_item_example", locals: { item: item }

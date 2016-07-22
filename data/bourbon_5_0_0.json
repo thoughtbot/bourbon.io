@@ -1898,10 +1898,10 @@
     }
   },
   {
-    "description": "Default Bourbon configuration settings.\n\n",
+    "description": "Default global Bourbon settings. Values in this map are overwritten by any\nvalues set in the `$bourbon` map.\n\n",
     "commentRange": {
       "start": 3,
-      "end": 26
+      "end": 27
     },
     "context": {
       "type": "variable",
@@ -1909,8 +1909,8 @@
       "value": "(\n  \"contrast-switch-dark-color\": #000,\n  \"contrast-switch-light-color\": #fff,\n  \"global-font-file-formats\": (\"ttf\", \"woff2\", \"woff\"),\n  \"modular-scale-base\": 1em,\n  \"modular-scale-ratio\": $major-third,\n  \"rails-asset-pipeline\": false,\n)",
       "scope": "private",
       "line": {
-        "start": 28,
-        "end": 35
+        "start": 29,
+        "end": 36
       }
     },
     "type": "map",
@@ -1976,22 +1976,60 @@
     ]
   },
   {
-    "description": "User overrides of Bourbon configuration settings.\n\n",
+    "description": "Global Bourbon settings.\n\n",
     "commentRange": {
-      "start": 37,
-      "end": 49
+      "start": 38,
+      "end": 71
     },
     "context": {
       "type": "variable",
-      "name": "bourbon",
+      "name": "Settings",
       "value": "()",
       "scope": "default",
       "line": {
-        "start": 51,
-        "end": 51
+        "start": 73,
+        "end": 73
       }
     },
     "type": "map",
+    "property": [
+      {
+        "type": "color",
+        "name": "contrast-switch-dark-color",
+        "default": "#000",
+        "description": "Global dark color for the `contrast-switch` function."
+      },
+      {
+        "type": "color",
+        "name": "contrast-switch-light-color",
+        "default": "#fff",
+        "description": "Global light color for the `contrast-switch` function."
+      },
+      {
+        "type": "list",
+        "name": "global-font-file-formats",
+        "default": "(\"ttf\", \"woff2\", \"woff\")",
+        "description": "Global font file formats for the `font-face` mixin."
+      },
+      {
+        "type": "number (with unit)",
+        "name": "modular-scale-base",
+        "default": "1em",
+        "description": "Global base value for the `modular-scale` function."
+      },
+      {
+        "type": "number (unitless)",
+        "name": "modular-scale-ratio",
+        "default": "$major-third (1.25)",
+        "description": "Global base ratio for the `modular-scale` function."
+      },
+      {
+        "type": "boolean",
+        "name": "rails-asset-pipeline",
+        "default": "false",
+        "description": "Enable or disable the `$asset-pipeline` variable for all functions that\n  accept it."
+      }
+    ],
     "example": [
       {
         "type": "scss",
@@ -2005,21 +2043,7 @@
     "file": {
       "path": "bourbon/settings/_settings.scss",
       "name": "_settings.scss"
-    },
-    "usedBy": [
-      {
-        "description": "Return a Bourbon setting.\n\n",
-        "context": {
-          "type": "function",
-          "name": "_retrieve-bourbon-setting",
-          "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
-          "line": {
-            "start": 14,
-            "end": 16
-          }
-        }
-      }
-    ]
+    }
   },
   {
     "description": "Append pseudo-classes to a selector(s).\n\n",
@@ -2468,10 +2492,6 @@
       {
         "type": "variable",
         "name": "_bourbon-defaults"
-      },
-      {
-        "type": "variable",
-        "name": "bourbon"
       }
     ],
     "file": {
