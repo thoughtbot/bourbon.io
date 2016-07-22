@@ -21,3 +21,7 @@ div.doc-item__source-link
 - if item.description.present?
   div.doc-item__description
     = markdown(item.description)
+
+- if item.content.present?
+  div.doc-item__content-directive
+    = markdown(item.content)
