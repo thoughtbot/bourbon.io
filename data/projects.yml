@@ -1,0 +1,21 @@
+projects:
+  - title: U.S. Web Design Standards
+    url: https://standards.usa.gov/
+    source: https://github.com/18F/web-design-standards
+  - title: Middleman
+    url: https://middlemanapp.com/
+    source: https://github.com/middleman/middleman-guides
+  - title: ValenceDocs
+    url: https://valencedocs.com/
+  - title: San Francisco Opera
+    url: http://sfopera.com/
+  - title: The Seattle Times
+    url: http://www.seattletimes.com/
+  - title: Wikipedia 15
+    url: https://15.wikipedia.org/
+  - title: VIZ
+    url: http://www.viz.com/
+  - title: George Soros
+    url: http://www.georgesoros.com/
+  - title: True Ventures
+    url: https://trueventures.com/

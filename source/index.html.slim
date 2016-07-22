@@ -19,3 +19,9 @@ header
          for announcements.
 
     = link_to "Documentation", "/docs/latest/", class: "c-button"
+
+    section
+      ul
+        - data.projects.projects.each do |project|
+          li
+            = project.title
