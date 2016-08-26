@@ -9,8 +9,7 @@ set -e
 gem install bundler --conservative
 bundle check || bundle install
 
-
-# Set up Ruby dependencies
+# Set up Node dependencies
 npm install
 
 # Set up configurable environment variables
