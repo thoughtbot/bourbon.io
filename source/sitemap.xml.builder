@@ -8,7 +8,7 @@ xml.urlset xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9" do
   pages.each do |page|
     xml.url do
       xml.loc URI.join(
-        ENV.fetch("SITE_URL"),
+        ENV["SITE_URL"],
         page.url
       )
     end
