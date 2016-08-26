@@ -4,7 +4,6 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 activate :directory_indexes
-activate :dotenv
 activate :syntax do |syntax|
   syntax.css_class = "syntax-highlight"
 end
