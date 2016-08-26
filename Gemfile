@@ -13,6 +13,6 @@ gem "neat", "2.0.0.beta.1"
 gem "rake"
 gem "redcarpet"
 gem "sassc"
-gem "scss_lint", require: false
+gem "scss_lint", "0.49.0", require: false
 gem "slim"
 gem "slim_lint", require: false

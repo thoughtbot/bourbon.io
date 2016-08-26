@@ -1,5 +1,3 @@
-# Up-to-date with SCSS-Lint v0.47
-
 scss_files: '**/*.scss'
 
 exclude: 'node_modules/**'
@@ -97,6 +95,11 @@ linters:
     enabled: true
     style: include_zero
 
+  LengthVariable:
+    enabled: false
+    allowed_lengths: []
+    allowed_properties: []
+
   MergeableSelector:
     enabled: true
     force_nesting: true
@@ -167,7 +170,7 @@ linters:
 
   Shorthand:
     enabled: true
-    allowed_shorthands: [1, 2, 3]
+    allowed_shorthands: [1, 2, 3, 4]
 
   SingleLinePerProperty:
     enabled: true

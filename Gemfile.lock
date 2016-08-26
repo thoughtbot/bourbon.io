@@ -169,7 +169,7 @@ DEPENDENCIES
   rake
   redcarpet
   sassc
-  scss_lint
+  scss_lint (= 0.49.0)
   slim
   slim_lint
 
