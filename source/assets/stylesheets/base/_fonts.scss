@@ -1,0 +1,9 @@
+@include font-face("Quincy", "https://thoughtbot.github.io/bourbon.io-fonts/quincy-cf-text", ("woff2", "woff")) {
+  font-style: normal;
+  font-weight: 400;
+};
+
+@include font-face("Anonymous Pro", "https://thoughtbot.github.io/bourbon.io-fonts/anonymous-pro", ("ttf")) {
+  font-style: normal;
+  font-weight: 400;
+};
