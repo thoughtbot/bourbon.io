@@ -3,9 +3,37 @@
 All notable changes to this project will be documented in this file. This
 project adheres to [Semantic Versioning](http://semver.org).
 
-## [Unreleased]
+## [5.0.0-beta.7] - 2016-11-03
 
-[Unreleased]: https://github.com/thoughtbot/bourbon/compare/v5.0.0.beta.6...HEAD
+### Added
+
+- Added `white-space: nowrap;` to the `hide-visually` mixin so that content
+  renders on one line and is correctly pronounced by screen readers. You can
+  read more about this in Jesse Beach’s article “[Beware smushed off-screen
+    accessible text][smushed-text-article].”
+
+### Changed
+
+- Removed the default values from the `$position` and `$coordinates` arguments
+  for the `position` mixin.
+- Updated `contrast-switch` to calculate contrast based on the WCAG 2.0
+  specification. Please note that it is an approximation and we cannot guarantee
+  full compliance, though all of our manual testing passed.
+- Renamed the `$coordinates` argument in the `position` mixin
+  to `$box-edge-values`.
+- Updated `$font-stack-system` to include Avenir Next, Avenir, Lucida
+  Grande, Helvetica, Noto, Franklin Gothic Medium, Century Gothic, and
+  Liberation Sans. This follows [system-fonts] by Adam Morse.
+- The `word-break` property was removed from the `word-wrap` mixin and
+  is no longer output.
+- Renamed the `word-wrap` mixin to `overflow-wrap` to align with the
+  name change in the [CSS spec].
+
+[smushed-text-article]: https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe#.l4hkljiza
+[system-fonts]: https://github.com/mrmrs/css-system-fonts
+[CSS spec]: https://drafts.csswg.org/css-text-3/#propdef-overflow-wrap
+
+[5.0.0-beta.7]: https://github.com/thoughtbot/bourbon/compare/v5.0.0.beta.6...v5.0.0.beta.7
 
 ## [5.0.0-beta.6] - 2016-06-06
 
