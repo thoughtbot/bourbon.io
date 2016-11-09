@@ -1,5 +1,6 @@
 .p-grid-container {
   @include grid-container;
   @include margin(null auto);
+  @include padding(null $base-spacing);
   max-width: 60rem;
 }
