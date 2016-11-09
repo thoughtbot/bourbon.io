@@ -1,8 +1,16 @@
-body {
+html {
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: 100%;
   line-height: $base-line-height;
+
+  @media (min-width: 38em) {
+    font-size: 106.25%;
+  }
+
+  @media (min-width: 65em) {
+    font-size: 112.5%;
+  }
 }
 
 h1,
