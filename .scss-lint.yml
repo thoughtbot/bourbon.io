@@ -1,6 +1,8 @@
 scss_files: '**/*.scss'
 
-exclude: 'node_modules/**'
+exclude:
+  - 'node_modules/**'
+  - 'source/assets/stylesheets/reset/**'
 
 severity: warning
 
