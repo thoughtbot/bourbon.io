@@ -714,7 +714,7 @@
     "require": [
       {
         "type": "function",
-        "name": "_retrieve-bourbon-setting",
+        "name": "_fetch-bourbon-setting",
         "external": false
       },
       {
@@ -844,7 +844,7 @@
       },
       {
         "type": "function",
-        "name": "_retrieve-bourbon-setting",
+        "name": "_fetch-bourbon-setting",
         "external": false
       }
     ],
@@ -1429,7 +1429,7 @@
     "require": [
       {
         "type": "function",
-        "name": "_retrieve-bourbon-setting",
+        "name": "_fetch-bourbon-setting",
         "external": false
       }
     ],
@@ -2245,7 +2245,7 @@
         "description": "Return a Bourbon setting.\n\n",
         "context": {
           "type": "function",
-          "name": "_retrieve-bourbon-setting",
+          "name": "_fetch-bourbon-setting",
           "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
           "line": {
             "start": 14,
@@ -2732,6 +2732,89 @@
     ]
   },
   {
+    "description": "Return a Bourbon setting.\n\n",
+    "commentRange": {
+      "start": 3,
+      "end": 12
+    },
+    "context": {
+      "type": "function",
+      "name": "_fetch-bourbon-setting",
+      "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
+      "line": {
+        "start": 14,
+        "end": 16
+      }
+    },
+    "parameter": [
+      {
+        "type": "string",
+        "name": "setting"
+      }
+    ],
+    "return": {
+      "type": "boolean | color | list | number | string"
+    },
+    "example": [
+      {
+        "type": "scss",
+        "code": "_fetch-bourbon-setting(rails-asset-pipeline)"
+      }
+    ],
+    "access": "private",
+    "group": [
+      "undefined"
+    ],
+    "require": [
+      {
+        "type": "variable",
+        "name": "_bourbon-defaults"
+      }
+    ],
+    "file": {
+      "path": "bourbon/utilities/_fetch-bourbon-setting.scss",
+      "name": "_fetch-bourbon-setting.scss"
+    },
+    "usedBy": [
+      {
+        "description": "Switches between two colors based on the contrast to another color. It’s\nlike a [ternary operator] for color contrast and can be useful for building\na button system.\n\nThe calculation of the contrast ratio is based on the [WCAG 2.0\nspecification]. However, we cannot guarantee full compliance, though all of\nour manual testing passed.\n\n  [ternary operator]: https://goo.gl/ccfLqi\n  [WCAG 2.0 specification]: https://goo.gl/zhQuYA\n\n",
+        "context": {
+          "type": "function",
+          "name": "contrast-switch",
+          "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    $-contrast-to-dark: _contrast-ratio($base-color, $dark-color);\n    $-contrast-to-light: _contrast-ratio($base-color, $light-color);\n    $-prefer-dark: $-contrast-to-dark >= $-contrast-to-light;\n\n    @return if($-prefer-dark, $dark-color, $light-color);\n  }\n",
+          "line": {
+            "start": 60,
+            "end": 82
+          }
+        }
+      },
+      {
+        "description": "Generates an `@font-face` declaration. You can choose the specific file\nformats you need to output; the mixin supports `eot`, `ttf`, `svg`, `woff2`\nand `woff`. The mixin also supports usage with the Rails Asset Pipeline,\nwhich you can enable per use, or globally in the `$bourbon()` settings.\n\n",
+        "context": {
+          "type": "mixin",
+          "name": "font-face",
+          "code": "\n\n  @font-face {\n    font-family: $font-family;\n    src: _font-source-declaration(\n      $font-family,\n      $file-path,\n      $asset-pipeline,\n      $file-formats\n    );\n    @content;\n  }\n",
+          "line": {
+            "start": 49,
+            "end": 66
+          }
+        }
+      },
+      {
+        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
+        "context": {
+          "type": "function",
+          "name": "modular-scale",
+          "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
+          "line": {
+            "start": 70,
+            "end": 121
+          }
+        }
+      }
+    ]
+  },
+  {
     "description": "Builds the `src` list for an `@font-face` declaration.\n\n",
     "commentRange": {
       "start": 3,
@@ -2905,89 +2988,6 @@
           "line": {
             "start": 22,
             "end": 31
-          }
-        }
-      }
-    ]
-  },
-  {
-    "description": "Return a Bourbon setting.\n\n",
-    "commentRange": {
-      "start": 3,
-      "end": 12
-    },
-    "context": {
-      "type": "function",
-      "name": "_retrieve-bourbon-setting",
-      "code": "\n  @return map-get(map-merge($_bourbon-defaults, $bourbon), $setting);\n",
-      "line": {
-        "start": 14,
-        "end": 16
-      }
-    },
-    "parameter": [
-      {
-        "type": "string",
-        "name": "setting"
-      }
-    ],
-    "return": {
-      "type": "boolean | color | list | number | string"
-    },
-    "example": [
-      {
-        "type": "scss",
-        "code": "_retrieve-bourbon-setting(rails-asset-pipeline)"
-      }
-    ],
-    "access": "private",
-    "group": [
-      "undefined"
-    ],
-    "require": [
-      {
-        "type": "variable",
-        "name": "_bourbon-defaults"
-      }
-    ],
-    "file": {
-      "path": "bourbon/utilities/_retrieve-bourbon-setting.scss",
-      "name": "_retrieve-bourbon-setting.scss"
-    },
-    "usedBy": [
-      {
-        "description": "Switches between two colors based on the contrast to another color. It’s\nlike a [ternary operator] for color contrast and can be useful for building\na button system.\n\nThe calculation of the contrast ratio is based on the [WCAG 2.0\nspecification]. However, we cannot guarantee full compliance, though all of\nour manual testing passed.\n\n  [ternary operator]: https://goo.gl/ccfLqi\n  [WCAG 2.0 specification]: https://goo.gl/zhQuYA\n\n",
-        "context": {
-          "type": "function",
-          "name": "contrast-switch",
-          "code": "\n\n  @if not _is-color($base-color) {\n    @error \"`#{$base-color}` is not a valid color for the `$base-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($dark-color) {\n    @error \"`#{$dark-color}` is not a valid color for the `$dark-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else if not _is-color($light-color) {\n    @error \"`#{$light-color}` is not a valid color for the `$light-color` \" +\n           \"argument in the `contrast-switch` function.\";\n  } @else {\n    $-contrast-to-dark: _contrast-ratio($base-color, $dark-color);\n    $-contrast-to-light: _contrast-ratio($base-color, $light-color);\n    $-prefer-dark: $-contrast-to-dark >= $-contrast-to-light;\n\n    @return if($-prefer-dark, $dark-color, $light-color);\n  }\n",
-          "line": {
-            "start": 60,
-            "end": 82
-          }
-        }
-      },
-      {
-        "description": "Generates an `@font-face` declaration. You can choose the specific file\nformats you need to output; the mixin supports `eot`, `ttf`, `svg`, `woff2`\nand `woff`. The mixin also supports usage with the Rails Asset Pipeline,\nwhich you can enable per use, or globally in the `$bourbon()` settings.\n\n",
-        "context": {
-          "type": "mixin",
-          "name": "font-face",
-          "code": "\n\n  @font-face {\n    font-family: $font-family;\n    src: _font-source-declaration(\n      $font-family,\n      $file-path,\n      $asset-pipeline,\n      $file-formats\n    );\n    @content;\n  }\n",
-          "line": {
-            "start": 49,
-            "end": 66
-          }
-        }
-      },
-      {
-        "description": "Increments up or down a defined scale and returns an adjusted value. This\nhelps establish consistent measurements and spacial relationships throughout\nyour project. We provide a list of commonly used scales as\n[pre-defined variables][scales].\n\n[scales]: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/settings/_scales.scss\n\n",
-        "context": {
-          "type": "function",
-          "name": "modular-scale",
-          "code": "\n\n  $v1: nth($value, 1);\n  $v2: nth($value, length($value));\n  $value: $v1;\n\n  // scale $v2 to just above $v1\n  @while $v2 > $v1 {\n    $v2: ($v2 / $ratio); // will be off-by-1\n  }\n  @while $v2 < $v1 {\n    $v2: ($v2 * $ratio); // will fix off-by-1\n  }\n\n  // check AFTER scaling $v2 to prevent double-counting corner-case\n  $double-stranded: $v2 > $v1;\n\n  @if $increment > 0 {\n    @for $i from 1 through $increment {\n      @if $double-stranded and ($v1 * $ratio) > $v2 {\n        $value: $v2;\n        $v2: ($v2 * $ratio);\n      } @else {\n        $v1: ($v1 * $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @if $increment < 0 {\n    // adjust $v2 to just below $v1\n    @if $double-stranded {\n      $v2: ($v2 / $ratio);\n    }\n\n    @for $i from $increment through -1 {\n      @if $double-stranded and ($v1 / $ratio) < $v2 {\n        $value: $v2;\n        $v2: ($v2 / $ratio);\n      } @else {\n        $v1: ($v1 / $ratio);\n        $value: $v1;\n      }\n    }\n  }\n\n  @return $value;\n",
-          "line": {
-            "start": 70,
-            "end": 121
           }
         }
       }
