@@ -23,5 +23,8 @@ div.doc-item__source-link
     = markdown(item.description)
 
 - if item.content.present?
+  h3
+    code
+      | @content
   div.doc-item__content-directive
     = markdown(item.content)
