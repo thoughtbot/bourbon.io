@@ -16,7 +16,7 @@ div.p-grid-container
       li
         = link_to "4.2.7", "/docs/4.2.7/"
 
-  nav.c-docs-nav role="navigation"
+  nav role="navigation"
     ol
       - version.doc_items.each do |item|
         li
@@ -24,7 +24,7 @@ div.p-grid-container
             code
               = item.context.name
 
-  section.c-docs-list
+  section
     - version.doc_items.each do |item|
       article.c-doc-item id="#{item.context.name.parameterize}"
         = partial "doc_item_header",

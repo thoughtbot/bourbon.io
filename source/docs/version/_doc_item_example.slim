@@ -1,9 +1,14 @@
-h3 Example
+div.doc-item__section
+  h3.doc-item__sub-title
+    - if item.example.count == 1
+      | Example
+    - if item.example.count >= 2
+      | Examples
 
-- item.example.each do |example|
-  figure.doc-item__code-example
-    - if example.description.present?
-      figcaption
-        = example.description
-    = code("scss") do
-      = example.code
+  - item.example.each do |example|
+    figure.doc-item__example
+      - if example.description.present?
+        figcaption
+          = example.description
+      = code("scss") do
+        = example.code

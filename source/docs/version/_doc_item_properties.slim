@@ -1,32 +1,36 @@
-h3 Properties
+div.doc-item__section
+  h3.doc-item__sub-title
+    | Properties
 
-table
-  tr
-    th scope="col"
-      | Name
-    th scope="col"
-      | Type
-    th scope="col"
-      | Default
-    th scope="col"
-      | Description
+  table.doc-item__properties
+    thead
+      tr
+        th scope="col"
+          | Name
+        th scope="col"
+          | Type
+        th scope="col"
+          | Default
+        th scope="col"
+          | Description
 
-  - item.property.each do |property|
-    tr
-      td
-        code
-          = property.name
-      td
-        code
-          = property.type
-      td
-        - if property.default
-          code
-            = property.default
-        - else
-          | -
-      td
-        - if property.description
-          = markdown(property.description)
-        - else
-          | -
+    tbody
+      - item.property.each do |property|
+        tr
+          td
+            code
+              = property.name
+          td
+            code
+              = property.type
+          td
+            - if property.default
+              code
+                = property.default
+            - else
+              | -
+          td
+            - if property.description
+              = markdown(property.description)
+            - else
+              | -

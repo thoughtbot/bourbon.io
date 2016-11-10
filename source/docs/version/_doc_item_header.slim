@@ -2,29 +2,26 @@ h2.doc-item__title
   code
     = item.context.name
 
-span.doc-item__directive-type
-  = item.context.type.capitalize
+= item.context.type.capitalize
 
 - if item.return.present?
-  span.doc-item__returns
-    | Returns:
-    code< #{item.return.type}
+  | Returns:
+  code< #{item.return.type}
 
 - if item.since.present?
   - item.since.each do |release|
-    span.doc-item__since
-      | #{release.version}+
+    | #{release.version}+
 
-div.doc-item__source-link
-  = link_to "View Source", github_file_url(item.file.path, version)
+= link_to "View Source", github_file_url(item.file.path, version)
 
 - if item.description.present?
-  div.doc-item__description
+  div.doc-item__section.doc-item__description
     = markdown(item.description)
 
 - if item.content.present?
-  h3
-    code
-      | @content
-  div.doc-item__content-directive
-    = markdown(item.content)
+  div.doc-item__section
+    h3.doc-item__sub-title
+      code
+        | @content
+    div.doc-item__at-content-description
+      = markdown(item.content)

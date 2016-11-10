@@ -1,20 +1,27 @@
 table {
+  border: $base-border;
   border-collapse: collapse;
-  margin: $small-spacing 0;
-  table-layout: fixed;
+  margin: 0;
   width: 100%;
 }
 
+
 th {
-  border-bottom: 1px solid shade($base-border-color, 25%);
+  background-color: rgba($black, 0.02);
+  border-bottom: $base-border;
+  font-size: modular-scale(-1);
   font-weight: 600;
-  padding: $small-spacing 0;
   text-align: left;
 }
 
 td {
+  background-color: $white;
   border-bottom: $base-border;
-  padding: $small-spacing 0;
+}
+
+th,
+td {
+  padding: modular-scale(-3) modular-scale(-1);
 }
 
 tr,
