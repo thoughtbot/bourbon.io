@@ -1,5 +1,5 @@
 html {
-  color: $base-font-color;
+  color: $color-text-default;
   font-family: $font-family;
   font-size: 100%;
   line-height: $line-height-body;
@@ -31,12 +31,12 @@ p {
 }
 
 a {
-  color: $link-color;
+  color: $color-text-link;
 
   &:active,
   &:focus,
   &:hover {
-    color: $link-color--action;
+    color: $color-text-link-hover;
     transition: color $base-duration $base-timing;
   }
 }
