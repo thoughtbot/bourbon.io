@@ -4,10 +4,6 @@ $bourbon: (
   "rails-asset-pipeline": false,
 );
 
-// Breakpoints
-$medium-screen: 600px;
-$large-screen: 900px;
-
 // Fonts
 $font-family: $font-stack-system;
 $font-family-heading: $font-family;
@@ -49,15 +45,9 @@ $color-text-default: $dark-gray;
 $color-text-link: $color-text-default;
 $color-text-link-hover: $orange;
 
-$action-color: $orange;
-
 // Border
 $base-border-color: $light-gray;
 $base-border: 1px solid $base-border-color;
-
-// Background Colors
-$base-background-color: #fff;
-$secondary-background-color: tint($base-border-color, 75%);
 
 // Animations
 $base-duration: 150ms;
