@@ -1,7 +1,7 @@
 .c-button {
   appearance: none;
   background-color: $action-color;
-  border: 0;
+  border: 1px solid $action-color;
   border-radius: $base-border-radius;
   color: $white;
   cursor: pointer;
@@ -14,14 +14,16 @@
   padding: 0 modular-scale(0);
   text-align: center;
   text-decoration: none;
-  transition: background-color $base-duration $base-timing;
+  transition: background-color $base-duration $base-timing,
+              border-color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
 
   &:hover,
   &:focus {
-    background-color: shade($action-color, 20%);
+    background-color: shade($action-color, 10%);
+    border-color: shade($action-color, 10%);
     color: $white;
   }
 
