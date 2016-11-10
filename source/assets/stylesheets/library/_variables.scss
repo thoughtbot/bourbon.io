@@ -1,9 +1,3 @@
-$bourbon: (
-  "modular-scale-base": 1em,
-  "modular-scale-ratio": $major-second,
-  "rails-asset-pipeline": false,
-);
-
 // Fonts
 $font-family: $font-stack-system;
 $font-family-heading: $font-family;
@@ -50,3 +44,10 @@ $border-radius: 3px;
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+$bourbon: (
+  "contrast-switch-dark-color": #000,
+  "contrast-switch-light-color": #fff,
+  "modular-scale-base": 1em,
+  "modular-scale-ratio": $major-second,
+);
