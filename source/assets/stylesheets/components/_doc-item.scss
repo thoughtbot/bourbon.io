@@ -40,7 +40,7 @@ $_space-l: 2rem;
 
 .doc-item__example {
   border: 1px solid $color-border;
-  border-radius: $base-border-radius;
+  border-radius: $border-radius;
   padding: modular-scale(0);
 
   &:not(:last-child) {

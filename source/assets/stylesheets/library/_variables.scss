@@ -22,8 +22,6 @@ $spacing-large: 1.5rem;
 $spacing-x-large: 2rem;
 $spacing-xx-large: 3rem;
 
-$base-border-radius: 3px;
-
 // Grid
 $neat-grid: (
   "columns": 12,
@@ -47,6 +45,7 @@ $color-text-link-hover: $orange;
 
 // Border
 $color-border: $light-gray;
+$border-radius: 3px;
 
 // Animations
 $base-duration: 150ms;
