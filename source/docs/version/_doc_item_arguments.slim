@@ -8,29 +8,26 @@ div.doc-item__section
         th scope="col"
           | Name
         th scope="col"
-          | Type
-        th scope="col"
-          | Default
-        th scope="col"
           | Description
 
     tbody
       - item.parameter.each do |argument|
         tr
-          td
+          td.u-white-space-pre
             code
               = argument.name
-          td
-            code
-              = argument.type
-          td
-            - if argument.default
-              code
-                = argument.default
-            - else
-              | -
+
           td
             - if argument.description
               = markdown(argument.description)
-            - else
-              | -
+
+            div
+              | Type:
+              code< #{argument.type}
+
+            div
+              - if argument.default
+                | Default:
+                code< #{argument.default}
+              - else
+                | Required

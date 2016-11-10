@@ -8,29 +8,19 @@ div.doc-item__section
         th scope="col"
           | Name
         th scope="col"
-          | Type
-        th scope="col"
-          | Default
-        th scope="col"
           | Description
 
     tbody
       - item.property.each do |property|
         tr
-          td
+          td.u-white-space-pre
             code
               = property.name
-          td
-            code
-              = property.type
-          td
-            - if property.default
-              code
-                = property.default
-            - else
-              | -
+
           td
             - if property.description
               = markdown(property.description)
-            - else
-              | -
+
+            div
+              | Type:
+              code< #{property.type}

@@ -2,7 +2,7 @@ div.doc-item__section
   h3.doc-item__sub-title
     - if item.example.count == 1
       | Example
-    - if item.example.count >= 2
+    - else
       | Examples
 
   - item.example.each do |example|
