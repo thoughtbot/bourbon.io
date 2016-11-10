@@ -17,11 +17,16 @@ $code-font-family: "Input Mono Lt", $font-stack-consolas;
 $base-line-height: 1.6;
 $heading-line-height: 1.2;
 
-// Other Sizes
+// Spacing
+$spacing-xx-small: 0.25rem;
+$spacing-x-small: 0.5rem;
+$spacing-small: 0.75rem;
+$spacing-medium: 1rem;
+$spacing-large: 1.5rem;
+$spacing-x-large: 2rem;
+$spacing-xx-large: 3rem;
+
 $base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
-$base-z-index: 0;
 
 // Grid
 $neat-grid: (

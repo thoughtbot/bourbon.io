@@ -7,10 +7,11 @@
   cursor: pointer;
   display: inline-block;
   font-family: $base-font-family;
+  font-size: modular-scale(0);
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
-  line-height: 1;
-  padding: $small-spacing $base-spacing;
+  line-height: 2;
+  padding: 0 modular-scale(0);
   text-align: center;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;
