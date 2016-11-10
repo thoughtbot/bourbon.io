@@ -1,5 +1,5 @@
 table {
-  border: $base-border;
+  border: 1px solid $color-border;
   border-collapse: collapse;
   margin: 0;
   width: 100%;
@@ -8,7 +8,7 @@ table {
 
 th {
   background-color: rgba($black, 0.02);
-  border-bottom: $base-border;
+  border-bottom: 1px solid $color-border;
   font-size: modular-scale(-1);
   font-weight: 600;
   text-align: left;
@@ -16,7 +16,7 @@ th {
 
 td {
   background-color: $white;
-  border-bottom: $base-border;
+  border-bottom: 1px solid $color-border;
 }
 
 th,

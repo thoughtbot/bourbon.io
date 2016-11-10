@@ -8,7 +8,7 @@ $_space-l: 2rem;
   }
 
   &:not(:last-child) {
-    border-bottom: $base-border;
+    border-bottom: 1px solid $color-border;
     padding-bottom: $_doc-item-spacing;
   }
 }
@@ -39,7 +39,7 @@ $_space-l: 2rem;
 }
 
 .doc-item__example {
-  border: $base-border;
+  border: 1px solid $color-border;
   border-radius: $base-border-radius;
   padding: modular-scale(0);
 

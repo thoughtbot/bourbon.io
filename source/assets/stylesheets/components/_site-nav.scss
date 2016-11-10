@@ -1,6 +1,6 @@
 .c-site-nav {
   @include padding($spacing-large null);
-  border-bottom: $base-border;
+  border-bottom: 1px solid $color-border;
   margin-bottom: $spacing-large;
 
   a {
