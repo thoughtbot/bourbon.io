@@ -8,14 +8,14 @@ $bourbon: (
 $medium-screen: 600px;
 $large-screen: 900px;
 
-// Typography
-$base-font-family: $font-stack-system;
-$heading-font-family: $base-font-family;
-$code-font-family: "Input Mono Lt", $font-stack-consolas;
+// Fonts
+$font-family: $font-stack-system;
+$font-family-heading: $font-family;
+$font-family-code: "Input Mono Lt", $font-stack-consolas;
 
 // Line height
-$base-line-height: 1.6;
-$heading-line-height: 1.2;
+$line-height-body: 1.6;
+$line-height-heading: 1.2;
 
 // Spacing
 $spacing-xx-small: 0.25rem;

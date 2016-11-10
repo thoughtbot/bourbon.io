@@ -1,8 +1,8 @@
 html {
   color: $base-font-color;
-  font-family: $base-font-family;
+  font-family: $font-family;
   font-size: 100%;
-  line-height: $base-line-height;
+  line-height: $line-height-body;
 
   @media (min-width: 38em) {
     font-size: 106.25%;
@@ -19,10 +19,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
+  font-family: $font-family-heading;
   font-size: modular-scale(1);
   font-weight: 600;
-  line-height: $heading-line-height;
+  line-height: $line-height-heading;
   margin: 0;
 }
 
@@ -42,7 +42,7 @@ a {
 }
 
 code {
-  font-family: $code-font-family;
+  font-family: $font-family-code;
 }
 
 pre {
