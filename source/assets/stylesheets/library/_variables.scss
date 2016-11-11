@@ -36,7 +36,8 @@ $orange: #f27126;
 $thoughtbot-red: #ed3e44;
 
 // Text Colors
-$color-text-default: $dark-gray;
+$color-text-default: tint($dark-gray, 15%);
+$color-text-heading: $dark-gray;
 $color-text-link: $color-text-default;
 $color-text-link-hover: $orange;
 
