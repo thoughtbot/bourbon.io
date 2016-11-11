@@ -33,8 +33,7 @@ $_space-l: 2rem;
 }
 
 .doc-item__arguments,
-.doc-item__properties,
-.doc-item__example {
+.doc-item__properties {
   font-size: modular-scale(-1);
 }
 
@@ -44,10 +43,6 @@ $_space-l: 2rem;
 }
 
 .doc-item__example {
-  border: 1px solid $color-border;
-  border-radius: $border-radius;
-  padding: modular-scale(0);
-
   &:not(:last-child) {
     margin-bottom: $_space-m;
   }

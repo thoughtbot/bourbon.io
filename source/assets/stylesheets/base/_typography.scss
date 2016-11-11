@@ -45,6 +45,16 @@ a {
 
 code {
   font-family: $font-family-code;
+  font-weight: $font-weight-regular;
+
+  :not(pre) > & {
+    background-color: shade($white, 2%);
+    border-radius: 0.1875em;
+    box-shadow: 0 0 0 1px rgba($black, 0.1);
+    font-size: modular-scale(-1);
+    margin: 0 0.125em;
+    padding: 0.0625em 0.25em;
+  }
 }
 
 pre {
@@ -52,9 +62,12 @@ pre {
   tab-size: 2;
 
   > code {
+    border: 1px solid $color-border;
     display: block;
+    font-size: modular-scale(-1);
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
+    padding: modular-scale(0);
   }
 }
 
