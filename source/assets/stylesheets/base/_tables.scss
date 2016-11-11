@@ -1,32 +1,26 @@
 table {
-  border: 1px solid $color-border;
   border-collapse: collapse;
   margin: 0;
+  text-align: left;
   width: 100%;
 }
 
-
-th {
-  background-color: rgba($black, 0.02);
-  border-bottom: 1px solid $color-border;
+thead {
   color: $color-text-heading;
   font-size: modular-scale(-1);
   font-weight: $font-weight-bold;
-  text-align: left;
 }
 
-td {
-  background-color: $white;
+tr {
   border-bottom: 1px solid $color-border;
 }
 
 th,
 td {
-  padding: $spacing-x-small $spacing-small;
+  padding: $spacing-x-small $spacing-medium;
+  vertical-align: top;
 }
 
-tr,
-td,
-th {
-  vertical-align: top;
+td {
+  background-color: $white;
 }
