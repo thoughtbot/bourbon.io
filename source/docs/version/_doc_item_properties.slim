@@ -8,6 +8,8 @@ div.doc-item__section
         th scope="col"
           | Name
         th scope="col"
+          | Type
+        th scope="col"
           | Description
 
     tbody
@@ -16,11 +18,9 @@ div.doc-item__section
           td.doc-item__no-wrap-column
             code
               = property.name
-
+          td.doc-item__no-wrap-column
+            code
+              = property.type
           td
             - if property.description
               = markdown(property.description)
-
-            div
-              | Type:
-              code< #{property.type}
