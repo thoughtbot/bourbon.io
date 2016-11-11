@@ -10,7 +10,7 @@ th {
   background-color: rgba($black, 0.02);
   border-bottom: 1px solid $color-border;
   font-size: modular-scale(-1);
-  font-weight: 600;
+  font-weight: $font-weight-bold;
   text-align: left;
 }
 
