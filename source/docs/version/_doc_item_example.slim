@@ -7,8 +7,5 @@ div.doc-item__section
 
   - item.example.each do |example|
     figure.doc-item__example
-      - if example.description.present?
-        figcaption
-          = example.description
       = code("scss") do
         = example.code
