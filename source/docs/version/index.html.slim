@@ -1,13 +1,16 @@
 - content_for(:title)
   | Bourbon - Documentation for Version #{version}
+
 - content_for(:description)
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
+
 - content_for(:preferred_path, "docs/#{version}")
 
-div.p-grid-container
+- content_for(:page_header)
   h1 Documentation
 
+div.p-grid-container
   nav role="navigation"
     ol
       - versions.reverse_each do |version|

@@ -1,7 +1,6 @@
 .c-site-nav {
   @include padding($space-large null);
   border-bottom: 1px solid $color-border-default;
-  margin-bottom: $space-large;
 
   a {
     text-decoration: none;
