@@ -43,6 +43,11 @@ a {
   }
 }
 
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
 code {
   font-family: $font-family-code;
   font-weight: $font-weight-regular;
