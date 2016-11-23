@@ -8,7 +8,7 @@ $_space-l: 2rem;
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $color-border-default;
     padding-bottom: $_doc-item-spacing;
   }
 }

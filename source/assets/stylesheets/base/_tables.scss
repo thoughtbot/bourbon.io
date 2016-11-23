@@ -1,5 +1,5 @@
 table {
-  border: 1px solid $color-border;
+  border: 1px solid $color-border-default;
   border-bottom: 0;
   border-collapse: collapse;
   display: inline-block;
@@ -19,7 +19,7 @@ thead {
 
 th,
 td {
-  border-bottom: 1px solid $color-border;
-  padding: $spacing-x-small $spacing-medium;
+  border-bottom: 1px solid $color-border-default;
+  padding: $space-x-small $space-medium;
   vertical-align: top;
 }

@@ -1,7 +1,7 @@
 $_button-default-background-color: $medium-gray;
 $_button-default-background-color-hover: shade($_button-default-background-color, 10%);
 
-$_button-primary-background-color: $orange;
+$_button-primary-background-color: $bourbon-orange;
 $_button-primary-background-color-hover: shade($_button-primary-background-color, 10%);
 
 .c-button {
@@ -12,7 +12,7 @@ $_button-primary-background-color-hover: shade($_button-primary-background-color
   color: contrast-switch($_button-default-background-color);
   cursor: pointer;
   display: inline-block;
-  font-family: $font-family;
+  font-family: $font-family-default;
   font-size: modular-scale(0);
   -webkit-font-smoothing: antialiased;
   font-weight: $font-weight-bold;

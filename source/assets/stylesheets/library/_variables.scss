@@ -1,29 +1,22 @@
-// Fonts
-$font-family: $font-stack-system;
-$font-family-heading: $font-family;
+// Typography
+$font-family-default: $font-stack-system;
+$font-family-heading: $font-family-default;
 $font-family-code: "Input Mono Lt", $font-stack-consolas;
 
 $font-weight-regular: 400;
 $font-weight-bold: 600;
 
-// Line height
 $line-height-body: 1.6;
 $line-height-heading: 1.2;
 
 // Spacing
-$spacing-xx-small: 0.25rem;
-$spacing-x-small: 0.5rem;
-$spacing-small: 0.75rem;
-$spacing-medium: 1rem;
-$spacing-large: 1.5rem;
-$spacing-x-large: 2rem;
-$spacing-xx-large: 3rem;
-
-// Grid
-$neat-grid: (
-  "columns": 12,
-  "gutter": 2rem,
-);
+$space-xx-small: 0.25rem;
+$space-x-small: 0.5rem;
+$space-small: 0.75rem;
+$space-medium: 1rem;
+$space-large: 1.5rem;
+$space-x-large: 2rem;
+$space-xx-large: 3rem;
 
 // Colors
 $black: #000;
@@ -32,23 +25,22 @@ $medium-gray: #999;
 $light-gray: #ddd;
 $white: #fff;
 
-$orange: #f27126;
-$thoughtbot-red: #ed3e44;
+$bourbon-orange: #f27126;
 
-// Text Colors
 $color-text-default: tint($dark-gray, 15%);
 $color-text-heading: $dark-gray;
 $color-text-link: $color-text-default;
-$color-text-link-hover: $orange;
+$color-text-link-hover: $bourbon-orange;
 
-// Border
-$color-border: $light-gray;
+// Borders
+$color-border-default: $light-gray;
 $border-radius: 3px;
 
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
 
+// Bourbon library settings
 $bourbon: (
   "contrast-switch-dark-color": #000,
   "contrast-switch-light-color": #fff,

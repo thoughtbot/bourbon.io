@@ -1,7 +1,7 @@
 .c-site-nav {
-  @include padding($spacing-large null);
-  border-bottom: 1px solid $color-border;
-  margin-bottom: $spacing-large;
+  @include padding($space-large null);
+  border-bottom: 1px solid $color-border-default;
+  margin-bottom: $space-large;
 
   a {
     text-decoration: none;
@@ -16,7 +16,7 @@
 
 .c-site-nav__link {
   &:not(:last-of-type) {
-    margin-right: $spacing-large;
+    margin-right: $space-large;
   }
 }
 

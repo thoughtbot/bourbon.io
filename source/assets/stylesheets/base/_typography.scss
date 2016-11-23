@@ -1,6 +1,6 @@
 html {
   color: $color-text-default;
-  font-family: $font-family;
+  font-family: $font-family-default;
   font-size: 100%;
   font-weight: $font-weight-regular;
   line-height: $line-height-body;
@@ -67,7 +67,7 @@ pre {
   tab-size: 2;
 
   > code {
-    border: 1px solid $color-border;
+    border: 1px solid $color-border-default;
     display: block;
     font-size: modular-scale(-1);
     -webkit-overflow-scrolling: touch;
@@ -77,9 +77,9 @@ pre {
 }
 
 hr {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $color-border-default;
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: $spacing-medium 0;
+  margin: $space-medium 0;
 }
