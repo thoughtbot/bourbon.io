@@ -27,7 +27,7 @@ $white: #fff;
 
 $bourbon-orange: #f27126;
 
-$color-text-default: tint($dark-gray, 15%);
+$color-text-default: $dark-gray;
 $color-text-heading: $dark-gray;
 $color-text-link: $color-text-default;
 $color-text-link-hover: $bourbon-orange;
