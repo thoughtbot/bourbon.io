@@ -40,7 +40,7 @@ $border-radius: 3px;
 
 // Animations
 $base-duration: 150ms;
-$base-timing: ease;
+$base-timing: $ease-in-out-sine;
 
 // Bourbon library settings
 $bourbon: (
