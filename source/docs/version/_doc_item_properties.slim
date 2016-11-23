@@ -1,26 +1,27 @@
-div.doc-item__section
-  h3.doc-item__sub-title
-    | Properties
+- if item.property.present?
+  div.doc-item__section
+    h3.doc-item__sub-title
+      | Properties
 
-  table.doc-item__properties
-    thead
-      tr
-        th scope="col"
-          | Name
-        th scope="col"
-          | Type
-        th scope="col"
-          | Description
-
-    tbody
-      - item.property.each do |property|
+    table.doc-item__properties
+      thead
         tr
-          td.doc-item__no-wrap-column
-            code
-              = property.name
-          td.doc-item__no-wrap-column
-            code
-              = property.type
-          td.doc-item__mininum-content-width
-            - if property.description
-              = markdown(property.description)
+          th scope="col"
+            | Name
+          th scope="col"
+            | Type
+          th scope="col"
+            | Description
+
+      tbody
+        - item.property.each do |property|
+          tr
+            td.doc-item__no-wrap-column
+              code
+                = property.name
+            td.doc-item__no-wrap-column
+              code
+                = property.type
+            td.doc-item__mininum-content-width
+              - if property.description
+                = markdown(property.description)

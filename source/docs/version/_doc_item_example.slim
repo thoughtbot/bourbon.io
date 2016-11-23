@@ -1,11 +1,12 @@
-div.doc-item__section
-  h3.doc-item__sub-title
-    - if item.example.count == 1
-      | Example
-    - else
-      | Examples
+- if item.example.present?
+  div.doc-item__section
+    h3.doc-item__sub-title
+      - if item.example.count == 1
+        | Example
+      - else
+        | Examples
 
-  - item.example.each do |example|
-    figure.doc-item__example
-      = code("scss") do
-        = example.code
+    - item.example.each do |example|
+      figure.doc-item__example
+        = code("scss") do
+          = example.code

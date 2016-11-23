@@ -1,37 +1,38 @@
-div.doc-item__section
-  h3.doc-item__sub-title
-    | Arguments
+- if item.parameter.present?
+  div.doc-item__section
+    h3.doc-item__sub-title
+      | Arguments
 
-  table.doc-item__arguments
-    thead
-      tr
-        th scope="col"
-          | Name
-        th scope="col"
-          | Type
-        th scope="col"
-          | Default
-        th scope="col"
-          | Description
-
-    tbody
-      - item.parameter.each do |argument|
+    table.doc-item__arguments
+      thead
         tr
-          td.doc-item__no-wrap-column
-            code
-              | $
-              = argument.name
-          td.doc-item__no-wrap-column
-            code
-              = argument.type
-          td.doc-item__no-wrap-column
-            - if argument.default
+          th scope="col"
+            | Name
+          th scope="col"
+            | Type
+          th scope="col"
+            | Default
+          th scope="col"
+            | Description
+
+      tbody
+        - item.parameter.each do |argument|
+          tr
+            td.doc-item__no-wrap-column
               code
-                = argument.default
-            - else
-              | -
-          td.doc-item__mininum-content-width
-            - if argument.description
-              = markdown(argument.description)
-            - else
-              | -
+                | $
+                = argument.name
+            td.doc-item__no-wrap-column
+              code
+                = argument.type
+            td.doc-item__no-wrap-column
+              - if argument.default
+                code
+                  = argument.default
+              - else
+                | -
+            td.doc-item__mininum-content-width
+              - if argument.description
+                = markdown(argument.description)
+              - else
+                | -
