@@ -2,10 +2,14 @@ general:
   artifacts:
     - "tmp"
 
+machine:
+  node:
+    version: 6.1.0
+
 dependencies:
   post:
     - npm install -g accesslint-cli
-    - gem install accesslint-ci
+    - gem install accesslint-ci -v 0.2.5
 
 compile:
   override:
