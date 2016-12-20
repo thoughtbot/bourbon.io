@@ -9,7 +9,6 @@ machine:
 dependencies:
   post:
     - npm install -g accesslint-cli
-    - gem install accesslint-ci -v 0.2.5
 
 compile:
   override:
@@ -19,4 +18,4 @@ test:
   override:
     - |
       bundle exec middleman server --daemon --port=4567 --watcher-disable && \
-      accesslint-ci scan http://localhost:4567
+      bundle exec accesslint-ci scan http://localhost:4567
