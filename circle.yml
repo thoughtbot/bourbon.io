@@ -15,7 +15,7 @@ compile:
     - bundle exec middleman build --verbose
 
 test:
-  override:
+  post:
     - |
       bundle exec middleman server --daemon --port=4567 --watcher-disable && \
       bundle exec accesslint-ci scan http://localhost:4567
