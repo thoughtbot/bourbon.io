@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "sassdoc": "^2.1.20"
+    "sassdoc": "^2.2.0"
   },
   "name": "bourbon.io",
   "repository": {
