@@ -162,14 +162,14 @@ DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   middleman-livereload (~> 3.4)
-  middleman-minify-html
+  middleman-minify-html (~> 3.4)
   middleman-syntax (~> 3.0)
   neat (~> 2.0)
   rake (~> 12.0)
   redcarpet (~> 3.4)
   sassc (~> 1.11)
   scss_lint (= 0.52.0)
-  slim
+  slim (~> 3.0)
 
 RUBY VERSION
    ruby 2.3.1p112
