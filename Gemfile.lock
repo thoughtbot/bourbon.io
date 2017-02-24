@@ -96,9 +96,9 @@ GEM
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
-    middleman-syntax (2.1.0)
+    middleman-syntax (3.0.0)
       middleman-core (>= 3.2)
-      rouge (~> 1.0)
+      rouge (~> 2.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -127,7 +127,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rouge (1.11.1)
+    rouge (2.0.7)
     sass (3.4.23)
     sassc (1.10.0)
       bundler
@@ -163,7 +163,7 @@ DEPENDENCIES
   middleman-autoprefixer (~> 2.7)
   middleman-livereload (~> 3.4)
   middleman-minify-html
-  middleman-syntax
+  middleman-syntax (~> 3.0)
   neat (= 2.0.0.beta.1)
   rake
   redcarpet
