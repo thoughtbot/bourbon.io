@@ -1282,10 +1282,10 @@
     "context": {
       "type": "mixin",
       "name": "hide-visually",
-      "code": "\n  @if $toggle == \"hide\" {\n    border: 0;\n    clip: rect(1px, 1px, 1px, 1px);\n    clip-path: circle(1% at 1% 1%);\n    height: 1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    white-space: nowrap;\n    width: 1px;\n  } @else if $toggle == \"unhide\" {\n    clip: auto;\n    clip-path: none;\n    height: auto;\n    overflow: visible;\n    position: static;\n    white-space: inherit;\n    width: auto;\n  }\n",
+      "code": "\n  @if not index(\"hide\" \"unhide\", $toggle) {\n    @error \"`#{$toggle}` is not a valid value for the `$toggle` argument in \" +\n           \"the `hide-visually` mixin. Must be either `hide` or `unhide`.\";\n  } @else if $toggle == \"hide\" {\n    border: 0;\n    clip: rect(1px, 1px, 1px, 1px);\n    clip-path: inset(100%);\n    height: 1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    white-space: nowrap;\n    width: 1px;\n  } @else if $toggle == \"unhide\" {\n    clip: auto;\n    clip-path: none;\n    height: auto;\n    overflow: visible;\n    position: static;\n    white-space: inherit;\n    width: auto;\n  }\n",
       "line": {
         "start": 47,
-        "end": 67
+        "end": 70
       }
     },
     "link": [
@@ -1305,7 +1305,7 @@
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  @include hide-visually;\n\n  &:active,\n  &:focus {\n    @include hide-visually(unhide);\n  }\n}\n\n// CSS Output\n.element {\n  border: 0;\n  clip: rect(1px, 1px, 1px, 1px);\n  clip-path: circle(1% at 1% 1%);\n  height: 1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.hide-visually:active,\n.hide-visually:focus {\n  clip: auto;\n  clip-path: none;\n  height: auto;\n  overflow: visible;\n  position: static;\n  width: auto;\n}"
+        "code": ".element {\n  @include hide-visually;\n\n  &:active,\n  &:focus {\n    @include hide-visually(\"unhide\");\n  }\n}\n\n// CSS Output\n.element {\n  border: 0;\n  clip: rect(1px, 1px, 1px, 1px);\n  clip-path: inset(100%);\n  height: 1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.hide-visually:active,\n.hide-visually:focus {\n  clip: auto;\n  clip-path: none;\n  height: auto;\n  overflow: visible;\n  position: static;\n  width: auto;\n}"
       }
     ],
     "since": [
@@ -1318,6 +1318,9 @@
       "undefined"
     ],
     "require": [],
+    "throw": [
+      "`#{$toggle}` is not a valid value for the `$toggle` argument in "
+    ],
     "file": {
       "path": "bourbon/library/_hide-visually.scss",
       "name": "_hide-visually.scss"
@@ -2079,32 +2082,28 @@
       {
         "type": "string",
         "name": "direction",
-        "default": "up",
         "description": "The direction the triangle should point. Accepts `up`, `up-right`,\n  `right`, `down-right`, `down`, `down-left`, `left` or `up-left`.\n"
-      },
-      {
-        "type": "color",
-        "name": "color",
-        "default": "currentColor",
-        "description": "Color of the triangle.\n"
       },
       {
         "type": "number (with unit)",
         "name": "width",
-        "default": "1rem",
         "description": "Width of the triangle.\n"
       },
       {
         "type": "number (with unit)",
         "name": "height",
-        "default": "($width / 2)",
         "description": "Height of the triangle.\n"
+      },
+      {
+        "type": "color",
+        "name": "color",
+        "description": "Color of the triangle.\n"
       }
     ],
     "example": [
       {
         "type": "scss",
-        "code": ".element {\n  &::before {\n    @include triangle(up, #b25c9c, 2rem);\n    content: \"\";\n  }\n}\n\n// CSS Output\n.element::before {\n  border-style: solid;\n  height: 0;\n  width: 0;\n  border-color: transparent transparent #b25c9c transparent;\n  border-width: 0 1rem 1rem;\n  content: \"\";\n}"
+        "code": ".element {\n  &::before {\n    @include triangle(\"up\", 2rem, 1rem, #b25c9c);\n    content: \"\";\n  }\n}\n\n// CSS Output\n.element::before {\n  border-style: solid;\n  height: 0;\n  width: 0;\n  border-color: transparent transparent #b25c9c;\n  border-width: 0 1rem 1rem;\n  content: \"\";\n}"
       }
     ],
     "access": "public",
@@ -2931,6 +2930,30 @@
             "end": 24
           }
         }
+      },
+      {
+        "description": "Programatically determines the lightness of a color.\n\n",
+        "context": {
+          "type": "function",
+          "name": "_lightness",
+          "code": "\n  $-local-red-raw: red(rgba($hex-color, 1));\n  $-local-green-raw: green(rgba($hex-color, 1));\n  $-local-blue-raw: blue(rgba($hex-color, 1));\n\n  $-local-red: _gamma($-local-red-raw / 255);\n  $-local-green: _gamma($-local-green-raw / 255);\n  $-local-blue: _gamma($-local-blue-raw / 255);\n\n  @return $-local-red * 0.2126 + $-local-green * 0.7152 + $-local-blue * 0.0722;\n",
+          "line": {
+            "start": 14,
+            "end": 24
+          }
+        }
+      },
+      {
+        "description": "Programatically determines the lightness of a color.\n\n",
+        "context": {
+          "type": "function",
+          "name": "_lightness",
+          "code": "\n  $-local-red-raw: red(rgba($hex-color, 1));\n  $-local-green-raw: green(rgba($hex-color, 1));\n  $-local-blue-raw: blue(rgba($hex-color, 1));\n\n  $-local-red: _gamma($-local-red-raw / 255);\n  $-local-green: _gamma($-local-green-raw / 255);\n  $-local-blue: _gamma($-local-blue-raw / 255);\n\n  @return $-local-red * 0.2126 + $-local-green * 0.7152 + $-local-blue * 0.0722;\n",
+          "line": {
+            "start": 14,
+            "end": 24
+          }
+        }
       }
     ]
   },
@@ -2969,6 +2992,14 @@
       "undefined"
     ],
     "require": [
+      {
+        "type": "function",
+        "name": "_gamma"
+      },
+      {
+        "type": "function",
+        "name": "_gamma"
+      },
       {
         "type": "function",
         "name": "_gamma"
