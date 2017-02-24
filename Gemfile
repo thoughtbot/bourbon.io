@@ -4,7 +4,7 @@ ruby "2.3.1"
 
 gem "accesslint-ci", "0.2.6"
 gem "bourbon", "~> 5.0.0.beta.7"
-gem "builder"
+gem "builder", "~> 3.2"
 gem "middleman", "~> 4.2"
 gem "middleman-autoprefixer", "~> 2.7"
 gem "middleman-livereload", "~> 3.4"
