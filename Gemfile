@@ -13,6 +13,6 @@ gem "middleman-syntax", "~> 3.0"
 gem "neat", "~> 2.0"
 gem "rake", "~> 12.0"
 gem "redcarpet", "~> 3.4"
-gem "sassc"
+gem "sassc", "~> 1.11"
 gem "scss_lint", "0.52.0", require: false
 gem "slim"
