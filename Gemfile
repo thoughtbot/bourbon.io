@@ -11,7 +11,7 @@ gem "middleman-livereload", "~> 3.4"
 gem "middleman-minify-html"
 gem "middleman-syntax", "~> 3.0"
 gem "neat", "~> 2.0"
-gem "rake"
+gem "rake", "~> 12.0"
 gem "redcarpet"
 gem "sassc"
 gem "scss_lint", "0.52.0", require: false
