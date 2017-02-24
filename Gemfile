@@ -14,5 +14,5 @@ gem "neat", "~> 2.0"
 gem "rake"
 gem "redcarpet"
 gem "sassc"
-gem "scss_lint", "0.49.0", require: false
+gem "scss_lint", "0.52.0", require: false
 gem "slim"
