@@ -1,0 +1,11 @@
+head
+  meta charset="utf-8"
+  meta(name="viewport"
+       content="width=device-width, initial-scale=1, shrink-to-fit=no")
+  meta name="description" content=page_description
+  title=page_title
+  - if content_for?(:preferred_path)
+    link rel="canonical" href=preferred_url
+  = stylesheet_link_tag "main"
+  = stylesheet_link_tag \
+    "https://cloud.typenetwork.com/projects/218/fontface.css"

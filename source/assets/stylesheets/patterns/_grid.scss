@@ -1,0 +1,29 @@
+$neat-grid: (
+  "columns": 12,
+  "gutter": $space-large,
+);
+
+$medium-screen: 50em;
+
+
+
+
+.p-grid-container {
+  @include grid-container;
+  @include margin(null auto);
+  max-width: 60rem;
+}
+
+@for $i from 1 through map-get($neat-grid, "columns") {
+  .p-grid__column--#{$i} {
+    @include grid-column($i);
+  }
+}
+
+@media (min-width: $medium-screen) {
+  @for $i from 1 through map-get($neat-grid, "columns") {
+    .p-grid__column--#{$i}\@medium {
+      @include grid-column($i);
+    }
+  }
+}

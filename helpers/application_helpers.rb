@@ -7,10 +7,10 @@ module ApplicationHelpers
     renderer = Redcarpet::Render::HTML
     markdown = Redcarpet::Markdown.new(
       renderer,
-      autolink: true,
       fenced_code_blocks: true,
       footnotes: true,
       highlight: true,
+      no_intra_emphasis: true,
       smartypants: true,
       strikethrough: true,
       tables: true,
@@ -24,7 +24,13 @@ module ApplicationHelpers
   end
 
   def page_title
-    yield_content(:title) || data.site.title
+    title = "Bourbon - "
+
+    if content_for?(:title)
+      title << yield_content(:title)
+    else
+      title << data.site.title
+    end
   end
 
   def preferred_url
@@ -34,7 +40,9 @@ module ApplicationHelpers
 
   def svg(name)
     root = Middleman::Application.root
-    file_path = "#{root}/source/images/#{name}.svg"
+    foo = config.images_dir
+    file_path = "#{root}/source/#{foo}/#{name}.svg"
+
     return File.read(file_path) if File.exists?(file_path)
     "(not found)"
   end

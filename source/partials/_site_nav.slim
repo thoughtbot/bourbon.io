@@ -1,17 +1,26 @@
-nav.c-site-nav role="navigation"
-  div.p-grid-container.u-flex.u-flex-items-center
-    = link_to "Bourbon",
-              "/",
-              class: "c-site-nav__logo"
+nav.c-site-nav.c-site-frame__header role="navigation"
+  div.p-grid-container
+    div.p-grid__column--12.u-flex
+      = link_to "Bourbon",
+                "/",
+                class: "c-site-nav__logo"
 
-    = link_to "Documentation",
-              "/docs/latest/",
-              class: "c-site-nav__link"
+      = link_to "Documentation",
+                "/docs/latest/",
+                class: "c-site-nav__link"
 
-    = link_to "Change Log",
-              "/change-log/",
-              class: "c-site-nav__link"
+      / = link_to "Community",
+      /           "/community/",
+      /           class: "c-site-nav__link"
 
-    = link_to "GitHub",
-              "https://github.com/thoughtbot/bourbon/",
-              class: "c-site-nav__link"
+      = link_to "GitHub",
+                "https://github.com/thoughtbot/bourbon/",
+                class: "c-site-nav__link"
+
+      = link_to "Twitter",
+                "https://twitter.com/bourbonsass/",
+                class: "c-site-nav__link"
+
+      = link_to "Stack Overflow",
+                "https://stackoverflow.com/questions/tagged/bourbon/",
+                class: "c-site-nav__link"

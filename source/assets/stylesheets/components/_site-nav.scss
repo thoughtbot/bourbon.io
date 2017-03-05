@@ -1,16 +1,7 @@
 .c-site-nav {
-  @include padding($space-large null);
+  @include padding($space-medium null);
   border-bottom: 1px solid $color-border-default;
-
-  a {
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-      text-decoration: underline;
-      transition: text-decoration $base-duration $base-timing;
-    }
-  }
+  font-size: modular-scale(-1);
 }
 
 .c-site-nav__link {

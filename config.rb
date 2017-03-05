@@ -3,26 +3,28 @@ require "lib/version"
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
-activate :directory_indexes
 activate :syntax do |syntax|
   syntax.css_class = "syntax-highlight"
 end
 
 set :css_dir, "assets/stylesheets"
+set :images_dir, "assets/images"
 set :markdown_engine, :redcarpet
 set :markdown,
-  autolink: true,
   fenced_code_blocks: true,
   footnotes: true,
   highlight: true,
+  no_intra_emphasis: true,
   smartypants: true,
   strikethrough: true,
   tables: true,
   with_toc_data: true
 
-page "/*.xml", layout: false
+page "/", layout: "home"
 page "/*.json", layout: false
 page "/*.txt", layout: false
+page "/*.xml", layout: false
+page "/docs/*", layout: "docs"
 
 versions = Dir.glob("./data/*.json").map { |version| Version.new(version) }
 latest_version = versions.max { |a, b| a.to_s <=> b.to_s }
@@ -51,8 +53,6 @@ proxy(
 )
 
 proxy("_redirects", "netlify_redirects", ignore: true)
-
-redirect "docs/index.html", to: "/docs/latest"
 
 configure :development do
   activate :livereload do |reload|

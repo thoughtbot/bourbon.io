@@ -1,4 +1,8 @@
-- if content_for?(:page_header)
-  header.c-page-header role="banner"
-    div.p-grid-container.u-flex.u-flex-items-center
-      = yield_content(:page_header)
+header.c-page-header.c-site-frame__page-header role="banner"
+  div.p-grid-container
+    div.p-grid__column--12
+      h1
+        = yield_content(:title)
+
+      - if content_for?(:page_header)
+        = yield_content(:page_header)

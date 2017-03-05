@@ -12,6 +12,10 @@ html {
   @media (min-width: 65em) {
     font-size: 112.5%;
   }
+
+  @media (min-width: 100em) {
+    font-size: 118.75%;
+  }
 }
 
 h1,
@@ -34,6 +38,7 @@ p {
 
 a {
   color: $color-text-link;
+  text-decoration-skip: ink;
 
   &:active,
   &:focus,
@@ -45,6 +50,11 @@ a {
 
 b,
 strong {
+  font-weight: $font-weight-bold;
+}
+
+dt {
+  color: $color-text-heading;
   font-weight: $font-weight-bold;
 }
 

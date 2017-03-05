@@ -1,5 +1,5 @@
 - content_for(:title)
-  | Bourbon - Documentation for Version #{version}
+  | Documentation
 
 - content_for(:description)
   | Official documentation and technical reference for Bourbon #{version}, a
@@ -7,11 +7,13 @@
 
 - content_for(:preferred_path, "docs/#{version}")
 
-- content_for(:page_header)
-  h1 Documentation
-
-div.p-grid-container
+- content_for(:sidebar)
   nav role="navigation"
+    = link_to "Installation", "/docs/installation/"
+    = link_to "Change Log", "/docs/change-log/"
+    = link_to "Migrating from v4 to v5", "/docs/migrating-from-v4-to-v5/"
+    = link_to "Reference", "/docs/latest/"
+
     ol
       - versions.reverse_each do |version|
         li
@@ -19,23 +21,16 @@ div.p-grid-container
       li
         = link_to "4.3.3", "/docs/4.3.3/"
 
-  nav role="navigation"
-    = link_to "Installation", "/docs/installation/"
-
-    = link_to "Upgrade to v5", "/docs/upgrade-from-v4-to-v5/"
-
     ol
       - version.doc_items.each do |item|
         li
           = link_to "##{item.context.name.parameterize}" do
-            code
-              = item.context.name
+            = item.context.name
 
-  section
-    - version.doc_items.each do |item|
-      article.c-doc-item id="#{item.context.name.parameterize}"
-        = partial "doc_item_header",
-                  locals: { item: item, version: version }
-        = partial "doc_item_arguments", locals: { item: item }
-        = partial "doc_item_properties", locals: { item: item }
-        = partial "doc_item_example", locals: { item: item }
+- version.doc_items.each do |item|
+  article.c-doc-item id="#{item.context.name.parameterize}"
+    = partial "doc_item_header",
+              locals: { item: item, version: version }
+    = partial "doc_item_arguments", locals: { item: item }
+    = partial "doc_item_properties", locals: { item: item }
+    = partial "doc_item_example", locals: { item: item }
