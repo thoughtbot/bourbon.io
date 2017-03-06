@@ -217,7 +217,8 @@ project adheres to [Semantic Versioning](http://semver.org).
 - The `$monospace` variable has been removed.
 - The `box-sizing` mixin has been removed.
 - The `button` mixin has been removed.
-- The `em` and `rem` mixins have been removed.
+- The `em` and `rem` functions have been removed.
+  - [See the discussion on why these were removed][em-rem-issue].
 - The `flex-grid` function has been removed.
 - The `flex-gutter` function has been removed.
 - The `golden-ratio` function has been removed.
@@ -226,6 +227,113 @@ project adheres to [Semantic Versioning](http://semver.org).
 - The `retina-image` mixin has been removed.
 - The `triangle` mixin has been removed.
 
-[5.0.0.alpha.0]: https://github.com/thoughtbot/bourbon/compare/v4.2.6...v5.0.0.alpha.0
+[5.0.0.alpha.0]: https://github.com/thoughtbot/bourbon/compare/v4.3.3...v5.0.0.alpha.0
 [3cf106a]: https://github.com/thoughtbot/bourbon/commit/3cf106a210c1bae7765e6193f62310f95fdee0b7
 [Autoprefixer]: https://github.com/postcss/autoprefixer
+[em-rem-issue]: https://github.com/thoughtbot/bourbon/issues/691
+
+## [4.3.3] - 2017-02-23
+
+### Fixed
+
+- Internal Bourbon deprecation warnings for `is-size` and `is-length` will no
+  longer be thrown when using the `size` mixin.
+
+[4.3.3]: https://github.com/thoughtbot/bourbon/compare/v4.3.2...v4.3.3
+
+## [4.3.2] - 2017-02-10
+
+### Fixed
+
+- Internal Bourbon deprecation warnings for `unpack` and `is-length` will no
+  longer be thrown when using the `position` mixin. ([#1004])
+
+[4.3.2]: https://github.com/thoughtbot/bourbon/compare/v4.3.1...v4.3.2
+[#1004]: https://github.com/thoughtbot/bourbon/pull/1004
+
+## [4.3.1] - 2017-02-07
+
+### Fixed
+
+- Internal Bourbon deprecation warnings will no longer be thrown. ([#1002])
+
+[4.3.1]: https://github.com/thoughtbot/bourbon/compare/v4.3.0...v4.3.1
+[#1002]: https://github.com/thoughtbot/bourbon/pull/1002
+
+## [4.3.0] - 2017-02-03
+
+### Added
+
+- Added deprecation warnings for features that will be removed in 5.0.0. Please
+  reference our [change log], which includes a list of these changes and
+  removals. ([#891])
+
+[4.3.0]: https://github.com/thoughtbot/bourbon/compare/v4.2.7...v4.3.0
+[change log]: https://github.com/thoughtbot/bourbon/blob/master/CHANGELOG.md
+[#891]: https://github.com/thoughtbot/bourbon/pull/891
+
+## [4.2.7] - 2016-04-15
+
+### Fixed
+
+- Fixed a Sass deprecation warning when using the `background` and
+  `background-image` mixins.
+
+[4.2.7]: https://github.com/thoughtbot/bourbon/compare/v4.2.6...v4.2.7
+
+## [4.2.6] - 2015-10-17
+
+### Fixed
+
+- Fixed a bug with eyeglass support.
+
+[4.2.6]: https://github.com/thoughtbot/bourbon/compare/v4.2.5...v4.2.6
+
+## [4.2.5] - 2015-09-17
+
+## Added
+
+- Support for [eyeglass].
+
+[4.2.5]: https://github.com/thoughtbot/bourbon/compare/v4.2.4...v4.2.5
+[eyeglass]: http://eyeglass.rocks/
+
+## [4.2.4] - 2015-08-21
+
+## Changed
+
+- [`$all-text-inputs`] now accounts for `input`’s that don’t have a `type`
+  attribute specified, as they default to `type="text"`.
+  (https://github.com/thoughtbot/bourbon/commit/8e7e36e01c47194d83951fb6315c5b26a008f2b7)
+- The [`bourbon` npm package] now has a proper load path.
+  (https://github.com/thoughtbot/bourbon/commit/36c2d5576f1fe9dbdfd9543e15064c5a4a16343e)
+
+[4.2.4]: https://github.com/thoughtbot/bourbon/compare/v4.2.3...v4.2.4
+[`$all-text-inputs`]: http://bourbon.io/docs/#text-inputs
+[`bourbon` npm package]: https://npmjs.com/package/bourbon
+
+## [4.2.3] - 2015-05-18
+
+## Fixed
+
+- Fixed an issue with the `font-face` mixin outputting an extraneous commas when
+  using LibSass set to compressed output.
+
+[4.2.3]: https://github.com/thoughtbot/bourbon/compare/v4.2.2...v4.2.3
+
+## [4.2.2] - 2015-04-01
+
+## Fixed
+
+- The `flex-direction` mixin now properly outputs box-direction (old syntax) if
+  set to normal.
+
+[4.2.2]: https://github.com/thoughtbot/bourbon/compare/v4.2.1...v4.2.2
+
+## [4.2.1] - 2015-02-23
+
+## Fixed
+
+- Restored the `app/` directory for npm.
+
+[4.2.1]: https://github.com/thoughtbot/bourbon/compare/v4.2.0...v4.2.1
