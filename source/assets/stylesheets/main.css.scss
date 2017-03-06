@@ -1,10 +1,30 @@
 @import "bourbon";
 @import "neat";
 
-@import "reset/reset";
+@import "reset/normalize";
 
-@import "library/library";
-@import "base/base";
-@import "patterns/patterns";
-@import "components/components";
-@import "utilities/utilities";
+@import "library/variables";
+
+@import "base/forms";
+@import "base/layout";
+@import "base/media";
+@import "base/tables";
+@import "base/typography";
+
+@import "patterns/grid";
+@import "patterns/list-bare";
+
+@import "components/button";
+@import "components/doc-item";
+@import "components/page-header";
+@import "components/site-footer";
+@import "components/site-frame";
+@import "components/site-nav";
+
+@import "utilities/flex";
+
+.sidebar {
+  a {
+    display: block;
+  }
+}
