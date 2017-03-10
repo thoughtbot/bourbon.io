@@ -11,8 +11,3 @@ bundle check || bundle install
 
 # Set up Node dependencies
 npm install
-
-# Set up configurable environment variables
-if [ ! -f .env ]; then
-  cp .env.sample .env
-fi

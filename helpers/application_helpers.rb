@@ -24,26 +24,23 @@ module ApplicationHelpers
   end
 
   def page_title
-    title = "Bourbon - "
-
     if content_for?(:title)
-      title << yield_content(:title)
+      [data.site.name, yield_content(:title)].join(" - ")
     else
-      title << data.site.title
+      [data.site.name, data.site.tagline].join(" - ")
     end
   end
 
   def preferred_url
     path = yield_content :preferred_path
-    File.join(ENV["SITE_URL"], path, "/")
+    URI.join(data.site.url, path)
   end
 
   def svg(name)
     root = Middleman::Application.root
-    foo = config.images_dir
-    file_path = "#{root}/source/#{foo}/#{name}.svg"
+    file_path = "#{root}/source/#{config[:images_dir]}/#{name}.svg"
 
     return File.read(file_path) if File.exists?(file_path)
-    "(not found)"
+    "(SVG not found)"
   end
 end
