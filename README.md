@@ -12,25 +12,25 @@ You can find the [Bourbon Sass library source code here][library repo].
 
 1. Get the code:
 
-  ```
-  git clone https://github.com/thoughtbot/bourbon.io.git
-  ```
+    ```
+    git clone https://github.com/thoughtbot/bourbon.io.git
+    ```
 
 1. Set up your machine:
 
-  ```
-  bin/setup
-  ```
+    ```
+    bin/setup
+    ```
 
 1. Run the app:
 
-  ```
-  bundle exec middleman
-  ```
+    ```
+    bundle exec middleman
+    ```
 
-  ```
-  open http://localhost:4567
-  ```
+    ```
+    open http://localhost:4567
+    ```
 
 ## Generate Documentation
 
@@ -45,16 +45,16 @@ via [a static page][v4], pulled from the previous website.
 
 To generate documentation for the gem version specified in the `Gemfile`, run:
 
-  ```
-  rake generate
-  ```
+```
+rake generate
+```
 
 You can also generate documentation for the gem version from GitHub by using the
 `generate_for` command:
 
-  ```
-  rake generate_for 5.0.0
-  ```
+```
+rake generate_for 5.0.0
+```
 
 [SassDoc]: http://sassdoc.com/
 [Bourbon’s source]: https://github.com/thoughtbot/bourbon/
