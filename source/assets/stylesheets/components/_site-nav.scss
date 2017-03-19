@@ -2,6 +2,10 @@
   @include padding($space-medium null);
   border-bottom: 1px solid $color-border-default;
   font-size: modular-scale(-1);
+
+  [aria-current]:not([aria-current="false"]) {
+    font-weight: $font-weight-bold;
+  }
 }
 
 .c-site-nav__link {
