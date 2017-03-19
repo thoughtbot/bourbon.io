@@ -1,4 +1,4 @@
-# Bourbon Website
+### Bourbon Website
 
 This is the source code for the [Bourbon website]. It’s built with [Middleman].
 
