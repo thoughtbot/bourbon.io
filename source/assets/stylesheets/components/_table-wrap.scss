@@ -1,0 +1,6 @@
+.table-wrap {
+  margin-bottom: -($space-x-small);
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  padding-bottom: $space-x-small;
+}

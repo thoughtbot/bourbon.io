@@ -1,25 +1,30 @@
 table {
-  border: 1px solid $color-border-default;
-  border-bottom: 0;
   border-collapse: collapse;
-  display: inline-block;
   margin: 0;
-  max-width: 100%;
-  -webkit-overflow-scrolling: touch;
-  overflow-x: auto;
   text-align: left;
+  width: 100%;
 }
 
-tfoot,
-thead {
+thead,
+tfoot {
   color: $color-text-heading;
   font-size: modular-scale(-1);
   font-weight: $font-weight-bold;
 }
 
+tr {
+  border-bottom: 1px solid $color-border-default;
+}
+
 th,
 td {
-  border-bottom: 1px solid $color-border-default;
-  padding: $space-x-small $space-medium;
   vertical-align: top;
+
+  thead & {
+    padding: 0 $space-small $space-small 0;
+  }
+
+  tbody & {
+    padding: $space-small $space-small $space-small 0;
+  }
 }

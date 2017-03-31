@@ -59,16 +59,14 @@ dt {
 }
 
 code {
+  background-color: shade($white, 2%);
+  border-radius: 0.1875em;
+  box-shadow: 0 0 0 1px rgba($black, 0.1);
   font-family: $font-family-code;
   font-weight: $font-weight-regular;
-
-  :not(pre) > & {
-    background-color: shade($white, 2%);
-    border-radius: 0.1875em;
-    box-shadow: 0 0 0 1px rgba($black, 0.1);
-    margin: 0 0.125em;
-    padding: 0.0625em 0.25em;
-  }
+  margin: 0 0.125em;
+  padding: 0.0625em 0.25em;
+  white-space: nowrap;
 }
 
 pre {
@@ -76,11 +74,34 @@ pre {
   tab-size: 2;
 
   > code {
+    background-color: transparent;
     border: 1px solid $color-border-default;
+    border-radius: 0;
+    box-shadow: none;
     display: block;
+    margin: 0;
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
     padding: modular-scale(0);
+    white-space: pre;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  > code {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-weight: $font-weight-regular;
+    margin: 0;
+    padding: 0;
+    white-space: normal;
   }
 }
 
