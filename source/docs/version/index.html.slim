@@ -34,3 +34,4 @@
     = partial "doc_item_arguments", locals: { item: item }
     = partial "doc_item_properties", locals: { item: item }
     = partial "doc_item_example", locals: { item: item }
+    = code_demo(item.context.name)
