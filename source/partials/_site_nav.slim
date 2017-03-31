@@ -1,29 +1,29 @@
 nav.c-site-nav.c-site-frame__header role="navigation"
   div.p-grid-container
-    div.p-grid__column--12.u-flex
-      = current_link_to "Bourbon",
-                        "/",
-                        class: "c-site-nav__logo"
+    div.p-grid__column--12.u-flex.u-flex-items-center
+      = current_link_to "Bourbon", "/"
 
       = current_link_to "Documentation",
-                        "/docs/latest/",
-                        class: "c-site-nav__link"
+        "/docs/latest/",
+        class: "c-site-nav__link u-margin-left-auto"
 
-      / = current_link_to "Community",
-      /                   "/community/",
-      /                   class: "c-site-nav__link"
+      = link_to "https://stackoverflow.com/questions/tagged/bourbon/",
+        class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
+        "aria-current": "false" do
 
-      = link_to "GitHub",
-                "https://github.com/thoughtbot/bourbon/",
-                class: "c-site-nav__link",
-                "aria-current": "false"
+        svg class="icon" title="Twitter"
+          use xlink:href="/assets/images/icons.svg#twitter"
 
-      = link_to "Twitter",
-                "https://twitter.com/bourbonsass/",
-                class: "c-site-nav__link",
-                "aria-current": "false"
+      = link_to "https://twitter.com/bourbonsass/",
+        class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
+        "aria-current": "false" do
 
-      = link_to "Stack Overflow",
-                "https://stackoverflow.com/questions/tagged/bourbon/",
-                class: "c-site-nav__link",
-                "aria-current": "false"
+        svg class="icon" title="Stack Overflow"
+          use xlink:href="/assets/images/icons.svg#stack-overflow"
+
+      = link_to "https://github.com/thoughtbot/bourbon/",
+        class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
+        "aria-current": "false" do
+
+        svg class="icon" title="GitHub"
+          use xlink:href="/assets/images/icons.svg#github"
