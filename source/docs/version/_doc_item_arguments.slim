@@ -12,8 +12,6 @@
             th scope="col"
               | Type
             th scope="col"
-              | Default
-            th scope="col"
               | Description
 
         tbody
@@ -21,17 +19,14 @@
             tr
               th scope="row"
                 code
-                  = argument.name.prepend("$")
+                  - if argument.default
+                    => argument.name.prepend("$")
+                    | (#{argument.default})
+                  - else
+                    = argument.name.prepend("$")
               td
                 code
                   = argument.type
-              td
-                - if argument.default
-                  code
-                    = argument.default
-                - else
-                  span aria-label="No default"
-                    | &mdash;
               td.c-doc-item__mininum-content-width
                 - if argument.description
                   = markdown(argument.description)
