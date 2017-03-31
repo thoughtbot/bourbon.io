@@ -1,0 +1,22 @@
+.c-metadata-list {
+  @include padding($space-small null);
+  align-items: baseline;
+  border-bottom: 1px solid $color-border-default;
+  border-top: 1px solid $color-border-default;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: modular-scale(-1);
+  margin-bottom: $space-medium;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.c-metadata-list__key {
+  font-weight: $font-weight-bold;
+  margin-right: $space-xx-small;
+}
+
+.c-metadata-list__value {
+  margin-right: $space-medium;
+}

@@ -1,27 +1,33 @@
-h2.doc-item__title
+h2.c-doc-item__title
   code
     = item.context.name
 
-= item.context.type.capitalize
+ul.c-metadata-list.p-list-bare
+  li
+    span.c-metadata-list__key
+      ' Type:
+    span.c-metadata-list__value
+      = item.context.type.capitalize
 
-- if item.return.present?
-  | Returns:
-  code< #{item.return.type}
+  - if item.return.present?
+    li
+      span.c-metadata-list__key
+        ' Returns:
+      code.c-metadata-list__value
+        = item.return.type
 
-- if item.since.present?
-  - item.since.each do |release|
-    | #{release.version}+
-
-= link_to "View Source", github_file_url(item.file.path, version)
+  li.u-margin-left-auto
+    = link_to "View Source on GitHub", github_file_url(item.file.path, version)
 
 - if item.description.present?
-  div.doc-item__section.doc-item__description
+  div.c-doc-item__description
     = markdown(item.description)
 
 - if item.content.present?
-  div.doc-item__section
-    h3.doc-item__sub-title
-      code
-        | @content
-    div.doc-item__at-content-description
-      = markdown(item.content)
+  h3.c-doc-item__sub-title
+    | Content
+  div.c-doc-item__at-content-description
+    markdown:
+      This mixin allows you to pass in a block of styles for placement within
+      the styles included by the mixin.
+    = markdown(item.content)

@@ -1,10 +1,10 @@
 - if item.property.present?
-  div.doc-item__section
-    h3.doc-item__sub-title
-      | Properties
+  h3.c-doc-item__sub-title
+    | Properties
 
+  div.c-doc-item__properties
     div.table-wrap
-      table.doc-item__properties
+      table
         thead
           tr
             th scope="col"
@@ -23,7 +23,7 @@
               td
                 code
                   = property.type
-              td.doc-item__mininum-content-width
+              td.c-doc-item__mininum-content-width
                 - if property.description
                   = markdown(property.description)
                 - else

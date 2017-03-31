@@ -1,10 +1,10 @@
 - if item.parameter.present?
-  div.doc-item__section
-    h3.doc-item__sub-title
-      | Arguments
+  h3.c-doc-item__sub-title
+    | Arguments
 
+  div.c-doc-item__arguments
     div.table-wrap
-      table.doc-item__arguments
+      table
         thead
           tr
             th scope="col"
@@ -32,7 +32,7 @@
                 - else
                   span aria-label="No default"
                     | &mdash;
-              td.doc-item__mininum-content-width
+              td.c-doc-item__mininum-content-width
                 - if argument.description
                   = markdown(argument.description)
                 - else

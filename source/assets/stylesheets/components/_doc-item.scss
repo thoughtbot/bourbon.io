@@ -1,48 +1,43 @@
-$_doc-item-spacing: 6rem;
-$_space-m: 1rem;
-$_space-l: 2rem;
+$_doc-item-spacing: 8rem;
 
 .c-doc-item {
   &:not(:first-child) {
-    padding-top: $_doc-item-spacing;
+    padding-top: $_doc-item-spacing / 2;
   }
 
   &:not(:last-child) {
-    border-bottom: 1px solid $color-border-default;
-    padding-bottom: $_doc-item-spacing;
+    margin-bottom: $_doc-item-spacing / 2;
   }
 }
 
-.doc-item__title {
-  font-size: modular-scale(4);
+.c-doc-item__title {
+  font-size: modular-scale(6);
+  margin-bottom: $space-large;
 }
 
-.doc-item__sub-title {
+.c-doc-item__sub-title {
   font-size: modular-scale(1);
-  margin-bottom: modular-scale(-1);
+  margin-bottom: $space-medium;
 }
 
-.doc-item__title,
-.doc-item__section:not(:last-child) {
-  margin-bottom: $_space-l;
+.c-doc-item__description,
+.c-doc-item__at-content-description {
+  margin-bottom: $space-x-large;
+  max-width: 34em;
 }
 
-.doc-item__description,
-.doc-item__at-content-description {
-  max-width: 36em;
-}
-
-.doc-item__arguments,
-.doc-item__properties {
+.c-doc-item__arguments,
+.c-doc-item__properties {
   font-size: modular-scale(-1);
+  margin-bottom: $space-x-large;
 }
 
-.doc-item__mininum-content-width {
+.c-doc-item__mininum-content-width {
   min-width: 26em;
 }
 
-.doc-item__example {
+.c-doc-item__example {
   &:not(:last-child) {
-    margin-bottom: $_space-m;
+    margin-bottom: $space-medium;
   }
 }

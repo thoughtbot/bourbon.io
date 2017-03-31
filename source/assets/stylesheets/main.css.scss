@@ -16,6 +16,7 @@
 
 @import "components/button";
 @import "components/doc-item";
+@import "components/metadata-list";
 @import "components/page-header";
 @import "components/site-footer";
 @import "components/site-frame";
@@ -23,6 +24,7 @@
 @import "components/table-wrap";
 
 @import "utilities/flex";
+@import "utilities/margin";
 
 .sidebar {
   a {
