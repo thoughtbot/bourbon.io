@@ -33,3 +33,8 @@
     display: block;
   }
 }
+
+.test {
+  @include size(5rem);
+  background-color: blue;
+}
