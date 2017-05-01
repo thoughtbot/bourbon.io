@@ -1,0 +1,59 @@
+{
+  "plugins": [
+    "lint"
+  ],
+  "settings": {
+    "blockquote-indentation": 2,
+    "checkbox-character-style": {
+      "checked": "x",
+      "unchecked": " "
+    },
+    "checkbox-content-indent": true,
+    "code-block-style": "fenced",
+    "definition-spacing": true,
+    "emphasis-marker": "_",
+    "fenced-code-flag": true,
+    "fenced-code-marker": "`",
+    "file-extension": "md",
+    "final-newline": true,
+    "first-heading-level": true,
+    "hard-break-spaces": true,
+    "heading-increment": true,
+    "heading-style": "atx",
+    "link-title-style": "\"",
+    "list-item-bullet-indent": true,
+    "list-item-content-indent": true,
+    "list-item-indent": "space",
+    "maximum-line-length": 80,
+    "no-auto-link-without-protocol": true,
+    "no-blockquote-without-caret": true,
+    "no-consecutive-blank-lines": true,
+    "no-duplicate-definitions": true,
+    "no-duplicate-headings": true,
+    "no-duplicate-headings-in-section": true,
+    "no-emphasis-as-heading": true,
+    "no-empty-url": true,
+    "no-heading-content-indent": true,
+    "no-heading-indent": true,
+    "no-heading-like-paragraph": true,
+    "no-inline-padding": true,
+    "no-missing-blank-lines": {
+      "exceptTightLists": true
+    },
+    "no-multiple-toplevel-headings": true,
+    "no-reference-like-url": true,
+    "no-shell-dollars": true,
+    "no-shortcut-reference-link": false,
+    "no-table-indentation": true,
+    "no-tabs": true,
+    "no-undefined-references": true,
+    "no-unused-definitions": true,
+    "ordered-list-marker-style": ".",
+    "ordered-list-marker-value": "one",
+    "rule-style": "- - -",
+    "strong-marker": "*",
+    "table-pipe-alignment": true,
+    "table-pipes": true,
+    "unordered-list-marker-style": "-"
+  }
+}

@@ -1,3 +1,6 @@
+remark:
+  config_file: .remarkrc
+  enabled: true
 ruby:
   enabled: true
 scss:
