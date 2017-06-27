@@ -1,6 +1,26 @@
 All notable changes to this project will be documented in this file. This
 project adheres to [Semantic Versioning](http://semver.org).
 
+## [5.0.0-beta.8] - 2017-06-26
+
+### Added
+
+- A `style` property has been added to our `package.json`, which makes for easy
+  importing when using npm-sass, sass-module-importer and others.
+
+### Changed
+
+- The `triangle` mixin no longer has default argument values. The order of the
+  arguments also changed: `$width` and `$height` now come before `$color`.
+
+### Fixed
+
+- The `bourbon update` CLI command now works when Bourbon is installed using a
+  custom path.
+- Fixed an issue that would cause Bourbon to not be found within Rails apps.
+
+[5.0.0-beta.8]: https://github.com/thoughtbot/bourbon/compare/v5.0.0.beta.7...v5.0.0.beta.8
+
 ## [5.0.0-beta.7] - 2016-11-03
 
 ### Added
