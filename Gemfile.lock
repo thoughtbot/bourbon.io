@@ -131,10 +131,6 @@ GEM
       netrc (~> 0.8)
     rouge (2.1.1)
     sass (3.4.24)
-    sassc (1.11.2)
-      bundler
-      ffi (~> 1.9.6)
-      sass (>= 3.3.0)
     scss_lint (0.52.0)
       rake (>= 0.9, < 13)
       sass (~> 3.4.20)
@@ -170,7 +166,7 @@ DEPENDENCIES
   neat (~> 2.1)
   rake (~> 12.0)
   redcarpet (~> 3.4)
-  sassc (~> 1.11)
+  sass
   scss_lint (= 0.52.0)
   slim (~> 3.0)
 
@@ -178,4 +174,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
