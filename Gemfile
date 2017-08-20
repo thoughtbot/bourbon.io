@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.4.0"
 
-gem "accesslint-ci", "~> 0.3"
+gem "accesslint-ci", "0.2.6"
 gem "bourbon", "~> 5.0.0.beta.8"
 gem "builder", "~> 3.2"
 gem "middleman", "~> 4.2"
