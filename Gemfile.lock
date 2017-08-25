@@ -131,9 +131,6 @@ GEM
       netrc (~> 0.8)
     rouge (2.1.1)
     sass (3.4.25)
-    scss_lint (0.52.0)
-      rake (>= 0.9, < 13)
-      sass (~> 3.4.20)
     servolux (0.13.0)
     slim (3.0.8)
       temple (>= 0.7.6, < 0.9)
@@ -167,7 +164,6 @@ DEPENDENCIES
   rake (~> 12.0)
   redcarpet (~> 3.4)
   sass (~> 3.4)
-  scss_lint (= 0.52.0)
   slim (~> 3.0)
 
 RUBY VERSION
