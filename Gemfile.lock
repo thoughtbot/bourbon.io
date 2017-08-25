@@ -130,7 +130,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rouge (2.1.1)
+    rouge (2.2.1)
     sass (3.4.25)
     servolux (0.13.0)
     slim (3.0.8)
