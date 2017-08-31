@@ -1,6 +1,6 @@
 checkout:
   post:
-    - cp .sample.env .env
+    - cp .env.sample .env
 compile:
   override:
     - bundle exec middleman build --verbose
