@@ -4,6 +4,7 @@ activate :aria_current
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
+activate :sprockets
 activate :syntax do |syntax|
   syntax.css_class = "syntax-highlight"
 end
@@ -56,6 +57,12 @@ proxy(
 
 proxy("_redirects", "netlify_redirects", ignore: true)
 
+if defined? RailsAssets
+  RailsAssets.load_paths.each do |path|
+    sprockets.append_path path
+  end
+end
+
 configure :development do
   activate :livereload do |reload|
     reload.no_swf = true
@@ -67,4 +74,5 @@ configure :build do
   activate :gzip
   activate :minify_css
   activate :minify_html
+  activate :minify_javascript
 end
