@@ -1,3 +1,21 @@
 .c-page-header {
-  @include padding($space-large null);
+  @include padding($space-x-large null $space-x-small);
+  border-bottom: 1px solid $color-border-default;
+  margin-bottom: $space-x-large;
+}
+
+.c-page-header__title {
+  font-size: modular-scale(2);
+}
+
+.c-page-header__nav {
+  align-items: flex-end;
+  display: flex;
+  font-size: modular-scale(-1);
+}
+
+.c-page-header__nav-link {
+  &:not(:last-of-type) {
+    margin-right: $space-large;
+  }
 }

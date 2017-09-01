@@ -1,5 +1,3 @@
-## Installation
-
 1. Install the Bourbon gem using the [RubyGems] package manager:
 
     ```bash

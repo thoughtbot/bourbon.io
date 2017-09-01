@@ -7,12 +7,13 @@ html lang="en"
       = partial "partials/page_header"
       div.c-site-frame__body
         div.p-grid-container
-          - if content_for?(:sidebar)
+          - if content_for?(:docs_sidebar)
             div class="p-grid__column--12 p-grid__column--4@medium"
-              = yield_content(:sidebar)
+              = yield_content(:docs_sidebar)
 
           main class="p-grid__column--12 p-grid__column--8@medium" role="main"
             = yield
+
       = partial "partials/site_footer"
 
     = partial "partials/javascript"

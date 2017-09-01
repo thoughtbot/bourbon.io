@@ -1,3 +1,5 @@
+- content_for(:preferred_path, "docs/#{version}/")
+
 - content_for(:title)
   | Documentation
 
@@ -5,22 +7,23 @@
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
 
-- content_for(:preferred_path, "docs/#{version}/")
+- content_for(:page_header_title)
+  | Reference
 
-- content_for(:sidebar)
+- content_for(:page_header_nav)
+  = current_link_to "Installation", "/docs/installation/", class: "c-page-header__nav-link"
+  = current_link_to "Change Log", "/docs/change-log/", class: "c-page-header__nav-link"
+  = current_link_to "Migrating from v4 to v5", "/docs/migrating-from-v4-to-v5/", class: "c-page-header__nav-link"
+
+  / ol.p-list-bare
+  /   - versions.reverse_each do |version|
+  /     li
+  /       = link_to version, "/docs/#{version}/"
+  /   li
+  /     = link_to "4.3.3", "/docs/4.3.3/"
+
+- content_for(:docs_sidebar)
   nav.sidebar role="navigation"
-    = link_to "Installation", "/docs/installation/"
-    = link_to "Change Log", "/docs/change-log/"
-    = link_to "Migrating from v4 to v5", "/docs/migrating-from-v4-to-v5/"
-    = link_to "Reference", "/docs/latest/"
-
-    ol.p-list-bare
-      - versions.reverse_each do |version|
-        li
-          = link_to version, "/docs/#{version}/"
-      li
-        = link_to "4.3.3", "/docs/4.3.3/"
-
     ol.p-list-bare
       - version.doc_items.each do |item|
         li

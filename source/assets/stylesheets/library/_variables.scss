@@ -42,6 +42,9 @@ $border-radius: 3px;
 $base-duration: 150ms;
 $base-timing: $ease-in-out-sine;
 
+// Breakpoints
+$medium-screen: 50em;
+
 // Bourbon library settings
 $bourbon: (
   "contrast-switch-dark-color": #000,

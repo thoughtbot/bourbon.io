@@ -1,17 +1,16 @@
 $neat-grid: (
   "columns": 12,
-  "gutter": $space-large,
+  "gutter": 2rem,
 );
-
-$medium-screen: 50em;
-
-
-
 
 .p-grid-container {
   @include grid-container;
   @include margin(null auto);
-  max-width: 60rem;
+  max-width: 58rem;
+}
+
+.p-grid-container--narrow {
+  max-width: 38rem;
 }
 
 @for $i from 1 through map-get($neat-grid, "columns") {

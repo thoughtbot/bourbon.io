@@ -32,4 +32,8 @@
   a {
     display: block;
   }
+
+  [aria-current]:not([aria-current="false"]) {
+    font-weight: $font-weight-bold;
+  }
 }
