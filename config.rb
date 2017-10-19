@@ -55,8 +55,6 @@ proxy(
   ignore: true,
 )
 
-proxy("_redirects", "netlify_redirects", ignore: true)
-
 if defined? RailsAssets
   RailsAssets.load_paths.each do |path|
     sprockets.append_path path
