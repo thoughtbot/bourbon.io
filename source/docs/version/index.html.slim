@@ -1,14 +1,11 @@
 - content_for(:preferred_path, "docs/#{version}/")
 
-- content_for(:title)
+- content_for(:page_title)
   | Documentation
 
 - content_for(:description)
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
-
-- content_for(:page_header_title)
-  | Reference
 
   / ol.p-list-bare
   /   - versions.reverse_each do |version|

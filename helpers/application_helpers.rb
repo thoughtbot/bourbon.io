@@ -24,8 +24,8 @@ module ApplicationHelpers
   end
 
   def page_title
-    if content_for?(:title)
-      [data.site.name, yield_content(:title)].join(" - ")
+    if content_for?(:page_title)
+      [data.site.name, yield_content(:page_title)].join(" - ")
     else
       [data.site.name, data.site.tagline].join(" - ")
     end
