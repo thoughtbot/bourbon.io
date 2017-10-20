@@ -39,12 +39,12 @@ p {
 a {
   color: $color-text-link;
   text-decoration-skip: ink;
+  transition: color $base-duration $base-timing;
 
   &:active,
   &:focus,
   &:hover {
     color: $color-text-link-hover;
-    transition: color $base-duration $base-timing;
   }
 }
 

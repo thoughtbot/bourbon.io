@@ -20,9 +20,10 @@ $_button-primary-background-color-hover: shade($_button-primary-background-color
   padding: 0 modular-scale(0);
   text-align: center;
   text-decoration: none;
-  transition: background-color $base-duration $base-timing,
-              border-color $base-duration $base-timing,
-              color $base-duration $base-timing;
+  transition:
+    background-color $base-duration $base-timing,
+    border-color $base-duration $base-timing,
+    color $base-duration $base-timing;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
