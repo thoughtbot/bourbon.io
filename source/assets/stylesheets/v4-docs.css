@@ -442,6 +442,7 @@ div.main-content {
   width: calc(100% - 280px);
   height: 100%;
   margin-left: 280px;
+  padding-top: 5em;
 }
 
 body.docset div.main-content {
@@ -554,11 +555,11 @@ article:target {
 
 nav.fixed-nav {
   position: fixed;
-  top: 0;
+  top: 5em;
   left: 0;
   background: #fff;
   box-shadow: 0 0 .5em 1px #ece4cd;
-  height: 100%;
+  height: calc(100% - 5em);
   overflow: auto;
   width: 280px;
 }
@@ -1278,4 +1279,31 @@ article#triangle section.demo div.up-left {
   border-right: 20px solid #e6e6fa;
   display: inline-block;
   margin-right: 5px;
+}
+
+.legacy-notice {
+  background-color: #fff;
+  box-shadow: 0 0 3px 1px #ece4cd;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  height: 5em;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.legacy-notice p {
+  line-height: 1.6;
+  margin: 0;
+  width: 100%;
+}
+
+.legacy-notice a {
+  text-decoration: underline;
+  text-decoration-skip: ink;
 }

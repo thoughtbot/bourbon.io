@@ -7,12 +7,12 @@
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
 
-  / ol.p-list-bare
-  /   - versions.reverse_each do |version|
-  /     li
-  /       = link_to version, "/docs/#{version}/"
-  /   li
-  /     = link_to "4.3.3", "/docs/4.3.3/"
+ol.p-list-bare
+  - versions.reverse_each do |version|
+    li
+      = link_to "v#{version}", "/docs/#{version}/"
+  li
+    = link_to "v4", "/docs/4/"
 
 - content_for(:docs_sidebar)
   nav.sidebar role="navigation"
