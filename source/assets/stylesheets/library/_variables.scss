@@ -26,6 +26,7 @@ $light-gray: #ddd;
 $white: #fff;
 
 $bourbon-orange: #f27126;
+$bourbon-orange-dark: shade($bourbon-orange, 10%);
 
 $color-text-default: $dark-gray;
 $color-text-heading: $dark-gray;
@@ -36,7 +37,7 @@ $viewport-background-color: $white;
 
 // Borders
 $color-border-default: $light-gray;
-$border-radius: 3px;
+$border-radius: 4px;
 
 // Focus
 $focus-outline-color: transparentize($bourbon-orange, 0.4);
