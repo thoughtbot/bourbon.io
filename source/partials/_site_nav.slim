@@ -11,21 +11,21 @@ nav.c-site-nav.c-site-frame__header role="navigation"
         data.site.changelog_url,
         class: "c-site-nav__link"
 
-      = link_to "https://twitter.com/bourbonsass/",
+      = link_to data.site.twitter_url,
         class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
         "aria-current": "false" do
 
         svg class="icon" title="Twitter"
           use xlink:href="/assets/images/icons.svg#twitter"
 
-      = link_to "https://stackoverflow.com/questions/tagged/bourbon/",
+      = link_to data.site.stackoverflow_url,
         class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
         "aria-current": "false" do
 
         svg class="icon" title="Stack Overflow"
           use xlink:href="/assets/images/icons.svg#stack-overflow"
 
-      = link_to "https://github.com/thoughtbot/bourbon/",
+      = link_to data.site.github_url,
         class: "c-site-nav__link c-site-nav__link--icon u-line-height-zero",
         "aria-current": "false" do
 
