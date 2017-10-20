@@ -114,6 +114,7 @@ GEM
     rack (2.0.3)
     rack-livereload (0.3.16)
       rack
+    rails-assets-normalize-css (7.0.0)
     rails-assets-svg4everybody (2.1.9)
     rake (12.0.0)
     rb-fsevent (0.10.2)
@@ -152,6 +153,7 @@ DEPENDENCIES
   middleman-sprockets (~> 4.1)
   middleman-syntax (~> 3.0)
   neat (~> 2.1)
+  rails-assets-normalize-css!
   rails-assets-svg4everybody!
   rake (~> 12.0)
   redcarpet (~> 3.4)
@@ -162,4 +164,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3
