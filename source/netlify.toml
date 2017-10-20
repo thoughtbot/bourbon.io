@@ -1,3 +1,7 @@
+[build]
+  publish = "build"
+  command = "bundle exec middleman build --verbose"
+
 [[redirects]]
   from = "/docs"
   to = "/docs/latest"
