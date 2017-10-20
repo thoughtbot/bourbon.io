@@ -3,9 +3,13 @@ nav.c-site-nav.c-site-frame__header role="navigation"
     div.p-grid__column--12.u-flex.u-flex-align-items-center
       = current_link_to "Bourbon", "/"
 
+      = current_link_to "Installation",
+        "/installation/",
+        class: "c-site-nav__link u-margin-left-auto"
+
       = current_link_to "Documentation",
         "/docs/latest/",
-        class: "c-site-nav__link u-margin-left-auto"
+        class: "c-site-nav__link"
 
       = link_to "Change Log",
         data.site.changelog_url,

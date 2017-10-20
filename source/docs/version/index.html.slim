@@ -10,10 +10,6 @@
 - content_for(:page_header_title)
   | Reference
 
-- content_for(:page_header_nav)
-  = current_link_to "Installation", "/docs/installation/", class: "c-page-header__nav-link"
-  = current_link_to "Migrating from v4 to v5", "/docs/migrating-from-v4-to-v5/", class: "c-page-header__nav-link"
-
   / ol.p-list-bare
   /   - versions.reverse_each do |version|
   /     li

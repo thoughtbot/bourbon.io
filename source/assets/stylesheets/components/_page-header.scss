@@ -7,15 +7,3 @@
 .c-page-header__title {
   font-size: modular-scale(2);
 }
-
-.c-page-header__nav {
-  align-items: flex-end;
-  display: flex;
-  font-size: modular-scale(-1);
-}
-
-.c-page-header__nav-link {
-  &:not(:last-of-type) {
-    margin-right: $space-large;
-  }
-}
