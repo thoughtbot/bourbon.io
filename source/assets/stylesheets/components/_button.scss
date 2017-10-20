@@ -28,11 +28,15 @@ $_button-primary-background-color-hover: shade($_button-primary-background-color
   vertical-align: middle;
   white-space: nowrap;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: shade($_button-default-background-color-hover, 10%);
     border-color: shade($_button-default-background-color-hover, 10%);
     color: contrast-switch($_button-default-background-color-hover);
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
   }
 
   &:disabled {

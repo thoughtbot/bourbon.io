@@ -41,10 +41,13 @@ a {
   text-decoration-skip: ink;
   transition: color $base-duration $base-timing;
 
-  &:active,
-  &:focus,
   &:hover {
     color: $color-text-link-hover;
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
   }
 }
 

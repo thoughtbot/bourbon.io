@@ -79,3 +79,13 @@ select {
   margin: 0;
   width: 100%;
 }
+
+[type="checkbox"],
+[type="file"],
+[type="radio"],
+select {
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+}
