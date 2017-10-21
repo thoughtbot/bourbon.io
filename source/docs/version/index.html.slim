@@ -7,12 +7,20 @@
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
 
-ol.p-list-bare
-  - versions.reverse_each do |version|
-    li
-      = link_to "v#{version}", "/docs/#{version}/"
-  li
-    = link_to "v4", "/docs/4/"
+
+
+
+nav.c-dropdown
+  button.c-button.c-dropdown__button aria-expanded="false" aria-controls="versions-dropdown" data-js="dropdown"
+    = "v#{version} ↓"
+
+  div.c-dropdown__body id="versions-dropdown" hidden=""
+    ol.p-list-bare
+      - versions.reverse_each do |version|
+        li.c-dropdown__item
+          = link_to "v#{version}", "/docs/#{version}/"
+      li.c-dropdown__item
+        = link_to "v4", "/docs/4/"
 
 - content_for(:docs_sidebar)
   nav.sidebar role="navigation"
