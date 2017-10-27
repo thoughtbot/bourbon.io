@@ -23,7 +23,6 @@ set :markdown,
   tables: true,
   with_toc_data: true
 
-page "/", layout: "home"
 page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/*.xml", layout: false

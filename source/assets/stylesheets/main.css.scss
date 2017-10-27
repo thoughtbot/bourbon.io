@@ -17,6 +17,9 @@
 
 @import "components/button";
 @import "components/doc-item";
+@import "components/docs-nav";
+@import "components/dropdown";
+@import "components/flash-message";
 @import "components/metadata-list";
 @import "components/page-header";
 @import "components/site-footer";
@@ -24,40 +27,8 @@
 @import "components/site-nav";
 @import "components/table-wrap";
 
+@import "scopes/prose";
+
 @import "utilities/flex";
 @import "utilities/line-height";
 @import "utilities/margin";
-
-.sidebar {
-  a {
-    display: block;
-  }
-
-  [aria-current]:not([aria-current="false"]) {
-    font-weight: $font-weight-bold;
-  }
-}
-
-
-
-
-
-.c-dropdown {
-  position: relative;
-}
-
-.c-dropdown__button {
-}
-
-.c-dropdown__body {
-  @include padding($space-xx-small null);
-  @include position(absolute, calc(100% + 1px) null null 0);
-  background-color: $white;
-  border: 1px solid $color-border-default;
-  border-radius: $border-radius;
-  box-shadow: 0 2px 3px rgba($black, 0.16);
-}
-
-.c-dropdown__item {
-  padding: $space-xx-small $space-small;
-}

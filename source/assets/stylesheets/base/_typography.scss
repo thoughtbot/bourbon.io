@@ -62,10 +62,13 @@ dt {
 }
 
 code {
-  background-color: shade($white, 2%);
+  // background-color: shade($white, 2%);
+  // background-color: rgba($white, 0.4);
+  background-color: rgba($white, 0.88);
   border-radius: 0.1875em;
-  box-shadow: 0 0 0 1px rgba($black, 0.1);
+  box-shadow: 0 0 0 1px rgba($dark-brown, 0.04);
   font-family: $font-family-code;
+  font-size: modular-scale(-1);
   font-weight: $font-weight-regular;
   margin: 0 0.125em;
   padding: 0.0625em 0.25em;
@@ -77,10 +80,16 @@ pre {
   tab-size: 2;
 
   > code {
-    background-color: transparent;
-    border: 1px solid $color-border-default;
-    border-radius: 0;
-    box-shadow: none;
+    // background-color: transparent;
+    // background-color: rgba($white, 0.4);
+    // background-color: rgba($white, 0.8);
+    // background-color: tint($viewport-background-color, 50%);
+    // background-color: shade($viewport-background-color, 2%);
+    // border: 1px solid $color-border-default;
+    // border: 1px solid shade($viewport-background-color, 10%);
+    // border-radius: 0;
+    border-radius: $border-radius;
+    // box-shadow: none;
     display: block;
     margin: 0;
     -webkit-overflow-scrolling: touch;
@@ -114,4 +123,9 @@ hr {
   border-right: 0;
   border-top: 0;
   margin: $space-medium 0;
+}
+
+::selection {
+  background-color: $bourbon-orange;
+  color: $white;
 }

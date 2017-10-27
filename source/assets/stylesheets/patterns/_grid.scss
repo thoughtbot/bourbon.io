@@ -1,12 +1,12 @@
 $neat-grid: (
   "columns": 12,
-  "gutter": 2rem,
+  "gutter": 3rem,
 );
 
 .p-grid-container {
   @include grid-container;
   @include margin(null auto);
-  max-width: 58rem;
+  max-width: 65rem;
 }
 
 .p-grid-container--narrow {

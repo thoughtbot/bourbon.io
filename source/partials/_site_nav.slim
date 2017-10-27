@@ -1,10 +1,10 @@
-nav.c-site-nav.c-site-frame__header role="navigation"
-  div.p-grid-container
-    div.p-grid__column--12.u-flex.u-flex-align-items-center
+nav class="c-site-nav" role="navigation"
+  div class="p-grid-container"
+    div class="p-grid__column--12 u-flex u-flex-align-items-center"
       = current_link_to "Bourbon", "/"
 
       = current_link_to "Installation",
-        "/installation/",
+        data.site.install_url,
         class: "c-site-nav__link u-margin-left-auto"
 
       = current_link_to "Documentation",

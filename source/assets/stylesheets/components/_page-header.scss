@@ -1,9 +1,16 @@
 .c-page-header {
-  @include padding($space-x-large null $space-x-small);
+  @include padding($space-xx-large null $space-x-small);
+  align-items: center;
   border-bottom: 1px solid $color-border-default;
+  display: flex;
   margin-bottom: $space-x-large;
 }
 
 .c-page-header__title {
-  font-size: modular-scale(2);
+  font-size: modular-scale(7);
+  margin-right: $space-medium;
+}
+
+.c-page-header__actions {
+  margin-left: auto;
 }

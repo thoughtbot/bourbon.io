@@ -1,0 +1,84 @@
+.s-prose {
+  // h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: modular-scale(-1);
+  }
+
+  p,
+  ol,
+  ul,
+  pre {
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: modular-scale(4);
+      // margin-bottom: modular-scale(-1);
+      // margin-top: modular-scale(4);
+    }
+  }
+
+  // h1 {
+  //   font-size: modular-scale(4);
+  // }
+
+  h2 {
+    font-size: modular-scale(4);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: modular-scale(2);
+  }
+
+  p,
+  ol,
+  ul,
+  pre {
+    margin-bottom: modular-scale(4);
+  }
+
+  // ol {
+  //   list-style-type: decimal;
+  // }
+
+  // ul {
+  //   list-style-type: disc;
+  // }
+
+  ol,
+  ul {
+  //   padding-left: modular-scale(4);
+
+    li:not(:first-child) {
+      padding-top: modular-scale(-10);
+    }
+
+    li:not(:last-child) {
+      padding-bottom: modular-scale(-10);
+    }
+
+    ol,
+    ul {
+      margin: 0;
+    }
+  }
+
+  // a:not([class]) {
+  //   color: $color-body-text;
+  //   text-decoration: underline;
+
+  //   &:active,
+  //   &:focus,
+  //   &:hover {
+  //     color: $color-action;
+  //   }
+  // }
+}

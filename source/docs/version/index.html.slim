@@ -7,27 +7,34 @@
   | Official documentation and technical reference for Bourbon #{version}, a
     lightweight Sass tool set.
 
+- content_for(:flash)
+  div.c-flash-message
+    ' Updating from v4 to v5?
+    = link_to "Read our migration guide →", "/docs/migrating-from-v4-to-v5/"
 
+- content_for(:page_header_actions)
+  nav.c-dropdown
+    button(class="c-button c-button--primary"
+           aria-expanded="false"
+           aria-controls="versions-dropdown"
+           data-js="dropdown")
+      = "v#{version} ↓"
 
-
-nav.c-dropdown
-  button.c-button.c-dropdown__button aria-expanded="false" aria-controls="versions-dropdown" data-js="dropdown"
-    = "v#{version} ↓"
-
-  div.c-dropdown__body id="versions-dropdown" hidden=""
-    ol.p-list-bare
-      - versions.reverse_each do |version|
+    div.c-dropdown__body id="versions-dropdown" hidden=""
+      ol.p-list-bare
+        - versions.reverse_each do |version|
+          li.c-dropdown__item
+            = link_to "v#{version}", "/docs/#{version}/"
         li.c-dropdown__item
-          = link_to "v#{version}", "/docs/#{version}/"
-      li.c-dropdown__item
-        = link_to "v4", "/docs/4/"
+          = link_to "v4", "/docs/4/"
 
 - content_for(:docs_sidebar)
-  nav.sidebar role="navigation"
+  nav.c-docs-nav role="navigation"
     ol.p-list-bare
       - version.doc_items.each do |item|
         li
-          = link_to "##{item.context.name.parameterize}" do
+          = link_to "##{item.context.name.parameterize}",
+              class: "c-docs-nav__link" do
             = item.context.name
 
 - version.doc_items.each do |item|

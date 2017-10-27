@@ -1,5 +1,9 @@
-header.c-site-frame__page-header role="banner"
-  div.p-grid-container
-    div.c-page-header.p-grid__column--12.u-flex
-      h1.c-page-header__title
+header role="banner"
+  div class="p-grid-container"
+    div class="p-grid__column--12 c-page-header"
+      h1 class="c-page-header__title"
         = yield_content(:page_title)
+
+      - if content_for?(:page_header_actions)
+        div class="c-page-header__actions"
+          = yield_content(:page_header_actions)

@@ -1,0 +1,6 @@
+.c-flash-message {
+  border: 1px solid $color-border-default;
+  border-radius: $border-radius;
+  font-size: modular-scale(-1);
+  padding: $space-x-small $space-medium;
+}

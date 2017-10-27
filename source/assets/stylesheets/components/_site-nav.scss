@@ -1,7 +1,7 @@
 .c-site-nav {
-  @include padding($space-medium null);
-  border-bottom: 1px solid $color-border-default;
+  @include padding($space-large null);
   font-size: modular-scale(-1);
+  // margin-bottom: $space-small;
 
   [aria-current]:not([aria-current="false"]) {
     font-weight: $font-weight-bold;

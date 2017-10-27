@@ -3,6 +3,7 @@ description: >
   Bourbon is a library of pure Sass mixins and functions that are designed to
   make you a more efficient style sheet author.
 github_url: https://github.com/thoughtbot/bourbon/
+install_url: https://github.com/thoughtbot/bourbon#installation
 name: Bourbon
 stackoverflow_url: https://stackoverflow.com/questions/tagged/bourbon/
 tagline: A Lightweight Sass Tool Set
