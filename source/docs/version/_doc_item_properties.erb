@@ -1,0 +1,55 @@
+<% if item.property.present? %>
+  <h3 class="c-doc-item__sub-title">
+    Properties
+  </h3>
+
+  <div class="c-doc-item__properties">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">
+              Name
+            </th>
+
+            <th scope="col">
+              Type
+            </th>
+
+            <th scope="col">
+              Description
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% item.property.each do |property|  %>
+            <tr>
+              <th scope="row">
+                <code>
+                  <%= property.name %>
+                </code>
+              </th>
+
+              <td>
+                <code>
+                  <%= property.type %>
+                </code>
+              </td>
+
+              <td class="c-doc-item__mininum-content-width">
+                <% if property.description %>
+                  <%= markdown(property.description) %>
+                <% else %>
+                  <span aria-label="No description">
+                    &mdash;
+                  </span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

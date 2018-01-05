@@ -1,0 +1,56 @@
+<% if item.parameter.present? %>
+  <h3 class="c-doc-item__sub-title">
+    Arguments
+  </h3>
+
+  <div class="c-doc-item__arguments">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">
+              Name
+            </th>
+            <th scope="col">
+              Type
+            </th>
+            <th scope="col">
+              Description
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% item.parameter.each do |argument| %>
+            <tr>
+              <th scope="row">
+                <code>
+                  <%= argument.name.prepend("$") %>
+                  <% if argument.default %>
+                    (<%= argument.default %>)
+                  <% end %>
+                </code>
+              </th>
+
+              <td>
+                <code>
+                  <%= argument.type %>
+                </code>
+              </td>
+
+              <td class="c-doc-item__mininum-content-width">
+                <% if argument.description %>
+                  <%= markdown(argument.description) %>
+                <% else %>
+                  <span aria-label="No description">
+                    &mdash;
+                  </span>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

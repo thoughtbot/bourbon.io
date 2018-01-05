@@ -1,0 +1,56 @@
+<h2 class="c-doc-item__title">
+  <code>
+    <%= item.context.name %>
+  </code>
+</h2>
+
+<ul class="c-metadata-list p-list-bare">
+  <li>
+    <span class="c-metadata-list__key">
+      Type:
+    </span>
+
+    <span class="c-metadata-list__value">
+      <%= item.context.type.capitalize %>
+    </span>
+  </li>
+
+  <% if item.return.present? %>
+    <li>
+      <span class="c-metadata-list__key">
+        Returns:
+        <code class="c-metadata-list__value">
+          <%= item.return.type %>
+        </code>
+      </span>
+    </li>
+  <% end %>
+
+  <li class="u-margin-left-auto">
+    <%= link_to(
+      "View Source on GitHub",
+      github_file_url(item.file.path, version)
+    ) %>
+  </li>
+</ul>
+
+<% if item.description.present? %>
+  <div class="c-doc-item__description">
+    <%= markdown(item.description) %>
+  </div>
+<% end %>
+
+<% if item.content.present? %>
+  <h3 class="c-doc-item__sub-title">
+    Content
+  </h3>
+
+  <div class="c-doc-item__at-content-description">
+    <p>
+      This mixin allows you to pass in a block of styles for placement within
+      the styles included by the mixin.
+    </p>
+
+    <%= markdown(item.content) %>
+  </div>
+<% end %>

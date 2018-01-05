@@ -1,9 +1,0 @@
-header role="banner"
-  div class="p-grid-container"
-    div class="p-grid__column--12 c-page-header"
-      h1 class="c-page-header__title"
-        = yield_content(:page_title)
-
-      - if content_for?(:page_header_actions)
-        div class="c-page-header__actions"
-          = yield_content(:page_header_actions)

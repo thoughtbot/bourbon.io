@@ -1,0 +1,15 @@
+<% if item.example.present? %>
+  <h3 class="c-doc-item__sub-title">
+    <% if item.example.count == 1 %>
+      Example
+    <% else %>
+      Examples
+    <% end %>
+  </h3>
+
+  <% item.example.each do |example| %>
+    <figure class="c-doc-item__example">
+      <% code("scss") do %><%= example.code %><% end %>
+    </figure>
+  <% end %>
+<% end %>
