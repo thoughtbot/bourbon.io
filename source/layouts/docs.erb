@@ -1,42 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%= partial "partials/html_head" %>
-  <body>
-    <div class="c-site-frame">
-      <div class="c-site-frame__nav">
-        <%= partial "partials/site_nav" %>
-      </div>
-
-      <main class="c-site-frame__body" role="main">
-        <% if content_for?(:flash) %>
-          <div class="p-grid-container">
-            <div class="p-grid__column--12">
-              <%= yield_content(:flash) %>
-            </div>
-          </div>
-        <% end %>
-
-        <%= partial "partials/page_header" %>
-
-        <div class="p-grid-container">
-          <% if content_for?(:docs_sidebar) %>
-            <div class="p-grid__column--12 p-grid__column--4@medium c-docs-nav-wrapper">
-              <%= yield_content(:docs_sidebar) %>
-            </div>
-          <% end %>
-
-          <div class="p-grid__column--12 p-grid__column--8@medium">
-            <%= yield %>
-          </div>
-        </div>
-      </main>
-
-      <div class="c-site-frame__footer">
-        <%= partial "partials/site_footer" %>
+<% wrap_layout :layout do %>
+  <% if content_for?(:flash) %>
+    <div class="p-grid-container">
+      <div class="p-grid__column--12">
+        <%= yield_content(:flash) %>
       </div>
     </div>
+  <% end %>
 
-    <%= partial "partials/javascript" %>
-    <%= partial "partials/analytics" %>
-  </body>
-</html>
+  <%= partial "partials/page_header" %>
+
+  <div class="p-grid-container">
+    <% if content_for?(:docs_sidebar) %>
+      <div class="p-grid__column--12 p-grid__column--4@medium c-docs-nav-wrapper">
+        <%= yield_content(:docs_sidebar) %>
+      </div>
+    <% end %>
+
+    <div class="p-grid__column--12 p-grid__column--8@medium">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
