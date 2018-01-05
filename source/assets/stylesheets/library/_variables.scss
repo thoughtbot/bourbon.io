@@ -1,7 +1,6 @@
 // Typography
 $font-family-default: $font-stack-system;
 $font-family-heading: $font-family-default;
-// $font-family-code: "Inconsolata", $font-stack-consolas;
 $font-family-code: "Input Mono", $font-stack-consolas;
 
 $font-weight-regular: 400;
@@ -25,28 +24,20 @@ $dark-gray: #222;
 $medium-gray: #999;
 $light-gray: #ddd;
 $dark-brown: mix(#f27126, $dark-gray, 14%);
-// $light-brown: mix(#fffbee, #F6F3EE, 15%);
 $light-brown: tint(mix(#fffbee, #F6F3EE, 35%), 20%);
 $white: #fff;
 
 $bourbon-orange: #f27126;
 $bourbon-orange-dark: shade($bourbon-orange, 10%);
 
-// $color-text-default: mix(red, $dark-gray, 14%);
 $color-text-default: mix(#f27126, $dark-gray, 12%);
-// $color-text-default: $dark-gray;
 $color-text-heading: $color-text-default;
 $color-text-link: $color-text-default;
 $color-text-link-hover: $bourbon-orange;
 
-// $viewport-background-color: mix(#fffbee, #fffdf8, 10%);
 $viewport-background-color: $light-brown;
-// $viewport-background-color: #fffdf8;
-// $viewport-background-color: shade(mix(#fffbee, #F6F3EE, 10%), 1%);
-// $viewport-background-color: mix(yellow, red, 1%);
 
 // Borders
-// $color-border-default: $light-gray;
 $color-border-default: mix($dark-brown, $light-brown, 10%);
 $border-radius: 2px;
 

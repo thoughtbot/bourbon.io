@@ -35,13 +35,4 @@ module ApplicationHelpers
     path = yield_content :preferred_path
     URI.join(ENV.fetch("URL"), path)
   end
-
-  def svg(name)
-    root = Middleman::Application.root
-    images_path = config[:images_dir]
-    file_path = "#{root}/source/#{images_path}/#{name}.svg"
-
-    return File.read(file_path) if File.exists?(file_path)
-    "(SVG not found)"
-  end
 end
