@@ -32,7 +32,7 @@ task :generate_for do
   if downloaded_dir =~ /thoughtbot-bourbon-/
 
     puts "mixing documentation for bourbon #{number}"
-    assets_dir = "#{downloaded_dir}/app/assets/stylesheets"
+    assets_dir = "#{downloaded_dir}/core"
     new_file = "data/bourbon_#{version_number}.json"
     system("sassdoc #{assets_dir} -p > #{new_file}")
 
