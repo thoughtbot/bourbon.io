@@ -71,5 +71,4 @@ configure :build do
   activate :gzip
   activate :minify_css
   activate :minify_html
-  activate :minify_javascript
 end
