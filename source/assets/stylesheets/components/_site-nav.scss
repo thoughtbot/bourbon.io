@@ -1,11 +1,14 @@
 .c-site-nav {
   @include padding($space-large null);
   font-size: modular-scale(-1);
-  // margin-bottom: $space-small;
 
   [aria-current]:not([aria-current="false"]) {
     font-weight: $font-weight-bold;
   }
+}
+
+.c-site-nav__logo-svg {
+  fill: $bourbon-orange;
 }
 
 .c-site-nav__link {

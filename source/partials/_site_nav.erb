@@ -1,7 +1,9 @@
 <nav class="c-site-nav" role="navigation">
   <div class="p-grid-container">
     <div class="p-grid__column--12 u-flex u-flex-align-items-center">
-      <%= current_link_to "Bourbon", "/" %>
+      <% link_to "/", class: "u-line-height-zero" do %>
+        <%= partial "partials/site_nav_logo" %>
+      <% end %>
 
       <%= current_link_to(
         "Installation",
