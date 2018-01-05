@@ -2,6 +2,11 @@
   position: relative;
 }
 
+.c-dropdown__caret {
+  font-size: 0.6em;
+  vertical-align: 0.1em;
+}
+
 .c-dropdown__body {
   @include padding($space-xx-small null);
   @include position(absolute, calc(100% + 1px) null null 0);
