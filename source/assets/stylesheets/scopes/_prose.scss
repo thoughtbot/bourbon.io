@@ -11,11 +11,13 @@
   ol,
   ul,
   pre {
-    & + h2,
-    & + h3,
-    & + h4,
-    & + h5,
-    & + h6 {
+    margin-bottom: modular-scale(4);
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-top: modular-scale(4);
     }
   }
@@ -29,13 +31,6 @@
   h5,
   h6 {
     font-size: modular-scale(2);
-  }
-
-  p,
-  ol,
-  ul,
-  pre {
-    margin-bottom: modular-scale(4);
   }
 
   ol,
