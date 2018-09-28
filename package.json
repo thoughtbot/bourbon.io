@@ -1,0 +1,13 @@
+{
+  "name": "bourbon.io",
+  "version": "1.0.0",
+  "devDependencies": {
+    "stylelint": "^9.6.0",
+    "stylelint-scss": "^3.3.1",
+    "stylelint-order": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtbot/bourbon.io.git"
+  }
+}
