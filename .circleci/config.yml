@@ -15,6 +15,10 @@ jobs:
           name: Install Ruby dependencies
           command: bundle install --path vendor/bundle
 
+      - run:
+          name: Install Percy CLI
+          command: gem install percy-cli
+
       - save_cache:
           key: bourbon-io-{{ arch }}-{{ checksum "Gemfile.lock" }}
           paths:
@@ -27,3 +31,7 @@ jobs:
       - run:
           name: Build Middleman site
           command: bundle exec middleman build --verbose
+
+      - run:
+          name: Run Percy
+          command: percy snapshot build/
