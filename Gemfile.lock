@@ -142,19 +142,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bourbon (~> 5.1)
-  builder (~> 3.2)
-  middleman (~> 4.2)
-  middleman-aria_current (~> 0.1)
-  middleman-autoprefixer (~> 2.9)
-  middleman-livereload (~> 3.4)
-  middleman-minify-html (~> 3.4)
-  middleman-sprockets (~> 4.1)
-  middleman-syntax (~> 3.0)
-  neat (~> 3.0)
+  bourbon
+  builder
+  middleman
+  middleman-aria_current
+  middleman-autoprefixer
+  middleman-livereload
+  middleman-minify-html
+  middleman-sprockets
+  middleman-syntax
+  neat
   rails-assets-normalize-css!
-  rake (~> 12.3)
-  redcarpet (~> 3.4)
+  rake
+  redcarpet
   sassc
 
 RUBY VERSION
