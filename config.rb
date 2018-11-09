@@ -60,12 +60,6 @@ if defined? RailsAssets
   end
 end
 
-configure :development do
-  activate :livereload do |reload|
-    reload.no_swf = true
-  end
-end
-
 configure :build do
   activate :asset_hash
   activate :gzip

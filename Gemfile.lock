@@ -25,11 +25,7 @@ GEM
     concurrent-ruby (1.0.5)
     contracts (0.13.0)
     dotenv (2.2.1)
-    em-websocket (0.5.1)
-      eventmachine (>= 0.12.9)
-      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
-    eventmachine (1.2.5)
     execjs (2.7.0)
     fast_blank (1.0.0)
     fastimage (2.1.1)
@@ -41,7 +37,6 @@ GEM
       concurrent-ruby (~> 1.0)
     hashie (3.5.7)
     htmlcompressor (0.2.0)
-    http_parser.rb (0.6.0)
     i18n (0.7.0)
     kramdown (1.16.2)
     listen (3.0.8)
@@ -86,10 +81,6 @@ GEM
       servolux
       tilt (~> 2.0)
       uglifier (~> 3.0)
-    middleman-livereload (3.4.6)
-      em-websocket (~> 0.5.1)
-      middleman-core (>= 3.3)
-      rack-livereload (~> 0.3.15)
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
@@ -112,8 +103,6 @@ GEM
     parallel (1.12.1)
     public_suffix (3.0.2)
     rack (2.0.6)
-    rack-livereload (0.3.16)
-      rack
     rails-assets-normalize-css (7.0.0)
     rake (12.3.1)
     rb-fsevent (0.10.2)
@@ -147,7 +136,6 @@ DEPENDENCIES
   middleman
   middleman-aria_current
   middleman-autoprefixer
-  middleman-livereload
   middleman-minify-html
   middleman-sprockets
   middleman-syntax
