@@ -122,6 +122,9 @@ GEM
     redcarpet (3.4.0)
     rouge (2.2.1)
     sass (3.4.25)
+    sassc (2.0.0)
+      ffi (~> 1.9.6)
+      rake
     servolux (0.13.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -152,7 +155,7 @@ DEPENDENCIES
   rails-assets-normalize-css!
   rake (~> 12.3)
   redcarpet (~> 3.4)
-  sass (~> 3.4)
+  sassc
 
 RUBY VERSION
    ruby 2.4.3p205
