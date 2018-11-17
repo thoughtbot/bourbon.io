@@ -6,3 +6,8 @@
   from = "/docs"
   to = "/docs/latest"
   status = 301
+
+[[redirects]]
+  from = "https://bourbon.netlify.com/*"
+  to = "https://www.bourbon.io/:splat"
+  status = 301
