@@ -11,7 +11,7 @@ task :generate do
   # ~/.gem/ruby/2.2.0/gems/bourbon-4.2.1 => "4_2_1"
   version_number = bourbon_path.scan(/(\d\.\d\.\d)+/).last.last.gsub(/\./, "_")
 
-  system("sassdoc #{assets_dir} -p > data/bourbon_#{version_number}.json")
+  system("npx sassdoc #{assets_dir} -p > data/bourbon_#{version_number}.json")
 end
 
 desc "generate docs for a specific version number"
@@ -34,7 +34,7 @@ task :generate_for do
     puts "mixing documentation for bourbon #{number}"
     assets_dir = "#{downloaded_dir}/core"
     new_file = "data/bourbon_#{version_number}.json"
-    system("sassdoc #{assets_dir} -p > #{new_file}")
+    system("npx sassdoc #{assets_dir} -p > #{new_file}")
 
     puts "cleaning up"
     system("rm -rf bourbon.tar.gz")

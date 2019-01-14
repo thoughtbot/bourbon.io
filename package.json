@@ -2,6 +2,7 @@
   "name": "bourbon.io",
   "version": "1.0.0",
   "devDependencies": {
+    "sassdoc": "^2.5.1",
     "stylelint": "^9.9.0",
     "stylelint-scss": "^3.4.4",
     "stylelint-order": "^2.0.0"
