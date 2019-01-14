@@ -147,7 +147,7 @@ DEPENDENCIES
   sassc
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.4.3p205
 
 BUNDLED WITH
    1.17.1
