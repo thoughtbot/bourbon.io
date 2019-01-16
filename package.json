@@ -4,7 +4,7 @@
   "devDependencies": {
     "sassdoc": "^2.5.1",
     "stylelint": "^9.9.0",
-    "stylelint-scss": "^3.5.0",
+    "stylelint-scss": "^3.5.1",
     "stylelint-order": "^2.0.0"
   },
   "repository": {
