@@ -9,5 +9,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thoughtbot/bourbon.io.git"
+  },
+  "scripts": {
+    "stylelint": "npx stylelint 'source/assets/stylesheets/**/*.scss'"
   }
 }
