@@ -2,10 +2,9 @@
   "name": "bourbon.io",
   "version": "1.0.0",
   "devDependencies": {
+    "@thoughtbot/stylelint-config": "^0.2.0",
     "sassdoc": "^2.5.1",
-    "stylelint": "^9.10.1",
-    "stylelint-scss": "^3.5.4",
-    "stylelint-order": "^2.1.0"
+    "stylelint": "^9.10.1"
   },
   "repository": {
     "type": "git",
