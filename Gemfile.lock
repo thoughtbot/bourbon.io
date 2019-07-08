@@ -121,7 +121,6 @@ DEPENDENCIES
   middleman-syntax
   rake
   redcarpet
-  sassc
 
 RUBY VERSION
    ruby 2.6.2p47
