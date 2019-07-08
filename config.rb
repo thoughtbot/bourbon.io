@@ -4,7 +4,6 @@ activate :aria_current
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
-activate :sprockets
 activate :syntax do |syntax|
   syntax.css_class = "syntax-highlight"
 end
@@ -22,6 +21,7 @@ set :markdown,
   strikethrough: true,
   tables: true,
   with_toc_data: true
+set :sass_assets_paths, ["node_modules"]
 
 page "/*.json", layout: false
 page "/*.txt", layout: false
@@ -53,12 +53,6 @@ proxy(
   },
   ignore: true,
 )
-
-if defined? RailsAssets
-  RailsAssets.load_paths.each do |path|
-    sprockets.append_path path
-  end
-end
 
 configure :build do
   activate :asset_hash

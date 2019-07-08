@@ -20,6 +20,18 @@ jobs:
           paths:
             - vendor/bundle
 
+      - restore_cache:
+          key: bourbon-io-npm-{{ arch }}-{{ checksum "package.json" }}
+
+      - run:
+          name: Install Node dependencies
+          command: npm install
+
+      - save_cache:
+          key: bourbon-io-npm-{{ arch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+
       - run:
           name: Setup the environment
           command: cp .env.sample .env
