@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright © 2018 [thoughtbot, inc.](https://thoughtbot.com)
+Copyright © 2019 [thoughtbot, inc.](https://thoughtbot.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the “Software”), to deal
