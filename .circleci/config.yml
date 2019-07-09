@@ -9,33 +9,37 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: bourbon-io-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          keys:
+            - bourbon-io-bundle-v2-{{ checksum "Gemfile.lock" }}
+            - bourbon-io-bundle-v2-
 
       - run:
-          name: Install Ruby dependencies
+          name: Install gem dependencies
           command: bundle install --path vendor/bundle
 
       - save_cache:
-          key: bourbon-io-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          key: bourbon-io-bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
       - restore_cache:
-          key: bourbon-io-npm-{{ arch }}-{{ checksum "package.json" }}
+          keys:
+            - bourbon-io-npm-v2-{{ checksum "package-lock.json" }}
+            - bourbon-io-npm-v2-
 
       - run:
-          name: Install Node dependencies
+          name: Install npm dependencies
           command: npm install
 
       - save_cache:
-          key: bourbon-io-npm-{{ arch }}-{{ checksum "package.json" }}
+          key: bourbon-io-npm-v2-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
+            - ~/usr/local/lib/node_modules
 
       - run:
-          name: Setup the environment
+          name: Set up the environment
           command: cp .env.sample .env
 
       - run:
-          name: Build Middleman site
+          name: Build the Middleman site
           command: bundle exec middleman build --verbose
