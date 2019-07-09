@@ -2,6 +2,8 @@
   "name": "bourbon.io",
   "version": "1.0.0",
   "dependencies": {
+    "bourbon": "^5.1.0",
+    "bourbon-neat": "^3.0.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
