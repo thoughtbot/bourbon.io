@@ -1,30 +1,28 @@
 desc "Generate documentation for a published version of Bourbon"
 task :generate_docs_for do
   ARGV.each { |a| task a.to_sym do ; end }
-  number = ARGV[1]
+  version = ARGV[1]
+  version_slug = version.gsub(/\./, "_")
 
-  fail "\nplease provide version number\n\n" unless number
+  fail "\nPlease provide version number\n\n" unless version
 
-  puts "downloading version #{number}"
-  system("curl -L https://api.github.com/repos/thoughtbot/bourbon/tarball/v#{number} > bourbon.tar.gz")
+  workspace = "tmp/bourbon"
+  system("mkdir -p #{workspace}")
 
-  system("tar -zxf bourbon.tar.gz")
+  puts "Downloading Bourbon v#{version}"
+  archive = "#{workspace}/bourbon.tar.gz"
+  archive_contents = "#{workspace}/bourbon_#{version_slug}"
+  system("curl -L https://api.github.com/repos/thoughtbot/bourbon/tarball/v#{version} > #{archive}")
+  system("mkdir -p #{archive_contents}")
+  system("tar -zxf #{archive} --strip-components=1 -C #{archive_contents}")
 
-  downloaded_dir = Dir['**'].last
-  version_number = number.gsub(/\./, "_")
+  puts "Mixing documentation…"
+  data_file = "data/bourbon_#{version_slug}.json"
+  system("npx sassdoc #{archive_contents}/core -p > #{data_file}")
 
-  if downloaded_dir =~ /thoughtbot-bourbon-/
+  puts "Cleaning up…"
+  system("rm -rf #{workspace}")
 
-    puts "mixing documentation for bourbon #{number}"
-    assets_dir = "#{downloaded_dir}/core"
-    new_file = "data/bourbon_#{version_number}.json"
-    system("npx sassdoc #{assets_dir} -p > #{new_file}")
-
-    puts "cleaning up"
-    system("rm -rf bourbon.tar.gz")
-    system("rm -rf #{downloaded_dir}")
-
-    puts "all done!"
-    puts "please check the new file: #{new_file}"
-  end
+  puts "All done!"
+  puts "Documentation written to: #{data_file}"
 end
