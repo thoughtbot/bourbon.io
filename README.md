@@ -35,7 +35,7 @@ You can find the [Bourbon Sass library source code here][library repo].
 ## Generate Documentation
 
 Bourbon uses [SassDoc] to document its source code. For this website, we use
-Rake tasks to run SassDoc’s CLI, which parses documentation-specific comments
+a Rake task to run SassDoc’s CLI, which parses documentation-specific comments
 from [Bourbon’s source] and outputs them as versioned JSON files
 (e.g. [`bourbon_5_0_0.json`]). We then use a [proxy] in Middleman to generate
 unique pages for each version.
@@ -43,17 +43,11 @@ unique pages for each version.
 SassDoc has only been in use since v5.0.0. The v4 release is documented
 via [a static page][v4], pulled from the previous website.
 
-To generate documentation for the gem version specified in the `Gemfile`, run:
+To generate documentation for a published version of Bourbon,
+use the `generate_docs_for` task:
 
 ```
-rake generate
-```
-
-You can also generate documentation for the gem version from GitHub by using the
-`generate_for` command:
-
-```
-rake generate_for 5.0.0
+rake generate_docs_for 5.0.0
 ```
 
 [SassDoc]: http://sassdoc.com/

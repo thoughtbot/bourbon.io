@@ -1,21 +1,5 @@
-require "bundler"
-
-task :default => [:generate]
-
-desc "generate a docco json output file for the gem version defined in Gemfile"
-task :generate do
-  bourbon_path = Bundler.load.specs.find{|s| s.name == "bourbon" }.full_gem_path
-
-  assets_dir = "#{bourbon_path}/core"
-
-  # ~/.gem/ruby/2.2.0/gems/bourbon-4.2.1 => "4_2_1"
-  version_number = bourbon_path.scan(/(\d\.\d\.\d)+/).last.last.gsub(/\./, "_")
-
-  system("npx sassdoc #{assets_dir} -p > data/bourbon_#{version_number}.json")
-end
-
-desc "generate docs for a specific version number"
-task :generate_for do
+desc "Generate documentation for a published version of Bourbon"
+task :generate_docs_for do
   ARGV.each { |a| task a.to_sym do ; end }
   number = ARGV[1]
 
