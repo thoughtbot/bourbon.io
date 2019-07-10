@@ -59,8 +59,7 @@ rake generate_docs_for 5.0.0
 ## Hosting & Deployment
 
 The website is hosted on [Netlify], and is automatically built and deployed when
-changes are pushed to the `master` branch. Credentials for Netlify can be found
-in 1Password.
+changes are pushed to the `master` branch.
 
 [Netlify]: https://www.netlify.com/
 
