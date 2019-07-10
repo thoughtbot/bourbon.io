@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "bourbon": "^5.1.0",
-    "bourbon-neat": "^3.0.1",
+    "bourbon-neat": "^4.0.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
