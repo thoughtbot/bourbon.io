@@ -54,7 +54,7 @@ rake generate_docs_for 5.0.0
 [Bourbon’s source]: https://github.com/thoughtbot/bourbon/
 [`bourbon_5_0_0.json`]: data/bourbon_5_0_0.json
 [proxy]: https://middlemanapp.com/advanced/dynamic_pages/
-[v4]: source/docs/4.2.7/index.html.erb
+[v4]: source/docs/4/index.html.erb
 
 ## Hosting & Deployment
 
