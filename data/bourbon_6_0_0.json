@@ -1446,14 +1446,22 @@
       "end": 19
     },
     "context": {
-      "type": "css",
-      "name": "/* stylelint-disable order/properties-alphabetical-order */\n\n@mixin overflow-wrap($wrap: break-word)",
-      "value": "word-wrap: $wrap;\n  overflow-wrap: $wrap;",
+      "type": "mixin",
+      "name": "overflow-wrap",
+      "code": "\n  word-wrap: $wrap;\n  /* stylelint-disable-next-line order/properties-alphabetical-order */\n  overflow-wrap: $wrap;\n",
       "line": {
-        "start": 23,
-        "end": 29
+        "start": 21,
+        "end": 25
       }
     },
+    "parameter": [
+      {
+        "type": "string",
+        "name": "wrap",
+        "default": "break-word",
+        "description": "Accepted CSS values are `normal`, `break-word`, `inherit`, `initial`,\n  or `unset`.\n"
+      }
+    ],
     "example": [
       {
         "type": "scss",
@@ -1464,6 +1472,7 @@
     "group": [
       "undefined"
     ],
+    "require": [],
     "file": {
       "path": "bourbon/library/_overflow-wrap.scss",
       "name": "_overflow-wrap.scss"
