@@ -823,7 +823,7 @@
         "description": "List of the font file formats to include. Can also be set globally using\n  the `global-font-file-formats` key in the Bourbon settings.\n"
       },
       {
-        "type": "string",
+        "type": "boolean",
         "name": "asset-pipeline",
         "default": "false",
         "description": "Set to `true` if you’re using the Rails Asset Pipeline (place the fonts\n  in `app/assets/fonts/`). Can also be set globally using the\n  `rails-asset-pipeline` key in the Bourbon settings.\n"
