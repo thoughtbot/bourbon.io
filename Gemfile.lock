@@ -11,7 +11,7 @@ GEM
     autoprefixer-rails (9.6.1)
       execjs
     backports (3.15.0)
-    builder (3.2.3)
+    builder (3.2.4)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
