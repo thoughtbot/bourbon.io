@@ -1,3 +1,5 @@
+// stylelint-disable declaration-no-important
+
 .u-flex {
   display: flex !important;
 }
@@ -5,3 +7,5 @@
 .u-flex-align-items-center {
   align-items: center !important;
 }
+
+// stylelint-enable

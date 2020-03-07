@@ -1,3 +1,5 @@
+// stylelint-disable declaration-no-important
+
 .u-margin-left-auto {
   margin-left: auto !important;
 }
@@ -5,3 +7,5 @@
 .u-margin-top-x-large {
   margin-top: $space-x-large !important;
 }
+
+// stylelint-enable

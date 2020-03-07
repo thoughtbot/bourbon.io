@@ -7,6 +7,17 @@
     margin-bottom: modular-scale(-1);
   }
 
+  h2 {
+    font-size: modular-scale(4);
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: modular-scale(2);
+  }
+
   p,
   ol,
   ul,
@@ -20,17 +31,6 @@
     h6 {
       margin-top: modular-scale(4);
     }
-  }
-
-  h2 {
-    font-size: modular-scale(4);
-  }
-
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: modular-scale(2);
   }
 
   ol,

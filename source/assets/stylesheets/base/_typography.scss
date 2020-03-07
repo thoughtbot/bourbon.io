@@ -18,6 +18,18 @@ html {
   }
 }
 
+code {
+  background-color: rgba($white, 0.88);
+  border-radius: 0.1875em;
+  box-shadow: 0 0 0 1px rgba($dark-brown, 0.04);
+  font-family: $font-family-code;
+  font-size: modular-scale(-1);
+  font-weight: $font-weight-regular;
+  margin: 0 0.125em;
+  padding: 0.0625em 0.25em;
+  white-space: nowrap;
+}
+
 h1,
 h2,
 h3,
@@ -31,7 +43,7 @@ h6 {
   line-height: $line-height-heading;
   margin: 0;
 
-  > code {
+  code {
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -72,23 +84,11 @@ dt {
   font-weight: $font-weight-bold;
 }
 
-code {
-  background-color: rgba($white, 0.88);
-  border-radius: 0.1875em;
-  box-shadow: 0 0 0 1px rgba($dark-brown, 0.04);
-  font-family: $font-family-code;
-  font-size: modular-scale(-1);
-  font-weight: $font-weight-regular;
-  margin: 0 0.125em;
-  padding: 0.0625em 0.25em;
-  white-space: nowrap;
-}
-
 pre {
   margin: 0;
   tab-size: 2;
 
-  > code {
+  code {
     border-radius: $border-radius;
     display: block;
     margin: 0;

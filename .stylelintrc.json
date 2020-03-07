@@ -1,6 +1,3 @@
 {
-  "extends": "@thoughtbot/stylelint-config",
-  "rules": {
-    "declaration-no-important": null
-  }
+  "extends": "@thoughtbot/stylelint-config"
 }
