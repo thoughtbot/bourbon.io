@@ -5,9 +5,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@thoughtbot/stylelint-config": "^1.0.1",
+    "@thoughtbot/stylelint-config": "1.1.0",
     "sassdoc": "^2.7.1",
-    "stylelint": "^9.10.1"
+    "stylelint": "10.1.0"
   },
   "scripts": {
     "stylelint": "npx stylelint 'source/assets/stylesheets/**/*.scss'"
