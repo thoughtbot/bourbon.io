@@ -5,11 +5,14 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@thoughtbot/eslint-config": "^0.1.0",
     "@thoughtbot/stylelint-config": "1.1.0",
+    "eslint": "5.16.0",
     "sassdoc": "^2.7.1",
     "stylelint": "10.1.0"
   },
   "scripts": {
+    "eslint": "npx eslint 'source/assets/javascripts/**/*.js'",
     "stylelint": "npx stylelint 'source/assets/stylesheets/**/*.scss'"
   }
 }
