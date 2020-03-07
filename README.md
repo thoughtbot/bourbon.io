@@ -78,7 +78,6 @@ This project uses:
   - `utilities/`: High-specificity, very explicit selectors. Overrides and
     helper classes (e.g. `.u-flex {}`).
 - Autoprefixer
-- SCSS-Lint, with Hound ([configuration](.scss-lint.yml))
 - A variety of CSS units:
   - `em` for typographical-related elements
   - `rem` for lengths related to components
