@@ -8,3 +8,6 @@ update_configs:
           dependency_name: "stylelint*"
       - match:
           dependency_name: "eslint*"
+  - package_manager: "ruby:bundler"
+    directory: "/"
+    update_schedule: "weekly"
