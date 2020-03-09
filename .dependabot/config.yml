@@ -5,9 +5,9 @@ update_configs:
     update_schedule: "weekly"
     ignored_updates:
       - match:
-          dependency_name: "stylelint*"
+          dependency_name: "*stylelint*"
       - match:
-          dependency_name: "eslint*"
+          dependency_name: "*eslint*"
   - package_manager: "ruby:bundler"
     directory: "/"
     update_schedule: "weekly"
