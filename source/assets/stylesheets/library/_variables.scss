@@ -19,13 +19,13 @@ $space-x-large: 3rem;
 $space-xx-large: 5rem;
 
 // Colors
-$black: #000;
-$dark-gray: #222;
-$medium-gray: #999;
-$light-gray: #ddd;
+$black: #000000;
+$dark-gray: #222222;
+$medium-gray: #999999;
+$light-gray: #dddddd;
 $dark-brown: mix(#f27126, $dark-gray, 14%);
 $light-brown: tint(mix(#fffbee, #f6f3ee, 35%), 20%);
-$white: #fff;
+$white: #ffffff;
 
 $bourbon-orange: #f27126;
 $bourbon-orange-dark: shade($bourbon-orange, 10%);
@@ -56,8 +56,8 @@ $medium-screen: 50em;
 
 // Bourbon library settings
 $bourbon: (
-  "contrast-switch-dark-color": #000,
-  "contrast-switch-light-color": #fff,
+  "contrast-switch-dark-color": #000000,
+  "contrast-switch-light-color": #ffffff,
   "modular-scale-base": 1em,
   "modular-scale-ratio": $major-second,
 );

@@ -6,10 +6,10 @@
   },
   "devDependencies": {
     "@thoughtbot/eslint-config": "^0.1.0",
-    "@thoughtbot/stylelint-config": "1.1.0",
+    "@thoughtbot/stylelint-config": "2.0.0",
     "eslint": "5.16.0",
     "sassdoc": "^2.7.1",
-    "stylelint": "10.1.0"
+    "stylelint": "13.2.1"
   },
   "scripts": {
     "eslint": "npx eslint 'source/assets/javascripts/**/*.js'",
