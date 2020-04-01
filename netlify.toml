@@ -8,6 +8,12 @@
   status = 301
 
 [[redirects]]
+  from = "https://bourbon.netlify.app/*"
+  to = "https://www.bourbon.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://bourbon.netlify.com/*"
   to = "https://www.bourbon.io/:splat"
   status = 301
