@@ -1,0 +1,37 @@
+version: 2
+registries:
+  rubygems-server-gems-graphql-pro:
+    type: rubygems-server
+    url: https://gems.graphql.pro
+    username: "${{secrets.RUBYGEMS_SERVER_GEMS_GRAPHQL_PRO_USERNAME}}"
+    password: "${{secrets.RUBYGEMS_SERVER_GEMS_GRAPHQL_PRO_PASSWORD}}"
+
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "08:00"
+    timezone: America/New_York
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "*eslint*"
+    versions:
+    - ">= 0"
+  - dependency-name: "*stylelint*"
+    versions:
+    - ">= 0"
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "08:00"
+    timezone: America/New_York
+  open-pull-requests-limit: 10
+  registries:
+  - rubygems-server-gems-graphql-pro
