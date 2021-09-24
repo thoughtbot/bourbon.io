@@ -8,7 +8,7 @@
     "@thoughtbot/eslint-config": "0.1.0",
     "@thoughtbot/stylelint-config": "2.0.0",
     "eslint": "6.8.0",
-    "sassdoc": "^2.7.1",
+    "sassdoc": "^2.7.3",
     "stylelint": "13.2.1"
   },
   "scripts": {
