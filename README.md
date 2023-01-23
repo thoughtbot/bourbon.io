@@ -59,7 +59,7 @@ rake generate_docs_for 5.0.0
 ## Hosting & Deployment
 
 The website is hosted on [Netlify], and is automatically built and deployed when
-changes are pushed to the `master` branch.
+changes are pushed to the `main` branch.
 
 [Netlify]: https://www.netlify.com/
 
