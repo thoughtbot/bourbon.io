@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 
-ruby "2.6.5"
+ruby "3.0.0"
 
 gem "builder"
+gem "execjs", "2.7.0"
+gem "haml", "< 6.0.0"
 gem "middleman"
 gem "middleman-aria_current"
 gem "middleman-autoprefixer"
@@ -10,3 +12,4 @@ gem "middleman-minify-html"
 gem "middleman-syntax"
 gem "rake"
 gem "redcarpet"
+gem "webrick", "~> 1.8"
