@@ -1,6 +1,6 @@
 # The Bourbon website code is deprecated as of September 17, 2024
 
-[This project][Bourbon website] and the [Bourbon Sass library source code here][library repo] is no longer maintained. We encourage people to leverage the modern native CSS features in lieu of this library. You can refer to [our blog post on how to go about replacing or rethinking each helper](https://thoughtbot.com/blog/you-might-not-need-bourbon).
+[This project][Bourbon website] and the [Bourbon Sass library source code here][library repo] are no longer maintained. We encourage people to leverage the modern native CSS features in lieu of this library. You can refer to [our blog post on how to go about replacing or rethinking each helper](https://thoughtbot.com/blog/you-might-not-need-bourbon).
 
 [Bourbon website]: https://www.bourbon.io/
 [library repo]: https://github.com/thoughtbot/bourbon
