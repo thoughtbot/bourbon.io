@@ -14,19 +14,18 @@
     <% end %>
     <%= stylesheet_link_tag "main" %>
   </head>
-  <body>
-    <div class="c-site-frame">
-      <div class="c-site-frame__nav">
-        <%= partial "partials/site_nav" %>
-      </div>
+  <body class="c-site-frame u-margin-top-medium">
+    <header class="c-site-frame__nav">
+      <%= partial "partials/site_message" %>
+      <%= partial "partials/site_nav" %>
+    </header>
 
-      <main class="c-site-frame__body" role="main">
-        <%= yield %>
-      </main>
+    <main class="c-site-frame__body" role="main">
+      <%= yield %>
+    </main>
 
-      <div class="c-site-frame__footer">
-        <%= partial "partials/site_footer" %>
-      </div>
+    <div class="c-site-frame__footer">
+      <%= partial "partials/site_footer" %>
     </div>
 
     <%= partial "partials/javascript" %>
